@@ -373,20 +373,34 @@ header .mobile {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    margin-bottom: 5vh;
+}
+.project-hero-title-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
 }
-.project-hero-title h1 {
+.project-hero-title-text h1 {
     font-size: 80px;
     font-weight: 700;
-    margin: 0px;
+    margin: 0;
     color: white;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.0;
+}
+.project-hero-title-text p {
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    margin: 3vh 0 10px 3vh;
+    z-index: 2;
 }
 .project-hero-title img {
     width: 100px;
     height: 100px;
-    margin: 0 0 0 3%;
+    margin: 0 3% 0 0;
 }
 .typing-container {
     width: 100%;
@@ -493,6 +507,11 @@ header .mobile {
     header .header-items .mobile .hamburger {
         display: block;
     }
+    .project-hero-title {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
 }
 @media screen and (max-width: 768px) {
     .hero .hero-text h1 {
@@ -509,9 +528,17 @@ header .mobile {
     header .header-items {
         padding: 3vh 0;
     }
-    .project-hero .project-hero-title {
-        flex-direction: column-reverse;
-        margin: 10% 0 5% 0;
+    .project-hero-title-text {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-hero-title-text p {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+    .project-hero {
+        margin: 250px 10% 5% 10%;
     }
 }
 @media screen and (max-width: 280px) {
