@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cz" style="background-color:black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vojtěch Adam | Fast Coupons</title>
+    <link href="/images/logo.png" type="image/x-icon" rel="icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/type.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-items">
+            <div class="mobile">
+                <a href="#">
+                    <img src="/images/logo.png" class="logo">
+                </a>
+                <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <ul id="links">
+                <li><a href="/">Domů</a></li>
+                <li><a href="/project/photography">Fotografování</a></li>
+                <li><a href="/project/justintime.html">JustInTime</a></li>
+                <li><a href="#" class="active">Fast Coupons</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <canvas id="gradient-canvas"></canvas>
+    <script src="/js/Gradient.js"></script>
+    <script>
+        const gradient = new Gradient();
+        gradient.initGradient('#gradient-canvas')
+    </script>
+
+    <section class="project-hero auto-reveal-left">
+        <div class="project-hero-title">
+            <h1>Fast Coupons</h1>
+            <img src="/images/fastcoupons.png" alt="JustInTime">
+        </div>
+        <div class="typing-container">
+            <span id="feature-text"></span>
+            <span class="input-cursor"></span>
+            <script>
+                window.addEventListener("load", function() {
+                    type(`Tento projekt už není aktivní 🫤. Jednalo se o mou první větší aplikaci, která fungovala jenom do chvíle, dokud McDonald's neupravil systém fungování jejich kupónů 🧑‍🔧. Nyní je tento projekt "archivován", ale .apk soubor je stále dostupný pro stažení.`);
+                });
+            </script>
+        </div>
+    </section>
+
+    <div class="section-spacer">
+        <h2 class="section-title auto-reveal-left">Jak to fungovalo? 🤔</h2>
+    </div>
+
+    <section class="cards">
+        <div class="container reveal">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_qqu8eybe.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <div class="content-text">
+                <h3>Základní princip kupónů</h3>
+                <p>Dříve (ještě, když to fungoval) měl každý kupón svůj kód ve tvaru "132 XXX XXX". Tyto kupóny se v aplikaci ukázaly pouze někdy, ale jejich kódy fungovaly pořád. Aplikace je tedy pouze zobrazovala a uživatel si mohl vybrat, který kupón
+                    chce použít.</p>
+            </div>
+        </div>
+        <div class="container reveal">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_bc4ugzhr.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <div class="content-text">
+                <h3>První pokus McDonald's o zamezení</h3>
+                <p>Postupem času McDonald's začal systém fungování kupónů měnit. Kupóny se začaly zobrazovat v aplikaci vždy, ale jejich kódy fungovaly jenom několik minut. Vytvořil jsem tedy verzi, která byla vzhledově naprosto identická originální aplikaci,
+                    díky čemuž jsi mohl přijít k pokladně a tvářit se jako, že jsi kupóny získal přes aplikaci.</p>
+            </div>
+        </div>
+        <div class="container reveal">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player class="content-image" src="https://assets7.lottiefiles.com/packages/lf20_xkmq5z4e.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <div class="content-text">
+                <h3>Jak je to dnes?</h3>
+                <p>McDonald's začal generovat kódy kupónů tak, že kód byl vždy jiný. Aplikace tedy nemohla fungovat, protože byla schopná zobrazit pouze kódy, které byly předem známy. Kvůli častým změnám vzhledu originální aplikace jsem se rozhodl, že již
+                    nebudu aplikaci aktualizovat.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-spacer">
+        <h2 class="section-title auto-reveal-left">Stažení? 🤖</h2>
+    </div>
+
+    <section class="cards">
+        <div class="container reveal">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player class="content-image" src="https://assets10.lottiefiles.com/packages/lf20_dicn56pf.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <div class="content-text">
+                <h3>Android (ruční instalace)</h3>
+                <p>Pro stažení aplikace je potřeba mít na svém zařízení povolené instalování aplikací z neznámých zdrojů. Aplikace je dostupná pouze pro Android. Pro stažení aplikace klikněte na tlačítko níže.</p>
+                <button class="button" onclick="window.open('https://download941.mediafire.com/ch5tbt05z9ug/tmjln1jpmin9l3a/', '_blank');"><span
+                        class="download">Stáhnout</span></button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+</body>
+
+</html>

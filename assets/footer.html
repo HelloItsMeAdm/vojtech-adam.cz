@@ -1,0 +1,47 @@
+<head>
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<div class="content">
+    <div class="about">
+        <h2>O mě</h2>
+        <p id="about_text_footer"></p>
+        <script>
+            var today = new Date();
+            var birthDate = new Date("2005/05/29");
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            var finalText = "Ahoj 👋! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem student Ekonomické školy 👨‍🎓.<br>Baví mě programování mobilních aplikací 📲 a ve volném čase se věnuju fotografování 📸.";
+            document.getElementById("about_text_footer").innerHTML = finalText;
+        </script>
+    </div>
+    <div class="contact">
+        <div class="item">
+            <h2>Kontakt</h2>
+            <a href="https://www.vojtech-adam.cz/">www.vojtech-adam.cz</a><br>
+            <a href="mailto:kontakt@vojtech-adam.cz" class="email">kontakt@vojtech-adam.cz</a><br>
+        </div>
+
+        <div class="item">
+            <h2>Instagram</h2>
+            <a href="https://www.instagram.com/helloitsmeadm" target="_blank">@helloitsmeadm</a><br>
+            <a href="https://www.instagram.com/photographer_vojtech" target="_blank">@photographer_vojtech</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <a target="_blank" href="https://www.buymeacoffee.com/vojtechadam" class="donate-container">
+            <img class="donate-img" src="/images/buymeacoffee.png" alt="Kup mi káves!">
+            <span class="donate-span">Kup mi káves!</span>
+        </a>
+        <p id="copyright"></p>
+        <a href="https://www.vojtech-adam.cz/privacy" target="_blank">Zásady ochrany osobních údajů</a>
+        <script>
+            var today = new Date();
+            var finalText = "&copy " + today.getFullYear() + " Vojtěch Adam";
+            document.getElementById("copyright").innerHTML = finalText;
+        </script>
+    </div>
+</div>

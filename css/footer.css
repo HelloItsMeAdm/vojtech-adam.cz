@@ -1,0 +1,99 @@
+footer {
+    height: 100%;
+    background-color: var(--darker-gray);
+    padding: 3vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+footer .contact {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+footer h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+footer p, footer a {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    transition: .5s;
+    margin: 0 auto;
+}
+footer .about {
+    width: 100%;
+    margin: 0 auto 2.5% auto;
+}
+footer a:hover, footer .copyright a:hover {
+    color: var(--color-primary);
+}
+footer .instagram {
+    text-align: end;
+}
+footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3vh;
+    width: 100%;
+}
+footer .copyright p, footer .copyright a {
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+footer .copyright .donate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1vh;
+    width: 100%;
+}
+footer .copyright .donate-container .donate-img {
+    width: 25px;
+    margin-right: 10px;
+}
+footer .copyright .donate-container .donate-span {
+    font-size: 28px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1000px) {
+    footer .contact {
+        flex-direction: column;
+    }
+    footer .content * {
+        text-align: center;
+    }
+    footer .content .contact .item:first-child {
+        margin-bottom: 2vh;
+    }
+    footer .content .contact {
+        align-items: center;
+    }
+    footer .content .item:first-child {
+        margin-top: 2vh;
+    }
+}
+@media screen and (max-width: 480px) {
+    footer .copyright .donate-container {
+        flex-direction: column;
+        margin-bottom: 1vh;
+    }
+}
