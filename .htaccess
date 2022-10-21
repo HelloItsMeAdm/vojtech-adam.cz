@@ -1,11 +1,23 @@
-ErrorDocument 400 https://www.vojtech-adam.cz/error/400
-ErrorDocument 401 https://www.vojtech-adam.cz/error/401
-ErrorDocument 403 https://www.vojtech-adam.cz/error/403
-ErrorDocument 404 https://www.vojtech-adam.cz/error/404
-ErrorDocument 503 https://www.vojtech-adam.cz/error/503
+Header set Content-Security-Policy "upgrade-insecure-requests;"
 
 RewriteEngine on
 
+ErrorDocument 400 https://www.vojtech-adam.cz/chyba/400
+ErrorDocument 401 https://www.vojtech-adam.cz/chyba/401
+ErrorDocument 403 https://www.vojtech-adam.cz/chyba/403
+ErrorDocument 404 https://www.vojtech-adam.cz/chyba/404
+ErrorDocument 503 https://www.vojtech-adam.cz/chyba/503
+
+# Redirect all requests to https
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect all requests to www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect all requests url without .html
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
 
