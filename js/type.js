@@ -1,5 +1,6 @@
 async function type(sentence) {
-    const letters = sentence.split("");
+    var letters = sentence.split("");
+
     for (let i = 0; i < letters.length; i++) {
         await sleep(50);
         if (letters[i] === "<") {
@@ -11,6 +12,15 @@ async function type(sentence) {
             tag += ">";
             tag = tag.substring(1, tag.length - 1);
             document.getElementById("feature-text").appendChild(document.createElement(tag));
+        } else if (letters[i] === "&") {
+            let tag = "";
+            while (letters[i] !== ";") {
+                tag += letters[i];
+                i++;
+            }
+            tag = tag.substring(1, tag.length);
+            tag = "&" + tag.replace(/,/g, "");
+            document.getElementById("feature-text").innerHTML += tag;
         } else {
             document.getElementById("feature-text").append(letters[i]);
         }
