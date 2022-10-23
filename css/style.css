@@ -206,18 +206,19 @@ header .mobile {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
 }
 .section-title {
     font-size: 50px;
     font-weight: 700;
-    margin: 0px;
     color: white;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.2;
     margin: 3% 0;
     border-bottom: 5px solid #fff;
     border-radius: 5px;
+    padding-bottom: 20px;
 }
 
 /* Project cards */
