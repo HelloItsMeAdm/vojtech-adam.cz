@@ -15,7 +15,8 @@ function scroll() {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("header").style.height = "80px";
         document.getElementById("header").style.opacity = "1";
-    } else {
+    }
+    if (prevScrollpos < currentScrollPos - 5) {
         document.getElementById("header").style.height = "0px";
         document.getElementById("header").style.opacity = "0";
     }

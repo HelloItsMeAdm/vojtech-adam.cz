@@ -1,4 +1,2 @@
 toggle typing and animations buttons
-google play image is small on mobile - fix dimensions
 new error page
-navbar scroll on phone
