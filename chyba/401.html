@@ -2,69 +2,59 @@
 <html lang="cz">
 
 <head>
-
-    <!-- Basic Page Needs
-  ================================================== -->
     <meta charset="utf-8">
     <title>Vojtěch Adam | Chyba!</title>
-
-    <!-- Mobile Specific Metas
-  ================================================== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="author" content="HelloItsMeAdm">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/helloitsmeadm_logo.svg" />
-
-    <!-- Main Stylesheet -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.svg" />
     <link href="/errpages/style.css" rel="stylesheet">
-
-    <script src="/errpages/script.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <script src="/errpages/main.js"></script>
 </head>
 
 <body>
-    <a href="https://www.vojtech-adam.cz/">
-        <header class="top-header">
-        </header>
+    <div class="moon"></div>
+    <div class="moon__crater moon__crater1"></div>
+    <div class="moon__crater moon__crater2"></div>
+    <div class="moon__crater moon__crater3"></div>
 
-        <!--dust particel-->
-        <div>
-            <div class="starsec"></div>
-            <div class="starthird"></div>
-            <div class="starfourth"></div>
-            <div class="starfifth"></div>
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star star3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+
+    <div class="error">
+        <div class="error__title">401</div>
+        <div class="error__subtitle">Neautorizovaný přístup!</div>
+        <div class="error__description">Pro přístup na tuto stránku kontaktujte administrátora.</div>
+        <button class="error__button error__button--active" onclick="window.location.href = '/';">Zpět na hlavní stránku</button>
+    </div>
+
+    <div class="astronaut">
+        <div class="astronaut__backpack"></div>
+        <div class="astronaut__body"></div>
+        <div class="astronaut__body__chest"></div>
+        <div class="astronaut__arm-left1"></div>
+        <div class="astronaut__arm-left2"></div>
+        <div class="astronaut__arm-right1"></div>
+        <div class="astronaut__arm-right2"></div>
+        <div class="astronaut__arm-thumb-left"></div>
+        <div class="astronaut__arm-thumb-right"></div>
+        <div class="astronaut__leg-left"></div>
+        <div class="astronaut__leg-right"></div>
+        <div class="astronaut__foot-left"></div>
+        <div class="astronaut__foot-right"></div>
+        <div class="astronaut__wrist-left"></div>
+        <div class="astronaut__wrist-right"></div>
+
+        <div class="astronaut__head">
+            <canvas id="visor" width="60px" height="60px"></canvas>
+            <div class="astronaut__head-visor-flare1"></div>
+            <div class="astronaut__head-visor-flare2"></div>
         </div>
-        <!--Dust particle end--->
-
-
-        <div class="lamp__wrap">
-            <div class="lamp">
-                <div class="cable"></div>
-                <div class="cover"></div>
-                <div class="in-cover">
-                    <div class="bulb"></div>
-                </div>
-                <div class="light"></div>
-            </div>
-        </div>
-        <!-- END Lamp -->
-        <section class="error">
-            <!-- Content -->
-            <div class="error__content">
-                <div class="error__message message">
-                    <h1 class="message__title">401 - Unauthorized</h1>
-                    <p class="message__text">Omlouváme se, ale odmítli jsme autorizovat vaši žádost. Prosím kontaktujte administrátora.</p>
-                </div>
-                <div class="error__nav e-nav">
-                    <a href="https://www.vojtech-adam.cz/" class="e-nav__link"></a>
-                </div>
-            </div>
-            <!-- END Content -->
-
-        </section>
-
-    </a>
+    </div>
 </body>
 
 </html>

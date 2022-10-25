@@ -62,7 +62,10 @@ footer .copyright .donate-container {
     align-items: center;
     flex-direction: row;
     margin-top: 1vh;
-    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 footer .copyright .donate-container .donate-img {
     width: 25px;
@@ -70,6 +73,11 @@ footer .copyright .donate-container .donate-img {
 }
 footer .copyright .donate-container .donate-span {
     font-size: 28px;
+    color: white;
+    transition: .5s;
+}
+footer .copyright .donate-container .donate-span:hover {
+    color: var(--color-primary);
 }
 
 /* Media Queries */
