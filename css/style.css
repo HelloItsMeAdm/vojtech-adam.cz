@@ -424,6 +424,7 @@ header .mobile {
     animation: blink .6s linear infinite alternate;
     border-radius: 2px;
     padding-top: 10px;
+    background-color: white;
 }
 @keyframes blink {
     0% {
