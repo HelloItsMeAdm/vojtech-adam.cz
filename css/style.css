@@ -413,6 +413,10 @@ header .mobile {
 .typing-container {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 .typing-container #feature-text {
     font-size: 25px;
@@ -425,6 +429,15 @@ header .mobile {
     border-radius: 2px;
     padding-top: 10px;
     background-color: white;
+}
+.typing-container a {
+    cursor: pointer;
+    color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 0 0 5%;
 }
 @keyframes blink {
     0% {
@@ -553,6 +566,13 @@ header .mobile {
     }
     .project-hero-title img {
         margin: 0 0 3vh 0;
+    }
+    .typing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .typing-container a {
+        margin: 3vh 0 0 0;
     }
 }
 @media screen and (max-width: 280px) {
