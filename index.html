@@ -55,18 +55,23 @@
             <h1>Vojtěch Adam</h1>
             <h2>alias HelloItsMeAdm</h2>
             <div class="typing-container">
-                <span id="feature-text"></span>
-                <span class="input-cursor"></span>
-                <script>
-                    var today = new Date();
-                    var birthDate = new Date("2005/05/29");
-                    var age = today.getFullYear() - birthDate.getFullYear();
-                    var m = today.getMonth() - birthDate.getMonth();
-                    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                        age--;
-                    }
-                    type("Ahoj &#128075;! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem student Ekonomické školy &#127891;.<br>Baví mě programování mobilních aplikací &#128242; a ve volném čase se věnuju fotografování &#128248;.");
-                </script>
+                <div id="move-screen">
+                    <span id="feature-text"></span>
+                    <span class="input-cursor"></span>
+                    <script>
+                        window.addEventListener("load", function() {
+                            var today = new Date();
+                            var birthDate = new Date("2005/05/29");
+                            var age = today.getFullYear() - birthDate.getFullYear();
+                            var m = today.getMonth() - birthDate.getMonth();
+                            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                age--;
+                            }
+                            type("Ahoj &#128075;! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem student Ekonomické školy &#127891;.<br>Baví mě programování mobilních aplikací &#128242; a ve volném čase se věnuju fotografování &#128248;.");
+                        });
+                    </script>
+                </div>
+                <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
             </div>
         </div>
         <div class="hero-image auto-reveal-right">

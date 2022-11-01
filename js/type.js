@@ -52,6 +52,7 @@ async function type(sentence) {
         }
     }
     document.getElementsByClassName("input-cursor")[0].remove();
+    document.getElementById("skipTyping").style.display = "none";
     //document.getElementById("move-screen").style.height = "auto";
     return;
 }

@@ -57,13 +57,16 @@
             </div>
         </div>
         <div class="typing-container">
-            <span id="feature-text"></span>
-            <span class="input-cursor"></span>
-            <script>
-                window.addEventListener("load", function() {
-                    type(`Tento projekt už není aktivní &#128528;. Jednalo se o mou první větší aplikaci, která fungovala jenom do chvíle, dokud McDonald's neupravil systém fungování jejich kupónů &#128295;. Nyní je tento projekt "archivován", ale .apk soubor je stále dostupný pro stažení.`);
-                });
-            </script>
+            <div id="move-screen">
+                <span id="feature-text"></span>
+                <span class="input-cursor"></span>
+                <script>
+                    window.addEventListener("load", function() {
+                        type(`Tento projekt už není aktivní &#128528;. Jednalo se o mou první větší aplikaci, která fungovala jenom do chvíle, dokud McDonald's neupravil systém fungování jejich kupónů &#128295;. Nyní je tento projekt "archivován", ale .apk soubor je stále dostupný pro stažení.`);
+                    });
+                </script>
+            </div>
+            <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
         </div>
     </section>
 
