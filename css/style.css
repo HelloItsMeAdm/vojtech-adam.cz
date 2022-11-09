@@ -135,6 +135,7 @@ header .mobile {
     left: 0;
     z-index: -1;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    filter: blur(50px);
     --gradient-color-1: #043D5D;
     --gradient-color-2: #032E46;
     --gradient-color-3: #23B684;
