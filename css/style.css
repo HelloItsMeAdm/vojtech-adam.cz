@@ -45,6 +45,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 * a {
     color: var(--white);
+    -webkit-tap-highlight-color: transparent;
 }
 * a:hover {
     color: var(--color-primary);
