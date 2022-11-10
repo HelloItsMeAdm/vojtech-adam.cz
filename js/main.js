@@ -41,32 +41,66 @@ function loadFooter(e) {
 }
 
 function toggleMenu() {
-    var x = document.getElementById("links");
-    var y = document.getElementById("hamburger");
     var toggled = true;
-    if (x.style.display === "block") {
-        x.style.display = "none";
-        toggled = false;
-    } else {
-        x.style.display = "block";
-        toggled = true;
+    var links = document.getElementById("links");
+    var hamburger = document.getElementById("hamburger");
+    var header = document.getElementById("header");
+    var headerItems = document.getElementById("headerItems");
+    var hamburgerIcon = hamburger.getElementsByTagName("i")[0];
+
+    if (window.innerWidth < 1000) {
+        if (links.style.display === "block") {
+            links.style.display = "none";
+            header.style.height = "100px";
+            headerItems.style.height = "95px";
+            hamburgerIcon.classList.remove("fa-times");
+            hamburgerIcon.classList.add("fa-bars");
+            toggled = false;
+            hamburgerIcon.style.transform = "rotate(0deg)";
+            hamburgerIcon.style.opacity = "0";
+            sleep(200).then(() => {
+                hamburgerIcon.style.opacity = "1";
+            });
+        } else {
+            links.style.display = "block";
+            header.style.height = "190px";
+            headerItems.style.height = "185px";
+            hamburgerIcon.classList.remove("fa-bars");
+            hamburgerIcon.classList.add("fa-times");
+            toggled = true;
+            hamburgerIcon.style.transform = "rotate(90deg)";
+            hamburgerIcon.style.opacity = "0";
+            sleep(200).then(() => {
+                hamburgerIcon.style.opacity = "1";
+            });
+        }
     }
     window.addEventListener("resize", function() {
         if (window.innerWidth > 1000) {
-            x.style.display = "block";
-            y.style.display = "none";
-            y.style.opacity = 0;
+            links.style.display = "block";
+            hamburger.style.display = "none";
+            hamburger.style.opacity = 0;
+            header.style.height = "100px";
+            headerItems.style.height = "95px";
         } else {
             if (toggled) {
-                x.style.display = "block";
-                y.style.display = "block";
-                y.style.opacity = 1;
+                links.style.display = "block";
+                hamburger.style.display = "block";
+                hamburger.style.opacity = 1;
+                header.style.height = "190px";
+                headerItems.style.height = "185px";
             } else {
-                x.style.display = "none";
-                y.style.display = "block";
-                y.style.opacity = 1;
+                links.style.display = "none";
+                hamburger.style.display = "block";
+                hamburger.style.opacity = 1;
+                header.style.height = "100px";
+                headerItems.style.height = "95px";
             }
         }
     });
     return;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
