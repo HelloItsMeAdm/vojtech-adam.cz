@@ -8,6 +8,7 @@ window.onscroll = function() {
 window.onload = function() {
     loadFooter();
     toggleMenu();
+    setTimeout(askDonate, 30000);
 }
 
 function scroll() {

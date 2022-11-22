@@ -321,6 +321,14 @@ header .mobile .hamburger #hamburgerIcon {
     right: 100px;
     transition: 0.5s;
 }
+.button span.donate:after {
+    content: '💰';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 100px;
+    transition: 0.5s;
+}
 .button:hover span {
     padding-right: 50px;
 }
