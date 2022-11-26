@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cz" style="background-color:#202124;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/be1f410c2f.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+    <header>
+        <div class="header-items">
+            <div class="logo">
+                <img src="img/logo.png" alt="Search logo">
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="/">Vyhledávání</a>
+                </li>
+                <li>
+                    <a href="images.html">Vyhledávání obrázků</a>
+                </li>
+                <li>
+                    <a href="#" class="active">Pokročilé vyhledávání</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="title">
+                <h1>Google Search</h1>
+                <p>Pokročilé vyhledávání</p>
+            </div>
+            <div class="subtitle">
+                <p>Najít stránky...</p>
+            </div>
+            <form action="https://www.google.com/search" name="f">
+                <div class="row with-text">
+                    <p>se všemi těmito slovy:</p>
+                    <input type="text" name="as_q" placeholder="Sem napiš hledaný výraz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="row with-text">
+                    <p>s tímto přesným slovem nebo frázemi:</p>
+                    <input type="text" name="as_epq" placeholder="Sem napiš hledaný výraz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="row with-text">
+                    <p>se všemi těmito slovy:</p>
+                    <input type="text" name="as_oq" placeholder="Sem napiš hledaný výraz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="row with-text">
+                    <p>,na kterých není žádné z těchto slov</p>
+                    <input type="text" name="as_eq" placeholder="Sem napiš hledaný výraz" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Pokročilé hledání" name="btnK">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

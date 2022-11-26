@@ -1,0 +1,233 @@
+/* Root */
+
+:root {
+    --primary: #4285F4;
+    --light-gray: #9aa0a6;
+    --gray: #202124;
+    --dark-gray: #171717;
+    --white: #fff;
+    --lighter-gray: #303134;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    background-color: var(--dark-gray);
+    z-index: 100;
+}
+.header-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vh 2vh;
+}
+.header-items .logo img {
+    width: 3em;
+}
+.header-items .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+}
+.header-items .links li {
+    list-style: none;
+    margin: 0 5%;
+}
+.header-items .links li a {
+    color: var(--light-gray);
+    font-size: 1.2em;
+    transition: color 0.5s;
+    text-transform: capitalize;
+    text-align: center;
+    display: flex;
+}
+.header-items .links li a:hover:not(a.active) {
+    color: var(--white);
+}
+header .active {
+    font-weight: 700;
+    color: var(--white) !important;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20vh 0 0 0;
+}
+main .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .wrapper .title {
+    margin-bottom: 5%;
+}
+main .wrapper .title h1, p, h2 {
+    text-align: center;
+    margin: 0;
+    color: var(--white);
+}
+main .wrapper .title h1 {
+    font-size: 5em;
+}
+main .wrapper .title p {
+    font-size: 2em;
+}
+main .wrapper form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main .wrapper form .row {
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+}
+main .wrapper form .row input {
+    width: 90%;
+    background-color: var(--gray);
+    border: 1px solid #5f6368;
+    height: 44px;
+    border-radius: 24px;
+    font-size: 1em;
+    color: var(--white);
+    transition: border 0.3s;
+    text-indent: 5%;
+}
+main .wrapper form .row input:hover {
+    border: 1px solid var(--white);
+}
+main .wrapper form .row input:focus::placeholder {
+    color: transparent;
+}
+main .wrapper form .row button {
+    width: 8%;
+    display: flex;
+    height: 44px;
+    margin-left: 2%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 40px;
+}
+main .wrapper form .row button:hover {
+    background-color: var(--lighter-gray);
+}
+main .wrapper form .row i {
+    font-size: 1.5em;
+    color: white;
+}
+main .wrapper form .buttons {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+main .wrapper form .buttons input {
+    background-color: var(--lighter-gray);
+    border: 1px solid var(--lighter-gray);
+    border-radius: 24px;
+    padding: 0 2em;
+    height: 44px;
+    cursor: pointer;
+    color: var(--white);
+    margin: 0 5% 5% 5%;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+main .wrapper form .buttons input:hover {
+    background-color: var(--light-gray);
+}
+main .wrapper form .row p {
+    margin-right: 3%;
+    text-align: right;
+}
+main .wrapper form .row.with-text {
+    justify-content: flex-end;
+}
+main .wrapper form .row.with-text input {
+    max-width: 300px;
+}
+main .wrapper .subtitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5%;
+    font-size: 1.5em;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10vh 0 0 0;
+    }
+    header .header-items {
+        flex-direction: column;
+        padding: 3vh 2vh;
+    }
+    main .wrapper .title h1 {
+        font-size: 3.5em;
+    }
+    main .wrapper .title p {
+        font-size: 1.6em;
+    }
+    main .wrapper form .row input, main .wrapper form .row p {
+        font-size: 0.8em;
+    }
+    main .wrapper form .row {
+        flex-direction: column;
+    }
+    main .wrapper form .row p {
+        margin: 0 0 5% 0;
+    }
+    main .wrapper form .row button {
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    main {
+        padding: 5vh 0 0 0;
+    }
+    header .header-items {
+        flex-direction: column;
+    }
+    header .links {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    main .wrapper .title h1 {
+        font-size: 2em;
+    }
+    main .wrapper .title p {
+        font-size: 1em;
+    }
+    main .wrapper form .buttons input, main .wrapper form .row p {
+        font-size: 0.8em;
+    }
+}
