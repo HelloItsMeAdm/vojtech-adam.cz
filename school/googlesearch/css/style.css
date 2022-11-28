@@ -196,6 +196,9 @@ main .wrapper .subtitle {
     main .wrapper .title p {
         font-size: 1.6em;
     }
+    main .wrapper .subtitle {
+        justify-content: center;
+    }
     main .wrapper form .row input, main .wrapper form .row p {
         font-size: 0.8em;
     }
