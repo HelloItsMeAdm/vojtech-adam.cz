@@ -1,3 +1,5 @@
+let shown = false;
+
 function displayDonate() {
     var dialog = document.createElement("div");
     dialog.id = "donate";
@@ -194,10 +196,14 @@ function displayDonate() {
     });
     dialog.appendChild(leaderboard);
     document.body.appendChild(dialog);
+    shown = true;
     return;
 }
 
 function askDonate() {
+    if (shown) {
+        return;
+    }
     var dialog = document.createElement("div");
     dialog.id = "donate";
     dialog.style.position = "fixed";
