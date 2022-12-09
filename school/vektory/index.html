@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs" style="background-color:#121212">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výpočet vektorů</title>
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+    <main>
+        <h1>Výpočet vektorů</h1>
+        <div class="input">
+            <div class="prefill">
+                <p>Předvyplnit ze zadání</p>
+                <select name="names" id="namesSelector" onchange="changeNames()">
+                    <option value="uv">U(6;3) a V(2;-4)</option>
+                    <option value="ab">A(-2;3) a B(3;0)</option>
+                </select>
+            </div>
+            <table>
+                <tr>
+                    <th>Vektor</th>
+                    <th>(X;Y)</th>
+                </tr>
+                <tr>
+                    <td id="firstVector"><span id="vectorNamea">u</span></td>
+                    <td class="hasInputs">(<input type="number" value="6" id="ax" placeholder="X" autocomplete="off" autocapitalize="off" spellcheck="false">;<input type="number" value="3" id="ay" placeholder="Y" autocomplete="off" autocapitalize="off" spellcheck="false">)</td>
+                </tr>
+                <tr>
+                    <td id="secondVector"><span id="vectorNameb">v</span></td>
+                    <td class="hasInputs">(<input type="number" value="2" id="bx" placeholder="X" autocomplete="off" autocapitalize="off" spellcheck="false">;<input type="number" value="-4" id="by" placeholder="Y" autocomplete="off" autocapitalize="off" spellcheck="false">)</td>
+                </tr>
+            </table>
+            <button class="button" onclick="calc()"><span class="calc">Vypočítat</span></button>
+        </div>
+
+        <table class="results">
+            <tr>
+                <th>Požadavek</th>
+                <th>Výsledek</th>
+            </tr>
+            <tr>
+                <td>Délka vektoru <span id="vectorNamea">u</span>:</td>
+                <td><span id="lengtha"></span></td>
+            </tr>
+            <tr>
+                <td>Délka vektoru <span id="vectorNameb">v</span>:</td>
+                <td><span id="lengthb"></span></td>
+            </tr>
+            <tr>
+                <td>Součet vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
+                <td><span id="sum"></span></td>
+            </tr>
+            <tr>
+                <td>Rozdíl vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
+                <td><span id="difference"></span></td>
+            </tr>
+            <tr>
+                <td>Skalární součin vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
+                <td><span id="scalar"></span></td>
+            </tr>
+            <tr>
+                <td>Odchylka vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
+                <td><span id="offset"></span></td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
