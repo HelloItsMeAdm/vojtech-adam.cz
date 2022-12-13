@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }
 main h1 {
@@ -36,7 +36,7 @@ main h1 {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -111,7 +111,7 @@ tr:last-of-type td:first-of-type {
 tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 20px;
 }
-#vectorNamea, #vectorNameb {
+#vectorNamea, #vectorNameb, #value {
     font-style: italic;
     font-weight: bold;
 }
@@ -157,4 +157,12 @@ tr:last-of-type td:last-of-type {
 }
 .results p {
     margin: 0.5rem;
+}
+span.green {
+    color: lime;
+    font-weight: bold;
+}
+span.red {
+    color: red;
+    font-weight: bold;
 }

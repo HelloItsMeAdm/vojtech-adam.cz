@@ -4,6 +4,7 @@ let sum;
 let difference;
 let scalar;
 let offset;
+let parallel;
 
 let ax;
 let ay;
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     difference = document.querySelector("#difference");
     scalar = document.querySelector("#scalar");
     offset = document.querySelector("#offset");
+    parallel = document.querySelector("#parallel");
 
     loaded = true;
     calc();
@@ -44,44 +46,55 @@ function calc() {
     // Scalar
     scalar.innerHTML = ax * bx + ay * by;
     // Offset
-    offset.innerHTML = ((Math.acos((ax * bx + ay * by) / ((Math.sqrt(ax * ax + ay * ay).toFixed(2)) * (Math.sqrt(bx * bx + by * by).toFixed(2))))) * (180 / Math.PI)).toFixed(2) + "°";
+    let offsetVal = ((Math.acos((ax * bx + ay * by) / ((Math.sqrt(ax * ax + ay * ay).toFixed(2)) * (Math.sqrt(bx * bx + by * by).toFixed(2))))) * (180 / Math.PI)).toFixed(2);
+    if (offsetVal == "NaN") {
+        offset.innerHTML = "Nelze určit";
+    } else {
+        offset.innerHTML = offsetVal + "°";
+    }
+    // Parallel
+    if ((ax / bx) === (ay / by)) {
+        let k = (ax / bx).toFixed(2);
+        if (k.toString().startsWith('-')) {
+            parallel.innerHTML = "<span class='green'>Ano</span><br><span id='value'>k</span> = (" + k + ")";
+        } else {
+            parallel.innerHTML = "<span class='green'>Ano</span><br><span id='value'>k</span> = " + k;
+        }
+    } else {
+        parallel.innerHTML = "<span class='red'>Ne</span>";
+    }
 }
 
 function changeNames() {
     getValues();
     const namesSelector = document.querySelector('#namesSelector');
-    const vectorNamesa = document.querySelectorAll('#vectorNamea');
-    const vectorNamesb = document.querySelectorAll('#vectorNameb');
     namesSelector.blur();
 
-    switch (namesSelector.value) {
-        case 'uv':
-            vectorNamesa.forEach((vectorNamea) => {
-                vectorNamea.innerHTML = 'u';
-            });
-            vectorNamesb.forEach((vectorNameb) => {
-                vectorNameb.innerHTML = 'v';
-            });
-            document.querySelector('#ax').value = 6;
-            document.querySelector('#ay').value = 3;
-            document.querySelector('#bx').value = 2;
-            document.querySelector('#by').value = -4;
-            calc();
-            return
-        case 'ab':
-            vectorNamesa.forEach((vectorNamea) => {
-                vectorNamea.innerHTML = 'a';
-            });
-            vectorNamesb.forEach((vectorNameb) => {
-                vectorNameb.innerHTML = 'b';
-            });
-            document.querySelector('#ax').value = -2;
-            document.querySelector('#ay').value = 3;
-            document.querySelector('#bx').value = 3;
-            document.querySelector('#by').value = 0;
-            calc();
-            return
-    }
+    const name = namesSelector.options[namesSelector.selectedIndex].dataset.name;
+    const ax = namesSelector.options[namesSelector.selectedIndex].dataset.ax;
+    const ay = namesSelector.options[namesSelector.selectedIndex].dataset.ay;
+    const bx = namesSelector.options[namesSelector.selectedIndex].dataset.bx;
+    const by = namesSelector.options[namesSelector.selectedIndex].dataset.by;
+
+    changeLetters(name);
+    document.querySelector('#ax').value = ax;
+    document.querySelector('#ay').value = ay;
+    document.querySelector('#bx').value = bx;
+    document.querySelector('#by').value = by;
+    calc();
+    return
+}
+
+function changeLetters(value) {
+    value = value.split('');
+    const vectorNamesa = document.querySelectorAll('#vectorNamea');
+    const vectorNamesb = document.querySelectorAll('#vectorNameb');
+    vectorNamesa.forEach((vectorNamea) => {
+        vectorNamea.innerHTML = value[0];
+    });
+    vectorNamesb.forEach((vectorNameb) => {
+        vectorNameb.innerHTML = value[1];
+    });
 }
 
 function getValues() {

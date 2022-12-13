@@ -18,8 +18,17 @@
             <div class="prefill">
                 <p>Předvyplnit ze zadání</p>
                 <select name="names" id="namesSelector" onchange="changeNames()">
-                    <option value="uv">U(6;3) a V(2;-4)</option>
-                    <option value="ab">A(-2;3) a B(3;0)</option>
+                    <optgroup label="Zadání 1">
+                        <option data-name="uv" data-ax="6" data-ay="3" data-bx="2" data-by="-4">U(6;3) a V(2;-4)
+                        </option>
+                        <option data-name="ab" data-ax="-2" data-ay="3" data-bx="3" data-by="0">A(-2;3) a B(3;0)</option>
+                    </optgroup>
+                    <optgroup label="Zadání 2">
+                        <option data-name="uv" data-ax="1" data-ay="3" data-bx="-1" data-by="-3">U(1;3) a V(-1;-3)</option>
+                        <option data-name="uv" data-ax="-2" data-ay="-1" data-bx="4" data-by="6">U(-2;-1) a V(4;6)</option>
+                        <option data-name="uv" data-ax="-5" data-ay="5" data-bx="-10" data-by="-10">U(-5;5) a V(-10;-10)</option>
+                        <option data-name="uv" data-ax="4" data-ay="7" data-bx="-12" data-by="-21">U(4;7) a V(-12;-21)</option>
+                    </optgroup>
                 </select>
             </div>
             <table>
@@ -67,6 +76,10 @@
             <tr>
                 <td>Odchylka vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
                 <td><span id="offset"></span></td>
+            </tr>
+            <tr>
+                <td>Rovnoběžnost vektorů <span id="vectorNamea">u</span> a <span id="vectorNameb">v</span>:</td>
+                <td><span id="parallel"></span></td>
             </tr>
         </table>
     </main>
