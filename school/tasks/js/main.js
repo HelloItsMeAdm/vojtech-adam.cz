@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let json;
+    let json = [];
     let data = sessionStorage.getItem('todos');
-    if (data === 'undefined') {
-        json = [];
-    } else {
+    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
         json = JSON.parse(data);
     }
     refreshUserData(json);
