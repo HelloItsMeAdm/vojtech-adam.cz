@@ -4,6 +4,7 @@
     --gray: #181818;
     --white: #FFFFFF;
     --dark-white: #B3B3B3;
+    --dialog-light-gray: #353535;
 }
 
 /* Root */
@@ -322,7 +323,7 @@ header .mobile .hamburger #hamburgerIcon {
     right: 100px;
     transition: 0.5s;
 }
-.button span.donate:after {
+.button span.donateSymbol:after {
     content: '💰';
     position: absolute;
     opacity: 0;
@@ -491,6 +492,128 @@ header .mobile .hamburger #hamburgerIcon {
     margin: 0;
 }
 
+/* Dialog */
+
+.dialog {
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.dialog .btn-close {
+    margin: 10px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--gray);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.dialog .btn-close:hover {
+    transform: translateX(-10px);
+}
+.dialog .donate {
+    width: 50%;
+    display: flex;
+    padding: 2rem;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--gray);
+}
+.dialog .donate h2 {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-size: 45px;
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+}
+.dialog .donate p {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    color: var(--white);
+    text-align: center;
+}
+.dialog-payments {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.dialog-payments a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--dialog-light-gray);
+    color: var(--white);
+    width: 200px;
+    height: 200px;
+}
+.dialog-payments a:hover {
+    transform: translateY(-10px);
+}
+.dialog-payments img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+.dialog-payments p {
+    font-size: 20px;
+    text-align: center;
+}
+.dialog .leaderboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+}
+.dialog .leaderboard h2 {
+    padding: 15px;
+    margin: 0;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+.dialog .leaderboard p {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+/* Decorations */
+
+span.bold {
+    font-weight: bold;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1000px) {
@@ -551,6 +674,20 @@ header .mobile .hamburger #hamburgerIcon {
     .project-hero-title img {
         margin: 0;
     }
+    .dialog-payments {
+        flex-direction: column;
+    }
+    .dialog-payments a {
+        height: 150px;
+        width: 150px;
+    }
+    .dialog-payments img {
+        height: 40px;
+        width: 40px;
+    }
+    .dialog-payments p {
+        font-size: 20px !important;
+    }
 }
 @media screen and (max-width: 900px) {
     .hero .hero-text h1 {
@@ -583,6 +720,17 @@ header .mobile .hamburger #hamburgerIcon {
     }
     .typing-container a {
         margin: 3vh 0 0 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .dialog .donate {
+        width: 80%;
+    }
+    .dialog .donate h2 {
+        font-size: 30px;
+    }
+    .dialog .donate p {
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 280px) {
