@@ -7,7 +7,7 @@ footer {
     align-items: center;
 }
 footer .content {
-    width: 50%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -103,5 +103,8 @@ footer .copyright .donate-container .donate-span:hover {
     footer .copyright .donate-container {
         flex-direction: column;
         margin-bottom: 1vh;
+    }
+    footer .copyright .donate-container .donate-img {
+        margin: 0;
     }
 }
