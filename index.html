@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="/css/style.css">
     <meta name="keywords" content="Vojtěch Adam, Vojta, Vojta Adam, Vojtaa29, HelloItsMeAdm, JustInTime, Fast Coupons, Photography, Fotografie, Fotograf, Vojtech, Vojtech Adam, Vojtech Adam Photography, Vojtech Adam Fotografie, Vojtech Adam Fotograf, Vojtech Adam Fotografie">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/type.js"></script>
-    <script src="/js/dialog.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
@@ -24,97 +18,109 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="header-items" id="headerItems">
-            <div class="mobile">
-                <a href="#">
-                    <img src="/images/logo.svg" class="logo">
-                </a>
-                <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
-                    <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
-                </a>
-            </div>
-            <ul id="links">
-                <li><a href="#" class="active">Domů</a></li>
-                <li><a href="/project/photography">Fotografování</a></li>
-                <li><a href="/project/justintime">JustInTime</a></li>
-                <li><a href="/project/fastcoupons">Fast Coupons</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <canvas id="gradient-canvas"></canvas>
-    <script src="/js/Gradient.js"></script>
-    <script>
-        const gradient = new Gradient();
-        gradient.initGradient('#gradient-canvas')
-    </script>
-
-    <section class="hero">
-        <div class="hero-text auto-reveal-left">
-            <h1>Vojtěch Adam</h1>
-            <h2>alias HelloItsMeAdm</h2>
-            <div class="typing-container">
-                <div id="move-screen">
-                    <span id="feature-text"></span>
-                    <span class="input-cursor"></span>
-                    <script>
-                        window.addEventListener("load", function() {
-                            var today = new Date();
-                            var birthDate = new Date("2005/05/29");
-                            var age = today.getFullYear() - birthDate.getFullYear();
-                            var m = today.getMonth() - birthDate.getMonth();
-                            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                                age--;
-                            }
-                            type("Ahoj &#128075;! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem student Ekonomické školy &#127891;.<br>Baví mě programování mobilních aplikací &#128242; a ve volném čase se věnuju fotografování &#128248;.");
-                        });
-                    </script>
+    <div id="body">
+        <script src="/js/load.js"></script>
+        <header id="header">
+            <div class="header-items" id="headerItems">
+                <div class="mobile">
+                    <a href="#">
+                        <img src="/images/logo.svg" class="logo">
+                    </a>
+                    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
+                        <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
+                    </a>
                 </div>
-                <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
+                <ul id="links">
+                    <li><a href="#" class="active">Domů</a></li>
+                    <li><a href="/project/photography">Fotografování</a></li>
+                    <li><a href="/project/justintime">JustInTime</a></li>
+                    <li><a href="/project/fastcoupons">Fast Coupons</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="hero-image auto-reveal-right">
-            <img src="/images/logo.svg" alt="Logo">
-        </div>
-    </section>
+        </header>
 
-    <div class="section-spacer">
-        <h2 class="section-title auto-reveal-left">Aktuální projekty 😎</h2>
+        <canvas id="gradient-canvas"></canvas>
+        <script src="/js/Gradient.js"></script>
+        <script>
+            const gradient = new Gradient();
+            gradient.initGradient('#gradient-canvas')
+        </script>
+
+        <section class="hero">
+            <div class="hero-text auto-reveal-left">
+                <h1>Vojtěch Adam</h1>
+                <h2>alias HelloItsMeAdm</h2>
+                <div class="typing-container">
+                    <div id="move-screen">
+                        <span id="feature-text"></span>
+                        <span class="input-cursor"></span>
+                        <script>
+                            window.addEventListener("load", function() {
+                                var today = new Date();
+                                var birthDate = new Date("2005/05/29");
+                                var age = today.getFullYear() - birthDate.getFullYear();
+                                var m = today.getMonth() - birthDate.getMonth();
+                                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                    age--;
+                                }
+                                type("Ahoj &#128075;! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem student Ekonomické školy &#127891;.<br>Baví mě programování mobilních aplikací &#128242; a ve volném čase se věnuju fotografování &#128248;.");
+                            });
+                        </script>
+                    </div>
+                    <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
+                </div>
+            </div>
+            <div class="hero-image auto-reveal-right">
+                <img src="/images/logo.svg" alt="Logo">
+            </div>
+        </section>
+
+        <div class="section-spacer">
+            <h2 class="section-title auto-reveal-left">Aktuální projekty 😎</h2>
+        </div>
+
+        <section class="cards">
+            <div class="container reveal">
+                <img class="content-image" src="/images/logo.svg" alt="Fotografování">
+                <div class="content-text">
+                    <h3>Fotografování 📸</h3>
+                    <p>Moje stránka o fotografování, kde se můžete podívat na mé fotky a zjistit, jaké fotoaparáty používám.
+                    </p>
+                    <button class="button" onclick="location.href='/project/photography'"><span
+                        class="arrow">Přejít</span></button>
+                </div>
+            </div>
+            <div class="container reveal">
+                <img class="content-image" src="/images/justintime.png" alt="JustInTime">
+                <div class="content-text">
+                    <h3>JustInTime 🚶‍♂️📲</h3>
+                    <p>Můj dosavadní největší projekt, který jsem vytvořil původně pouze pro osobní užívání. Jedná se o mobilní aplikaci pro Android, která slouží k plánování trasy mezi dvěma body, aby jste nikdy nepřišli pozdě.</p>
+                    <button class="button" onclick="location.href='/project/justintime'"><span
+                    class="arrow">Přejít</span></button>
+                </div>
+            </div>
+            <div class="container reveal">
+                <img class="content-image" src="/images/fastcoupons.png" alt="Fast Coupons">
+                <div class="content-text">
+                    <h3>Fast Coupons 🍔📲</h3>
+                    <p>Tato mobilní aplikace na Android sloužila dříve jako seznam kupónů, které fungovaly v síti McDonald's. Nyní aplikace už nefunguje, ale je pořád dostupná ke stažení.</p>
+                    <button class="button" onclick="location.href='/project/fastcoupons'"><span
+                        class="arrow">Přejít</span></button>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer"></footer>
     </div>
-
-    <section class="cards">
-        <div class="container reveal">
-            <img class="content-image" src="/images/logo.svg" alt="Fotografování">
-            <div class="content-text">
-                <h3>Fotografování 📸</h3>
-                <p>Moje stránka o fotografování, kde se můžete podívat na mé fotky a zjistit, jaké fotoaparáty používám.
-                </p>
-                <button class="button" onclick="location.href='/project/photography'"><span
-                        class="arrow">Přejít</span></button>
-            </div>
-        </div>
-        <div class="container reveal">
-            <img class="content-image" src="/images/justintime.png" alt="JustInTime">
-            <div class="content-text">
-                <h3>JustInTime 🚶‍♂️📲</h3>
-                <p>Můj dosavadní největší projekt, který jsem vytvořil původně pouze pro osobní užívání. Jedná se o mobilní aplikaci pro Android, která slouží k plánování trasy mezi dvěma body, aby jste nikdy nepřišli pozdě.</p>
-                <button class="button" onclick="location.href='/project/justintime'"><span
-                        class="arrow">Přejít</span></button>
-            </div>
-        </div>
-        <div class="container reveal">
-            <img class="content-image" src="/images/fastcoupons.png" alt="Fast Coupons">
-            <div class="content-text">
-                <h3>Fast Coupons 🍔📲</h3>
-                <p>Tato mobilní aplikace na Android sloužila dříve jako seznam kupónů, které fungovaly v síti McDonald's. Nyní aplikace už nefunguje, ale je pořád dostupná ke stažení.</p>
-                <button class="button" onclick="location.href='/project/fastcoupons'"><span
-                        class="arrow">Přejít</span></button>
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer"></footer>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/type.js"></script>
+<script src="/js/dialog.js"></script>
+<script>
+    loaded();
+</script>
 
 </html>

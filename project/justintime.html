@@ -9,12 +9,6 @@
     <link href="/images/logo.svg" type="image/x-icon" rel="icon">
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/type.js"></script>
-    <script src="/js/dialog.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
@@ -22,123 +16,138 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="header-items" id="headerItems">
-            <div class="mobile">
-                <a href="/">
-                    <img src="/images/logo.svg" class="logo">
-                </a>
-                <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
-                    <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
-                </a>
+    <div id="body">
+        <script src="/js/load.js"></script>
+        <header id="header">
+            <div class="header-items" id="headerItems">
+                <div class="mobile">
+                    <a href="/">
+                        <img src="/images/logo.svg" class="logo">
+                    </a>
+                    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
+                        <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
+                    </a>
+                </div>
+                <ul id="links">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/project/photography">Fotografování</a></li>
+                    <li><a href="#" class="active">JustInTime</a></li>
+                    <li><a href="/project/fastcoupons">Fast Coupons</a></li>
+                </ul>
             </div>
-            <ul id="links">
-                <li><a href="/">Domů</a></li>
-                <li><a href="/project/photography">Fotografování</a></li>
-                <li><a href="#" class="active">JustInTime</a></li>
-                <li><a href="/project/fastcoupons">Fast Coupons</a></li>
-            </ul>
-        </div>
-    </header>
+        </header>
 
-    <canvas id="gradient-canvas"></canvas>
-    <script src="/js/Gradient.js"></script>
-    <script>
-        const gradient = new Gradient();
-        gradient.initGradient('#gradient-canvas')
-    </script>
+        <canvas id="gradient-canvas"></canvas>
+        <script src="/js/Gradient.js"></script>
+        <script>
+            const gradient = new Gradient();
+            gradient.initGradient('#gradient-canvas')
+        </script>
 
-    <section class="project-hero auto-reveal-left">
-        <div class="project-hero-title">
-            <img src="/images/justintime.png" alt="JustInTime">
-            <div class="project-hero-title-text">
-                <h1>JustInTime</h1>
-                <p>- Projekt založen 21.12.2021</p>
+        <section class="project-hero auto-reveal-left">
+            <div class="project-hero-title">
+                <img src="/images/justintime.png" alt="JustInTime">
+                <div class="project-hero-title-text">
+                    <h1>JustInTime</h1>
+                    <p>- Projekt založen 21.12.2021</p>
+                </div>
             </div>
-        </div>
-        <div class="typing-container">
-            <div id="move-screen">
-                <span id="feature-text"></span>
-                <span class="input-cursor"></span>
-                <script>
-                    window.addEventListener("load", function() {
-                        type(`Toto je můj dosavadní největší projekt, který jsem vytvořil! Jedná se o aplikaci na telefon &#128242;, která slouží k naplánování &#8986; kdy potřebuješ být na určitém místě &#128679;. Aplikace následně sama vypočítá potřebný čas, rychlost a kdy potřebuješ vyjít,
+            <div class="typing-container">
+                <div id="move-screen">
+                    <span id="feature-text"></span>
+                    <span class="input-cursor"></span>
+                    <script>
+                        window.addEventListener("load", function() {
+                            type(`Toto je můj dosavadní největší projekt, který jsem vytvořil! Jedná se o aplikaci na telefon &#128242;, která slouží k naplánování &#8986; kdy potřebuješ být na určitém místě &#128679;. Aplikace následně sama vypočítá potřebný čas, rychlost a kdy potřebuješ vyjít,
                         aby jsi tam byl včas a až bude potřeba, tak tě upozorní na to, aby jsi vyšel &#128034;! Aplikace je zatím jenom na Android.`);
-                    });
-                </script>
+                        });
+                    </script>
+                </div>
+                <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
             </div>
-            <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
-        </div>
-    </section>
+        </section>
 
-    <div class="section-spacer">
-        <h2 class="section-title auto-reveal-left">Jak to funguje? 🤔</h2>
-    </div>
+        <div class="section-spacer">
+            <h2 class="section-title auto-reveal-left">Jak to funguje? 🤔</h2>
+        </div>
 
-    <section class="cards">
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_svy4ivvy.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            <div class="content-text">
-                <h3>Získání trasy od uživatele</h3>
-                <p>Než se trasa vypočítá a aplikace začne pracovat, musí uživatel zadat cílové místo, které chce navštívit. Aplikace pak získá informace o tom, kde se uživatel právě nachází a vypočítá nejkratší trasu k cíli. Na zobrazení mapy bylo použito
-                    Google Maps API.</p>
+        <section class="cards">
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_svy4ivvy.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="content-text">
+                    <h3>Získání trasy od uživatele</h3>
+                    <p>Než se trasa vypočítá a aplikace začne pracovat, musí uživatel zadat cílové místo, které chce navštívit. Aplikace pak získá informace o tom, kde se uživatel právě nachází a vypočítá nejkratší trasu k cíli. Na zobrazení mapy bylo použito
+                        Google Maps API.</p>
+                </div>
             </div>
-        </div>
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_wzgyyian.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            <div class="content-text">
-                <h3>Vypočítání potřebných dat</h3>
-                <p>Po získání trasy se aplikace pokusí vypočítat určité informace, které slouží pro načasování upozornění a podobně. Aplikace vypočítá potřebný čas, rychlost a kdy potřebuješ vyjít, aby jsi tam byl včas. Pro toto aplikace využívá Matrix API.</p>
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_wzgyyian.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="content-text">
+                    <h3>Vypočítání potřebných dat</h3>
+                    <p>Po získání trasy se aplikace pokusí vypočítat určité informace, které slouží pro načasování upozornění a podobně. Aplikace vypočítá potřebný čas, rychlost a kdy potřebuješ vyjít, aby jsi tam byl včas. Pro toto aplikace využívá Matrix
+                        API.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets6.lottiefiles.com/packages/lf20_jkereflx.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            <div class="content-text">
-                <h3>Upozornění uživatele</h3>
-                <p>Po vypočtení potřebných dat aplikace začne pracovat na upozornění uživatele. Tento proces byl na celé aplikaci asi nejsložitější, protože bylo nutné počítat se spousty dat - musíme brát v potaz, že uživatel může dojít do cíle další den
-                    nebo je v jiné časové zóně než cíl. Všechno toto naštěstí už funguje a aplikace by měla být schopná upozornit uživatele i v případě, že uživatel zapne telefon až po uplynutí času.</p>
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets6.lottiefiles.com/packages/lf20_jkereflx.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="content-text">
+                    <h3>Upozornění uživatele</h3>
+                    <p>Po vypočtení potřebných dat aplikace začne pracovat na upozornění uživatele. Tento proces byl na celé aplikaci asi nejsložitější, protože bylo nutné počítat se spousty dat - musíme brát v potaz, že uživatel může dojít do cíle další
+                        den nebo je v jiné časové zóně než cíl. Všechno toto naštěstí už funguje a aplikace by měla být schopná upozornit uživatele i v případě, že uživatel zapne telefon až po uplynutí času.</p>
+                </div>
             </div>
-        </div>
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_d5hrx4au.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            <div class="content-text">
-                <h3>Ukládání dat a statistiky</h3>
-                <p>Jak už jsi si určitě všiml, aplikace má i statistiky. Tyto statistiky jsou vytvářeny z dat, které aplikace ukládá. Aplikace ukládá data o tom, kolik uživatel celkově nachodil/najezdil, kolik mu to zabralo času, kolikrát aplikaci použil
-                    a jaká předvolba rychlosti je u něj nejčastější.
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_d5hrx4au.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="content-text">
+                    <h3>Ukládání dat a statistiky</h3>
+                    <p>Jak už jsi si určitě všiml, aplikace má i statistiky. Tyto statistiky jsou vytvářeny z dat, které aplikace ukládá. Aplikace ukládá data o tom, kolik uživatel celkově nachodil/najezdil, kolik mu to zabralo času, kolikrát aplikaci použil
+                        a jaká předvolba rychlosti je u něj nejčastější.
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="section-spacer">
-        <h2 class="section-title auto-reveal-left">Stažení? 🤖</h2>
-    </div>
+        <div class="section-spacer">
+            <h2 class="section-title auto-reveal-left">Stažení? 🤖</h2>
+        </div>
 
-    <section class="cards">
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_oabT72.json" background="transparent" speed="1" loop autoplay></lottie-player>
-            <div class="content-text">
-                <h3>Google Play</h3>
-                <p>Pro Android uživatele je aplikace dostupná na Google Play. Stačí kliknout na tlačítko níže a přesměruje tě to na Google Play.</p>
-                <button class="button" onclick="window.open('https://play.google.com/store/apps/details?id=com.helloitsmeadm.justintime', '_blank');"><span
+        <section class="cards">
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets9.lottiefiles.com/packages/lf20_oabT72.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="content-text">
+                    <h3>Google Play</h3>
+                    <p>Pro Android uživatele je aplikace dostupná na Google Play. Stačí kliknout na tlačítko níže a přesměruje tě to na Google Play.</p>
+                    <button class="button" onclick="window.open('https://play.google.com/store/apps/details?id=com.helloitsmeadm.justintime', '_blank');"><span
                     class="url">Přejít</span></button>
+                </div>
             </div>
-        </div>
-        <div class="container reveal">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_EnidHIgcT2.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <div class="container reveal">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_EnidHIgcT2.json" background="transparent" speed="1" loop autoplay></lottie-player>
 
-            <div class="content-text">
-                <h3>App Store</h3>
-                <p>Pro iOS uživatele aplikace zatím není dostupná.</p>
+                <div class="content-text">
+                    <h3>App Store</h3>
+                    <p>Pro iOS uživatele aplikace zatím není dostupná.</p>
+                </div>
             </div>
-    </section>
+        </section>
 
-    <footer id="footer"></footer>
+        <footer id="footer"></footer>
+    </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/type.js"></script>
+<script src="/js/dialog.js"></script>
+<script>
+    loaded();
+</script>
 
 </html>
