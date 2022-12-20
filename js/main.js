@@ -9,6 +9,7 @@ window.onload = function() {
     loadFooter();
     toggleMenu();
     setTimeout(askDonate, 30000);
+    showContent();
 }
 
 function scroll() {
@@ -100,6 +101,12 @@ function toggleMenu() {
         }
     });
     return;
+}
+
+function showContent() {
+    document.getElementById("loading").remove();
+    document.getElementById("body").style.display = "block";
+    document.getElementById("preloadCSS").remove();
 }
 
 function sleep(ms) {

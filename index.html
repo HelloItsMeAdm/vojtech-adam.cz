@@ -18,8 +18,20 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="/css/preload.css" id="preloadCSS">
+    <div class="loading" id="loading">
+        <div class="loading-wrapper">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1>Načítání...</h1>
+            <h2>Prosím počkejte, než se stránka načte. Nemělo by to dlouho trvat.</h2>
+        </div>
+    </div>
     <div id="body">
-        <script src="/js/load.js"></script>
         <header id="header">
             <div class="header-items" id="headerItems">
                 <div class="mobile">
@@ -119,8 +131,5 @@
 <script src="/js/animations.js"></script>
 <script src="/js/type.js"></script>
 <script src="/js/dialog.js"></script>
-<script>
-    loaded();
-</script>
 
 </html>
