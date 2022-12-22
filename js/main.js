@@ -1,4 +1,5 @@
 var prevScrollpos = window.pageYOffset;
+var headerHeight = "100px";
 window.ontouchmove = function() {
     scroll();
 }
@@ -19,7 +20,7 @@ window.onload = function() {
 function scroll() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("header").style.height = "80px";
+        document.getElementById("header").style.height = headerHeight;
         document.getElementById("header").style.opacity = "1";
     }
     if (prevScrollpos < currentScrollPos - 5) {
@@ -54,10 +55,13 @@ function toggleMenu() {
     var headerItems = document.getElementById("headerItems");
     var hamburgerIcon = hamburger.getElementsByTagName("i")[0];
 
+    header.style.position = "sticky";
+
     if (window.innerWidth < 1000) {
         if (links.style.display === "block") {
             links.style.display = "none";
-            header.style.height = "100px";
+            headerHeight = "100px";
+            header.style.height = headerHeight;
             headerItems.style.height = "95px";
             hamburgerIcon.classList.remove("fa-times");
             hamburgerIcon.classList.add("fa-bars");
@@ -69,8 +73,9 @@ function toggleMenu() {
             });
         } else {
             links.style.display = "block";
-            header.style.height = "190px";
-            headerItems.style.height = "185px";
+            headerHeight = "240px";
+            header.style.height = headerHeight;
+            headerItems.style.height = "235px";
             hamburgerIcon.classList.remove("fa-bars");
             hamburgerIcon.classList.add("fa-times");
             toggled = true;
@@ -86,20 +91,23 @@ function toggleMenu() {
             links.style.display = "block";
             hamburger.style.display = "none";
             hamburger.style.opacity = 0;
-            header.style.height = "100px";
+            headerHeight = "100px";
+            header.style.height = headerHeight;
             headerItems.style.height = "95px";
         } else {
             if (toggled) {
                 links.style.display = "block";
                 hamburger.style.display = "block";
                 hamburger.style.opacity = 1;
-                header.style.height = "190px";
-                headerItems.style.height = "185px";
+                headerHeight = "240px";
+                header.style.height = headerHeight;
+                headerItems.style.height = "235px";
             } else {
                 links.style.display = "none";
                 hamburger.style.display = "block";
                 hamburger.style.opacity = 1;
-                header.style.height = "100px";
+                headerHeight = "100px";
+                header.style.height = headerHeight;
                 headerItems.style.height = "95px";
             }
         }
