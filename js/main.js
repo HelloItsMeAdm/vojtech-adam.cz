@@ -6,10 +6,14 @@ window.onscroll = function() {
     scroll();
 }
 window.onload = function() {
-    loadFooter();
     toggleMenu();
     setTimeout(askDonate, 30000);
-    showContent();
+    if (document.title === "Vojtěch Adam | Školní projekty") {
+        getSchoolProjects();
+    } else {
+        showContent();
+    }
+    loadFooter();
 }
 
 function scroll() {
@@ -107,6 +111,71 @@ function showContent() {
     document.getElementById("loading").remove();
     document.getElementById("body").style.display = "block";
     document.getElementById("preloadCSS").remove();
+}
+
+function getSchoolProjects() {
+    fetch("/school/projects.json")
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                let section = document.createElement("section");
+                section.classList.add("cards");
+
+                let container = document.createElement("div");
+                container.classList.add("container");
+                container.classList.add("reveal");
+
+                let img = document.createElement("img");
+                img.classList.add("content-image");
+                img.src = data[i].image;
+                img.alt = data[i].name;
+
+                let contentText = document.createElement("div");
+                contentText.classList.add("content-text");
+
+                let projectTitle = document.createElement("div");
+                projectTitle.classList.add("project-double-title");
+
+                let h3 = document.createElement("h3");
+                h3.innerHTML = data[i].name;
+
+                let h4 = document.createElement("h4");
+                h4.innerHTML = "Vytvořeno: " + data[i].date;
+
+                let p = document.createElement("p");
+                p.innerHTML = data[i].description;
+
+                let button = document.createElement("button");
+                button.classList.add("button");
+                button.onclick = function() {
+                    window.open(data[i].url, "_blank");
+                }
+
+                let buttonSpan = document.createElement("span");
+                buttonSpan.classList.add("arrow");
+                buttonSpan.innerHTML = "Přejít";
+
+                button.appendChild(buttonSpan);
+
+                projectTitle.appendChild(h3);
+                projectTitle.appendChild(h4);
+
+                contentText.appendChild(projectTitle);
+                contentText.appendChild(p);
+                contentText.appendChild(button);
+
+                container.appendChild(img);
+                container.appendChild(contentText);
+
+                section.appendChild(container);
+
+                document.body.appendChild(section);
+            }
+            let footer = document.createElement("footer");
+            footer.id = "footer";
+            document.body.appendChild(footer);
+            showContent();
+        });
 }
 
 function sleep(ms) {

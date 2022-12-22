@@ -90,7 +90,7 @@ function displayDonate() {
 }
 
 function askDonate() {
-    if (shown) {
+    if (shown || !canShow()) {
         return;
     }
     var dialog = document.createElement("div");
@@ -146,5 +146,34 @@ function askDonate() {
 
     dialog.appendChild(donate);
     document.body.appendChild(dialog);
+
+    refreshUserData([{
+        blockDialog: true
+    }]);
     return;
+}
+
+function canShow() {
+    let json = [];
+    let data = sessionStorage.getItem('dialog');
+    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
+        json = JSON.parse(data);
+    }
+    refreshUserData(json);
+
+    if (json.length == 0) {
+        return true;
+    } else if (json.length == 1) {
+        if (json[0].blockDialog) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        return true;
+    }
+}
+
+function refreshUserData(newJson) {
+    sessionStorage.setItem('dialog', JSON.stringify(newJson));
 }

@@ -1,0 +1,19 @@
+[{
+    "name": "Google Search",
+    "description": "Nechcete používát Google vyhledávání, ale chcete používat radši to moje? Já taky ne! A přesně proto jsem udělal tenhle projekt!",
+    "image": "/school/googlesearch/img/logo.png",
+    "date": "24.11.2022",
+    "url": "https://www.vojtech-adam.cz/school/googlesearch/"
+}, {
+    "name": "Vektory",
+    "description": "Tato stránka vám umožní si vypočítat základní operace s vektory a podvádět tak při domácích úkolech nebo testech!",
+    "image": "/school/vektory/img/logo.png",
+    "date": "9.12.2022",
+    "url": "https://www.vojtech-adam.cz/school/vektory/"
+}, {
+    "name": "Tasks",
+    "description": "Jestli potřebujete někam napsat svoje úkoly, jako třeba úkoly do školy a nejste náročný uživatel, tak můžete použít můj projekt Tasks!",
+    "image": "/school/tasks/img/logo.png",
+    "date": "15.12.2022",
+    "url": "https://www.vojtech-adam.cz/school/tasks/"
+}]

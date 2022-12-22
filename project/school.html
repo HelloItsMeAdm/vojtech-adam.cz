@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cz" style="background-color:#121212">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vojtěch Adam | Školní projekty</title>
+    <link href="/images/logo.svg" type="image/x-icon" rel="icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <link rel="stylesheet" href="/css/preload.css" id="preloadCSS">
+    <div class="loading" id="loading">
+        <div class="loading-wrapper">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1>Načítání...</h1>
+            <h2>Prosím počkejte, než se stránka načte. Nemělo by to dlouho trvat.</h2>
+        </div>
+    </div>
+    <div id="body">
+        <header id="header">
+            <div class="header-items" id="headerItems">
+                <div class="mobile">
+                    <a href="/">
+                        <img src="/images/logo.svg" class="logo">
+                    </a>
+                    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
+                        <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
+                    </a>
+                </div>
+                <ul id="links">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/project/photography">Fotografování</a></li>
+                    <li><a href="/project/justintime">JustInTime</a></li>
+                    <li><a href="/project/fastcoupons.html">Fast Coupons</a></li>
+                    <li><a href="#" class="active">Škola</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <canvas id="gradient-canvas"></canvas>
+        <script src="/js/Gradient.js"></script>
+        <script>
+            const gradient = new Gradient();
+            gradient.initGradient('#gradient-canvas')
+        </script>
+
+        <section class="project-hero auto-reveal-left">
+            <div class="project-hero-title">
+                <img src="/images/fastcoupons.png" alt="Fast Coupons">
+                <div class="project-hero-title-text">
+                    <h1>Školní projekty</h1>
+                    <p>Všechny moje školní projekty od 1.9.2020</p>
+                </div>
+            </div>
+            <div class="typing-container">
+                <div id="move-screen">
+                    <span id="feature-text"></span>
+                    <span class="input-cursor"></span>
+                    <script>
+                        window.addEventListener("load", function() {
+                            type(`Zde najdeš všechny moje projekty, které jsem dělal ve škole &#127979;.`);
+                        });
+                    </script>
+                </div>
+                <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
+            </div>
+        </section>
+
+        <div class="section-spacer">
+            <h2 class="section-title auto-reveal-left">Seznam projektů 📜</h2>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/type.js"></script>
+<script src="/js/dialog.js"></script>
+
+</html>

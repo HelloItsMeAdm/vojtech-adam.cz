@@ -263,7 +263,7 @@ header .mobile .hamburger #hamburgerIcon {
     width: 20vh;
     height: 100%;
 }
-.content-text h3 {
+.content-text h3, .content-text .project-double-title h3 {
     font-size: 30px;
     font-weight: 700;
     margin: 0px;
@@ -280,6 +280,18 @@ header .mobile .hamburger #hamburgerIcon {
     font-weight: 300;
     color: var(--white);
     z-index: 2;
+}
+.project-double-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.project-double-title h4 {
+    color: var(--white);
+    margin: 0;
+    font-size: 1.3rem;
+    font-style: italic;
 }
 
 /* Button */
@@ -402,12 +414,13 @@ header .mobile .hamburger #hamburgerIcon {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 }
 .project-hero-title-text {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
 }
@@ -416,19 +429,19 @@ header .mobile .hamburger #hamburgerIcon {
     font-weight: 700;
     margin: 0;
     color: var(--white);
-    text-align: center;
+    text-align: left;
     line-height: 1.0;
 }
 .project-hero-title-text p {
     font-size: 30px;
     font-weight: 300;
     color: var(--white);
-    margin: 3vh 0 10px 3vh;
+    margin: 1rem 0 0 0;
     z-index: 2;
 }
 .project-hero-title img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 0 3% 0 0;
 }
 .typing-container {
@@ -674,8 +687,14 @@ span.bold {
         align-items: center;
         margin-bottom: 5%;
     }
+    .project-hero-title-text {
+        align-items: center;
+    }
+    .project-hero-title h1 {
+        margin: 0 0 1vh 0;
+    }
     .project-hero-title img {
-        margin: 0;
+        margin: 0 0 2vh 0;
     }
     .dialog-payments {
         flex-direction: column;
@@ -701,6 +720,7 @@ span.bold {
     }
     .project-hero-title h1 {
         font-size: 50px;
+        text-align: center;
     }
     .project-hero-title-text {
         flex-direction: column;
@@ -723,6 +743,9 @@ span.bold {
     }
     .typing-container a {
         margin: 3vh 0 0 0;
+    }
+    .project-double-title {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 600px) {
