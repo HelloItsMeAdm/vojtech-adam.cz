@@ -147,19 +147,14 @@ function askDonate() {
     dialog.appendChild(donate);
     document.body.appendChild(dialog);
 
-    refreshUserData([{
+    refreshUserData('dialog', [{
         blockDialog: true
     }]);
     return;
 }
 
 function canShow() {
-    let json = [];
-    let data = sessionStorage.getItem('dialog');
-    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
-        json = JSON.parse(data);
-    }
-    refreshUserData(json);
+    let json = getUserData('dialog');
 
     if (json.length == 0) {
         return true;
@@ -172,8 +167,4 @@ function canShow() {
     } else {
         return true;
     }
-}
-
-function refreshUserData(newJson) {
-    sessionStorage.setItem('dialog', JSON.stringify(newJson));
 }

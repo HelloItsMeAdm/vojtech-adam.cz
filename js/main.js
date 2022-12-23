@@ -8,7 +8,7 @@ window.onscroll = function() {
 }
 window.onload = function() {
     toggleMenu();
-    setTimeout(askDonate, 30000);
+    setTimeout(askDonate, 1000);
     if (document.title === "Vojtěch Adam | Školní projekty") {
         getSchoolProjects();
     } else {
@@ -184,6 +184,65 @@ function getSchoolProjects() {
             document.body.appendChild(footer);
             showContent();
         });
+}
+
+function getEffects() {
+    $.getScript("/js/snowflakes.js", function(sf) {
+        sf = new Snowflakes({
+            color: "white"
+        });
+        let current = getUserData('snowflakes');
+        let button = document.getElementById('toggleEffectsButton');
+        if (current.length == 0) {
+            refreshUserData('snowflakes', [{
+                toggledOn: true
+            }]);
+            button.innerHTML = "Vypnout efekty";
+            return;
+        }
+        if (current[0].toggledOn) {
+            sf.start();
+            button.innerHTML = "Vypnout efekty";
+        }
+    });
+}
+
+function toggleEffects() {
+    $.getScript("/js/snowflakes.js", function(sf) {
+        sf = new Snowflakes({
+            color: "white"
+        });
+        let current = getUserData('snowflakes');
+        let button = document.getElementById('toggleEffectsButton');
+        if (current[0].toggledOn) {
+            sf.destroy();
+            document.getElementsByClassName('snowflakes')[0].remove();
+            refreshUserData('snowflakes', [{
+                toggledOn: false
+            }]);
+            button.innerHTML = "Zapnout efekty";
+        } else {
+            sf.start();
+            refreshUserData('snowflakes', [{
+                toggledOn: true
+            }]);
+            button.innerHTML = "Vypnout efekty";
+        }
+    });
+}
+
+function getUserData(requested) {
+    let json = [];
+    let data = sessionStorage.getItem(requested);
+    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
+        json = JSON.parse(data);
+    }
+    refreshUserData(requested, json);
+    return json;
+}
+
+function refreshUserData(requested, newJson) {
+    sessionStorage.setItem(requested, JSON.stringify(newJson));
 }
 
 function sleep(ms) {

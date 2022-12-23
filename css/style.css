@@ -641,6 +641,11 @@ header .mobile .hamburger #hamburgerIcon {
 span.bold {
     font-weight: bold;
 }
+#toggleEffectsButton {
+    margin: 0;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
 
 /* Media Queries */
 
