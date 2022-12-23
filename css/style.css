@@ -668,6 +668,9 @@ span.bold {
     header .header-items .mobile .hamburger {
         display: block;
     }
+    header li a:hover {
+        background-color: transparent;
+    }
     .hero-image {
         display: none;
     }

@@ -8,7 +8,7 @@ window.onscroll = function() {
 }
 window.onload = function() {
     toggleMenu();
-    setTimeout(askDonate, 1000);
+    setTimeout(askDonate, 30000);
     if (document.title === "Vojtěch Adam | Školní projekty") {
         getSchoolProjects();
     } else {
