@@ -184,12 +184,13 @@ function getSchoolProjects() {
 }
 
 function getEffects() {
+    let button = document.getElementById('toggleEffectsButton');
+    button.innerHTML = "Načítám...";
     $.getScript("/js/snowflakes.js", function(sf) {
         sf = new Snowflakes({
             color: "white"
         });
         let current = getUserData('snowflakes');
-        let button = document.getElementById('toggleEffectsButton');
         if (current.length == 0) {
             refreshUserData('snowflakes', [{
                 toggledOn: true
@@ -205,12 +206,13 @@ function getEffects() {
 }
 
 function toggleEffects() {
+    let button = document.getElementById('toggleEffectsButton');
+    button.innerHTML = "Načítám...";
     $.getScript("/js/snowflakes.js", function(sf) {
         sf = new Snowflakes({
             color: "white"
         });
         let current = getUserData('snowflakes');
-        let button = document.getElementById('toggleEffectsButton');
         if (current[0].toggledOn) {
             sf.destroy();
             document.getElementsByClassName('snowflakes')[0].remove();
