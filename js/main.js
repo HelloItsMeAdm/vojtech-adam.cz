@@ -18,16 +18,13 @@ window.onload = function() {
 }
 
 function scroll() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
+    if (window.pageYOffset > headerHeight.replace("px", "")) {
+        document.getElementById("header").style.height = "0px";
+        document.getElementById("header").style.opacity = "0";
+    } else {
         document.getElementById("header").style.height = headerHeight;
         document.getElementById("header").style.opacity = "1";
     }
-    if (prevScrollpos < currentScrollPos - 5) {
-        document.getElementById("header").style.height = "0px";
-        document.getElementById("header").style.opacity = "0";
-    }
-    prevScrollpos = currentScrollPos;
 }
 
 function loadFooter(e) {

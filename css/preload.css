@@ -18,13 +18,13 @@
 }
 .loading h1 {
     color: white;
-    font-size: 5rem;
+    font-size: 10vmin;
     margin: 0;
     text-align: center;
 }
 .loading h2 {
     color: white;
-    font-size: 2rem;
+    font-size: 3vmin;
     margin: 0;
     text-align: center;
 }
@@ -82,5 +82,23 @@
     }
     100% {
         transform: translate(24px, 0);
+    }
+}
+@media screen and (max-width: 800px) {
+    .loading-wrapper {
+        width: 80vw;
+    }
+    .lds-ellipsis {
+        scale: 2;
+    }
+}
+@media screen and (max-width: 600px) {
+    .lds-ellipsis {
+        scale: 1.5;
+    }
+}
+@media screen and (max-width: 400px) {
+    .lds-ellipsis {
+        scale: 1;
     }
 }
