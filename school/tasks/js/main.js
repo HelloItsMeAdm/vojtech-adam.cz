@@ -41,13 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
         completeTdButton.appendChild(completeTdButtonIcon);
         completeTd.appendChild(completeTdButton);
 
-        nameTd.innerHTML = json[i].name;
+        nameTd.innerHTML = convertToRawText(json[i].name);
         if (json[i].completed) {
             completeTdButtonIcon.classList.add("fa-check-circle");
             nameTd.classList.add("completed");
         } else {
             completeTdButtonIcon.classList.add("fa-circle");
         }
+        nameTd.addEventListener("click", () => {
+            let newName = prompt("Zadej nový název úkolu", json[i].name);
+            if (newName !== null) {
+                json[i].name = convertToRawText(newName);
+                nameTd.innerHTML = convertToRawText(newName);
+                refreshUserData(json);
+            }
+        });
 
         deleteTdButtonIcon.classList.add("fa-solid");
         deleteTdButtonIcon.classList.add("fa-xmark");
@@ -68,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
         table.appendChild(tr);
     }
 });
+
+function convertToRawText(text) {
+    return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
 
 function addTask() {
     let textInput = document.getElementById("textInput").value;
