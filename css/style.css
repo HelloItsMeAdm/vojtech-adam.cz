@@ -371,41 +371,20 @@ header .mobile .hamburger #hamburgerIcon {
 .reveal {
     transition: 1s all ease;
     opacity: 0;
+}
+.reveal-bottom {
     transform: translateY(100px);
+}
+.reveal-left {
+    transform: translateX(-100px);
+}
+.reveal-right {
+    transform: translateX(100px);
 }
 .reveal.active {
     transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
-}
-@keyframes reveal-left {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes reveal-right {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.auto-reveal-left {
-    animation-name: reveal-left;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1.5s;
-}
-.auto-reveal-right {
-    animation-name: reveal-right;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1.5s;
 }
 
 /* Projects */

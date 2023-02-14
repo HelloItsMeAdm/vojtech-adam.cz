@@ -129,6 +129,7 @@ function getSchoolProjects() {
                 let container = document.createElement("div");
                 container.classList.add("container");
                 container.classList.add("reveal");
+                container.classList.add("reveal-left");
 
                 let img = document.createElement("img");
                 img.classList.add("content-image");

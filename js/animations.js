@@ -12,7 +12,7 @@ async function reveal() {
 
         if (elementTop < windowHeight - 80) {
             reveals[i].classList.add("active");
-            delayTime = await delay(300);
+            delayTime = await delay(250);
         } else {
             reveals[i].classList.remove("active");
         }
@@ -20,3 +20,4 @@ async function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+document.addEventListener("DOMContentLoaded", reveal);
