@@ -5,6 +5,7 @@
     --white: #FFFFFF;
     --dark-white: #B3B3B3;
     --dialog-light-gray: #353535;
+    --color-primary-dark: #14b1b1;
 }
 
 /* Root */
@@ -43,9 +44,6 @@ body::-webkit-scrollbar-thumb:hover {
     font-family: "Poppins", sans-serif;
     text-decoration: none;
     font-weight: 300;
-}
-::selection {
-    background-color: var(--color-primary);
 }
 * a {
     color: var(--white);
@@ -626,6 +624,88 @@ span.bold {
     cursor: pointer;
 }
 
+/* Cookies */
+
+.cookies-wrapper {
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+    max-width: 345px;
+    width: 100%;
+    background: var(--dialog-light-gray);
+    border-radius: 12px;
+    padding: 15px 25px 22px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.cookies-wrapper.show {
+    right: 20px;
+}
+.cookies-wrapper .title-box {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    color: var(--color-primary);
+}
+.cookies-wrapper .title-box i {
+    font-size: 50px;
+}
+.cookies-wrapper .title-box h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1.2;
+}
+.cookies-wrapper .info {
+    margin-bottom: 20px;
+}
+.cookies-wrapper .info p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+}
+.cookies-wrapper .info p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+.cookies-wrapper .info p a:hover {
+    color: var(--color-primary-dark);
+}
+.cookies-wrapper .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cookies-wrapper .button {
+    width: calc(100% / 2 - 15px);
+    padding: 8px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.4rem;
+}
+.cookies-wrapper .button.darker {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+.cookies-wrapper .button:hover {
+    background-color: var(--color-primary-dark);
+}
+.cookies-wrapper .button.darker:hover {
+    color: var(--color-primary-dark);
+    background-color: transparent;
+}
+.cookies-wrapper.hidden {
+    display: none;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1000px) {
@@ -768,6 +848,14 @@ span.bold {
     }
     .loading h2 {
         font-size: 1.5rem;
+    }
+    .cookies-wrapper {
+        max-width: calc(100vw - 70px);
+        bottom: 0;
+        left: 10px;
+    }
+    .cookies-wrapper .title-box {
+        flex-direction: column;
     }
 }
 @media screen and (max-width: 280px) {

@@ -233,16 +233,18 @@ function toggleEffects() {
 
 function getUserData(requested) {
     let json = [];
-    let data = sessionStorage.getItem(requested);
-    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
-        json = JSON.parse(data);
+    if (localStorage.getItem('cookies') === 'accepted') {
+        let data = localStorage.getItem(requested);
+        if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
+            json = JSON.parse(data);
+        }
+        refreshUserData(requested, json);
     }
-    refreshUserData(requested, json);
     return json;
 }
 
 function refreshUserData(requested, newJson) {
-    sessionStorage.setItem(requested, JSON.stringify(newJson));
+    localStorage.setItem(requested, JSON.stringify(newJson));
 }
 
 function sleep(ms) {
