@@ -623,6 +623,11 @@ span.bold {
     font-size: 1.3rem;
     cursor: pointer;
 }
+#toggleAnimationsButton {
+    margin: 0;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
 
 /* Cookies */
 

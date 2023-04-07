@@ -247,6 +247,44 @@ function refreshUserData(requested, newJson) {
     localStorage.setItem(requested, JSON.stringify(newJson));
 }
 
+function getAnimations() {
+    let button = document.getElementById('toggleAnimationsButton');
+    button.innerHTML = "Načítám...";
+    let current = getUserData('animations');
+    if (current.length == 0) {
+        refreshUserData('animations', [{
+            toggledOn: true
+        }]);
+        button.innerHTML = "Vypnout animace 😥";
+        return;
+    }
+    current[0].toggledOn == true ? button.innerHTML = "Vypnout animace 😥" : button.innerHTML = "Zapnout animace 😎";
+}
+
+function toggleAnimations() {
+    let button = document.getElementById('toggleAnimationsButton');
+    button.innerHTML = "Načítám...";
+    let current = getUserData('animations');
+    if (current.length == 0) {
+        refreshUserData('animations', [{
+            toggledOn: false
+        }]);
+        button.innerHTML = "Zapnout animace 😎";
+        return;
+    }
+    if (current[0].toggledOn) {
+        refreshUserData('animations', [{
+            toggledOn: false
+        }]);
+        button.innerHTML = "Zapnout animace 😎";
+    } else {
+        refreshUserData('animations', [{
+            toggledOn: true
+        }]);
+        button.innerHTML = "Vypnout animace 😥";
+    }
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

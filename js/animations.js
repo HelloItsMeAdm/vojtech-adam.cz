@@ -10,11 +10,16 @@ async function reveal() {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 80) {
-            reveals[i].classList.add("active");
-            delayTime = await delay(250);
+        let animations = getUserData("animations");
+        if (animations.length == 0 || animations[0].toggledOn == undefined || animations[0].toggledOn == true) {
+            if (elementTop < windowHeight - 80) {
+                reveals[i].classList.add("active");
+                delayTime = await delay(250);
+            } else {
+                reveals[i].classList.remove("active");
+            }
         } else {
-            reveals[i].classList.remove("active");
+            reveals[i].classList.add("active");
         }
     }
 }
