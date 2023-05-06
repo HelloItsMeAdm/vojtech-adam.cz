@@ -19,7 +19,10 @@ async function reveal() {
                 reveals[i].classList.remove("active");
             }
         } else {
-            reveals[i].classList.add("active");
+            reveals[i].classList.remove("reveal-left");
+            reveals[i].classList.remove("reveal-right");
+            reveals[i].classList.remove("reveal-bottom");
+            reveals[i].classList.remove("reveal");
         }
     }
 }
