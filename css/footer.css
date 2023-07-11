@@ -79,6 +79,9 @@ footer .copyright .donate-container .donate-span {
 footer .copyright .donate-container .donate-span:hover {
     color: var(--color-primary);
 }
+footer .top-space {
+    margin-top: 1.5vh !important;
+}
 
 /* Media Queries */
 
