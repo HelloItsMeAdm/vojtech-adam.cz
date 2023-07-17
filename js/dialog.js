@@ -90,7 +90,7 @@ function displayDonate() {
 }
 
 function askDonate() {
-    if (shown || !canShow()) {
+    if (shown) {
         return;
     }
     var dialog = document.createElement("div");
@@ -151,20 +151,4 @@ function askDonate() {
         blockDialog: true
     }]);
     return;
-}
-
-function canShow() {
-    let json = getUserData('dialog');
-
-    if (json.length == 0) {
-        return true;
-    } else if (json.length == 1) {
-        if (json[0].blockDialog) {
-            return false;
-        } else {
-            return true;
-        }
-    } else {
-        return true;
-    }
 }

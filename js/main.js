@@ -8,13 +8,27 @@ window.onscroll = function() {
 }
 window.onload = function() {
     toggleMenu();
-    setTimeout(askDonate, 30000);
     if (document.title === "Vojtěch Adam | Školní projekty") {
         getSchoolProjects();
     } else {
         showContent();
     }
     loadFooter();
+    donateCountdown = setInterval(function() {
+        var counter = parseInt(localStorage.getItem("donateCountdown"));
+        if (isNaN(counter)) {
+            counter = 0;
+        }
+        counter++;
+        localStorage.setItem("donateCountdown", counter);
+        if (counter >= 5) {
+            if (parseInt(localStorage.getItem("askedDonate")) !== 1) {
+                askDonate();
+            }
+            localStorage.setItem("askedDonate", 1);
+            clearInterval(donateCountdown);
+        }
+    }, 1000);
 }
 
 function scroll() {
