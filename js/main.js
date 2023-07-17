@@ -21,7 +21,7 @@ window.onload = function() {
         }
         counter++;
         localStorage.setItem("donateCountdown", counter);
-        if (counter >= 5) {
+        if (counter >= 60) {
             if (parseInt(localStorage.getItem("askedDonate")) !== 1) {
                 askDonate();
             }
