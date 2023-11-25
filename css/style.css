@@ -210,7 +210,7 @@ header .mobile .hamburger #hamburgerIcon {
     height: 100%;
     margin-left: 10%;
 }
-.hero .hero-image img {
+.hero .hero-image img, .hero .hero-image lottie-player {
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -252,7 +252,7 @@ header .mobile .hamburger #hamburgerIcon {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 10vh auto;
+    margin: 7vh auto;
 }
 .cards .container {
     display: flex;
@@ -261,7 +261,7 @@ header .mobile .hamburger #hamburgerIcon {
     width: 100%;
 }
 .cards .container:not(:last-child) {
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
 }
 .cards .content-image {
     width: 20vh;
@@ -300,6 +300,51 @@ header .mobile .hamburger #hamburgerIcon {
     font-size: 1.3rem;
     font-style: italic;
 }
+
+/* Card wrap */
+
+.cards-wrap {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin: 7vh auto;
+    text-align: center;
+}
+.cards-wrap .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.5s;
+    border-radius: 15px;
+    padding: 2vh;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cards-wrap .content-image {
+    object-fit: contain;
+    width: 100%;
+    height: 20vh;
+}
+.cards-wrap .content-text {
+    width: 100%;
+    margin: 0;
+}
+.cards-wrap .content-text h3 {
+    word-wrap: break-word;
+    margin: 2vh 0 1vh 0;
+}
+.cards-wrap .content-text p {
+    margin: 0;
+}
+.cards-wrap .container:hover {
+    transform: translateY(-15px);
+    background-color: var(--gray);
+}
+
 
 /* Button */
 
@@ -429,9 +474,6 @@ header .mobile .hamburger #hamburgerIcon {
     width: 150px;
     height: 150px;
     margin: 0 3% 0 0;
-}
-.project-hero-title lottie-player {
-    scale: 2;
 }
 .typing-container {
     width: 100%;
@@ -743,6 +785,9 @@ span.bold {
         margin: 5% 0;
         width: 100%;
     }
+    .hero .hero-text h1, .hero .hero-text h2 {
+        text-align: center;
+    }
     .hero .hero-text p {
         width: 100%;
         margin: 0;
@@ -811,6 +856,9 @@ span.bold {
     }
     .project-double-title {
         flex-direction: column;
+    }
+    .typing-container {
+        text-align: center
     }
 }
 @media screen and (max-width: 900px) {

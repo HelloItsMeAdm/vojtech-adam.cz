@@ -54,7 +54,7 @@ function displayDonate() {
     donate.appendChild(close);
     dialog.appendChild(donate);
 
-    var leaderboard = document.createElement("div");
+    /*var leaderboard = document.createElement("div");
     leaderboard.classList.add('leaderboard');
 
     var leaderboardTitle = document.createElement("h2");
@@ -83,7 +83,7 @@ function displayDonate() {
             leaderboard.appendChild(person);
         }
     });
-    donate.appendChild(leaderboard);
+    donate.appendChild(leaderboard);*/
     document.body.appendChild(dialog);
     shown = true;
     return;

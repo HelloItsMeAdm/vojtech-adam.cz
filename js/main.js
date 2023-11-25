@@ -1,5 +1,6 @@
 var prevScrollpos = window.pageYOffset;
 var headerHeight = "100px";
+var toggledEffects = true;
 window.ontouchmove = function() {
     scroll();
 }
@@ -7,28 +8,31 @@ window.onscroll = function() {
     scroll();
 }
 window.onload = function() {
+    document.getElementById("links").style.display = "block";
     toggleMenu();
-    if (document.title === "Vojtěch Adam | Školní projekty") {
+    if (window.location.pathname === "/project/school") {
         getSchoolProjects();
+    } else if (window.location.pathname === "/project/nfc") {
+        showContent();
     } else {
         showContent();
+        donateCountdown = setInterval(function() {
+            var counter = parseInt(localStorage.getItem("donateCountdown"));
+            if (isNaN(counter)) {
+                counter = 0;
+            }
+            counter++;
+            localStorage.setItem("donateCountdown", counter);
+            if (counter >= 60) {
+                if (parseInt(localStorage.getItem("askedDonate")) !== 1) {
+                    askDonate();
+                }
+                localStorage.setItem("askedDonate", 1);
+                clearInterval(donateCountdown);
+            }
+        }, 1000);
     }
     loadFooter();
-    donateCountdown = setInterval(function() {
-        var counter = parseInt(localStorage.getItem("donateCountdown"));
-        if (isNaN(counter)) {
-            counter = 0;
-        }
-        counter++;
-        localStorage.setItem("donateCountdown", counter);
-        if (counter >= 60) {
-            if (parseInt(localStorage.getItem("askedDonate")) !== 1) {
-                askDonate();
-            }
-            localStorage.setItem("askedDonate", 1);
-            clearInterval(donateCountdown);
-        }
-    }, 1000);
 }
 
 function scroll() {
@@ -59,7 +63,7 @@ function loadFooter(e) {
 }
 
 function toggleMenu() {
-    var toggled = true;
+    var toggled = false;
     var links = document.getElementById("links");
     var hamburger = document.getElementById("hamburger");
     var header = document.getElementById("header");
@@ -113,6 +117,8 @@ function toggleMenu() {
                 headerHeight = "240px";
                 header.style.height = headerHeight;
                 headerItems.style.height = "235px";
+                hamburgerIcon.classList.remove("fa-bars");
+                hamburgerIcon.classList.add("fa-times");
             } else {
                 links.style.display = "none";
                 hamburger.style.display = "block";
@@ -120,6 +126,8 @@ function toggleMenu() {
                 headerHeight = "100px";
                 header.style.height = headerHeight;
                 headerItems.style.height = "95px";
+                hamburgerIcon.classList.add("fa-bars");
+                hamburgerIcon.classList.remove("fa-times");
             }
         }
     });
@@ -207,15 +215,16 @@ function getEffects() {
         });
         let current = getUserData('snowflakes');
         if (current.length == 0) {
-            refreshUserData('snowflakes', [{
-                toggledOn: true
-            }]);
+            sf.start();
             button.innerHTML = "Vypnout efekty";
             return;
         }
         if (current[0].toggledOn) {
             sf.start();
             button.innerHTML = "Vypnout efekty";
+        } else {
+            sf.destroy();
+            button.innerHTML = "Zapnout efekty";
         }
     });
 }
@@ -228,19 +237,32 @@ function toggleEffects() {
             color: "white"
         });
         let current = getUserData('snowflakes');
-        if (current[0].toggledOn) {
+        if (current.length == 0) {
+            if (toggledEffects) {
+                sf.destroy();
+                document.getElementsByClassName('snowflakes')[0].remove();
+                button.innerHTML = "Zapnout efekty";
+                toggledEffects = false;
+            } else {
+                sf.start();
+                button.innerHTML = "Vypnout efekty";
+                toggledEffects = true;
+            }
+        } else if (current[0].toggledOn) {
             sf.destroy();
             document.getElementsByClassName('snowflakes')[0].remove();
             refreshUserData('snowflakes', [{
                 toggledOn: false
             }]);
             button.innerHTML = "Zapnout efekty";
+            toggledEffects = false;
         } else {
             sf.start();
             refreshUserData('snowflakes', [{
                 toggledOn: true
             }]);
             button.innerHTML = "Vypnout efekty";
+            toggledEffects = true;
         }
     });
 }

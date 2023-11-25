@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="cs" style="background-color:#121212">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vojtěch Adam | NFC</title>
+    <link href="/images/logo.svg" type="image/x-icon" rel="icon">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <link rel="stylesheet" href="/css/preload.css" id="preloadCSS">
+    <div class="loading" id="loading">
+        <div class="loading-wrapper">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1>Načítání...</h1>
+            <h2>Prosím počkejte, než se stránka načte. Nemělo by to dlouho trvat.</h2>
+        </div>
+    </div>
+    <div id="body">
+        <header id="header">
+            <div class="header-items" id="headerItems">
+                <div class="mobile">
+                    <a href="/">
+                        <img src="/images/logo.svg" class="logo">
+                    </a>
+                    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
+                        <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
+                    </a>
+                </div>
+                <ul id="links">
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="/project/photography">Fotografování</a></li>
+                    <li><a href="/project/justintime">JustInTime</a></li>
+                    <li><a href="/project/fastcoupons">Fast Coupons</a></li>
+                    <li><a href="/project/school">Škola</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <canvas id="gradient-canvas"></canvas>
+        <script src="/js/Gradient.js"></script>
+        <script>
+            const gradient = new Gradient();
+            gradient.initGradient('#gradient-canvas')
+        </script>
+
+        <section class="project-hero reveal reveal-left">
+            <div class="project-hero-title">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://lottie.host/a0db768b-5d25-417b-9dea-ef07a60b5b32/ZbEtBqhLny.json"
+                    background="transparent" speed="1" loop autoplay></lottie-player>
+                <div class="project-hero-title-text">
+                    <h1>NFC</h1>
+                    <p>Všechny důležité odkazy na jednom místě.</p>
+                </div>
+            </div>
+            <div class="typing-container">
+                <div id="move-screen">
+                    <span id="feature-text"></span>
+                    <span class="input-cursor"></span>
+                    <script>
+                        window.addEventListener("load", function () {
+                            type(`Ať už jsi tuto stránku našel jakkoliv, jsem rád, že jsi tu &#x1F389;. Níže najdeš několik odkazů, které tě mohou zajímat.`);
+                        });
+                    </script>
+                </div>
+                <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
+            </div>
+        </section>
+
+        <div class="section-spacer">
+            <h2 class="section-title reveal reveal-left">To nejdůležitější 🔝</h2>
+        </div>
+
+        <section class="cards-wrap">
+            <a class="container reveal reveal-bottom" target="_blank"
+                href="https://www.instagram.com/photographer_vojtech/">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/photographer_logo.png">
+                </div>
+                <div class="content-text">
+                    <h3>@photographer_vojtech</h3>
+                    <p>Instagram, kde sdílím své fotografie.</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://www.instagram.com/helloitsmeadm/">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/helloitsmeadm_logo.png">
+                </div>
+                <div class="content-text">
+                    <h3>@helloitsmeadm</h3>
+                    <p>Instagram, zaměřený na vše, co se týká IT.</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://www.vojtech-adam.cz/">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/logo.svg">
+                </div>
+                <div class="content-text">
+                    <h3>www.vojtech-adam.cz</h3>
+                    <p>Moje osobní webová stránka.</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://www.vojtech-adam.cz/playstore">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/google-play-badge.png">
+                </div>
+                <div class="content-text">
+                    <h3>Google Play Store</h3>
+                    <p>Věděl jsi, že mám vlastní aplikaci na Google Play Store?</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://paypal.me/helloitsmeadm">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/paypal.png">
+                </div>
+                <div class="content-text">
+                    <h3>PayPal</h3>
+                    <p>Chceš mi poslat pár korun? Můžeš to udělat přes PayPal.</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://www.buymeacoffee.com/vojtechadam">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/buymeacoffee.png">
+                </div>
+                <div class="content-text">
+                    <h3>Buy me a coffee</h3>
+                    <p>Kávu si taky rád dám. Můžeš mi ji koupit přes BuyMeACoffee.</p>
+                </div>
+            </a>
+            <a class="container reveal reveal-bottom" target="_blank" href="https://github.com/helloitsmeadm/">
+                <div class="content-image-wrapper">
+                    <img class="content-image" src="/images/github-mark-white.svg">
+                </div>
+                <div class="content-text">
+                    <h3>GitHub</h3>
+                    <p>Chceš vidět, co všechno dělám? Mrkni na můj GitHub.</p>
+                </div>
+            </a>
+        </section>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/type.js"></script>
+<script src="/js/dialog.js"></script>
+
+</html>
