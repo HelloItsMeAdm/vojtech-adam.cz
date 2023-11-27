@@ -146,7 +146,6 @@ header .mobile .hamburger #hamburgerIcon {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
     filter: blur(50px);
     --gradient-color-1: #043D5D;
@@ -206,7 +205,7 @@ header .mobile .hamburger #hamburgerIcon {
     margin-left: 1vh;
 }
 .hero .hero-image {
-    width: 30%;
+    width: 35%;
     height: 100%;
     margin-left: 10%;
 }
@@ -777,13 +776,14 @@ span.bold {
     header li a:hover {
         background-color: transparent;
     }
-    .hero-image {
-        display: none;
-    }
     .hero {
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin: 5% 0;
         width: 100%;
+    }
+    .hero .hero-image {
+        margin: 0 0 2vh 0;
+        width: 50%;
     }
     .hero .hero-text h1, .hero .hero-text h2 {
         text-align: center;
