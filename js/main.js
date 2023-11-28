@@ -1,6 +1,7 @@
 var prevScrollpos = window.pageYOffset;
 var headerHeight = "100px";
 var toggledEffects = true;
+var toggledAnimations = true;
 window.ontouchmove = function() {
     scroll();
 }
@@ -36,7 +37,7 @@ window.onload = function() {
 }
 
 function scroll() {
-    if (window.pageYOffset > headerHeight.replace("px", "")) {
+    if (window.scrollY > headerHeight.replace("px", "")) {
         document.getElementById("header").style.height = "0px";
         document.getElementById("header").style.opacity = "0";
     } else {
@@ -213,13 +214,16 @@ function getEffects() {
         sf = new Snowflakes({
             color: "white"
         });
-        let current = getUserData('snowflakes');
+        let current = getUserData('effects');
         if (current.length == 0) {
-            sf.start();
-            button.innerHTML = "Vypnout efekty";
-            return;
-        }
-        if (current[0].toggledOn) {
+            if (toggledEffects) {
+                sf.start();
+                button.innerHTML = "Vypnout efekty";
+            } else {
+                sf.destroy();
+                button.innerHTML = "Zapnout efekty";
+            }
+        } else if (current[0].toggledOn) {
             sf.start();
             button.innerHTML = "Vypnout efekty";
         } else {
@@ -227,6 +231,10 @@ function getEffects() {
             button.innerHTML = "Zapnout efekty";
         }
     });
+}
+
+function refreshUserData(requested, newJson) {
+    localStorage.setItem(requested, JSON.stringify(newJson));
 }
 
 function toggleEffects() {
@@ -248,19 +256,24 @@ function toggleEffects() {
                 button.innerHTML = "Vypnout efekty";
                 toggledEffects = true;
             }
+            if (localStorage.getItem('cookies') === 'accepted') {
+                refreshUserData('effects', [{
+                    toggledOn: toggledEffects
+                }]);
+            }
         } else if (current[0].toggledOn) {
-            sf.destroy();
-            document.getElementsByClassName('snowflakes')[0].remove();
-            refreshUserData('snowflakes', [{
+            refreshUserData('effects', [{
                 toggledOn: false
             }]);
+            sf.destroy();
+            document.getElementsByClassName('snowflakes')[0].remove();
             button.innerHTML = "Zapnout efekty";
             toggledEffects = false;
         } else {
-            sf.start();
-            refreshUserData('snowflakes', [{
+            refreshUserData('effects', [{
                 toggledOn: true
             }]);
+            sf.start();
             button.innerHTML = "Vypnout efekty";
             toggledEffects = true;
         }
@@ -274,13 +287,8 @@ function getUserData(requested) {
         if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
             json = JSON.parse(data);
         }
-        refreshUserData(requested, json);
     }
     return json;
-}
-
-function refreshUserData(requested, newJson) {
-    localStorage.setItem(requested, JSON.stringify(newJson));
 }
 
 function getAnimations() {
@@ -288,13 +296,16 @@ function getAnimations() {
     button.innerHTML = "Načítám...";
     let current = getUserData('animations');
     if (current.length == 0) {
-        refreshUserData('animations', [{
-            toggledOn: true
-        }]);
+        if (toggledAnimations) {
+            button.innerHTML = "Vypnout animace 😥";
+        } else {
+            button.innerHTML = "Zapnout animace 😎";
+        }
+    } else if (current[0].toggledOn) {
         button.innerHTML = "Vypnout animace 😥";
-        return;
+    } else {
+        button.innerHTML = "Zapnout animace 😎";
     }
-    current[0].toggledOn == true ? button.innerHTML = "Vypnout animace 😥" : button.innerHTML = "Zapnout animace 😎";
 }
 
 function toggleAnimations() {
@@ -302,13 +313,19 @@ function toggleAnimations() {
     button.innerHTML = "Načítám...";
     let current = getUserData('animations');
     if (current.length == 0) {
-        refreshUserData('animations', [{
-            toggledOn: false
-        }]);
-        button.innerHTML = "Zapnout animace 😎";
-        return;
-    }
-    if (current[0].toggledOn) {
+        if (toggledAnimations) {
+            button.innerHTML = "Zapnout animace 😎";
+            toggledAnimations = false;
+        } else {
+            button.innerHTML = "Vypnout animace 😥";
+            toggledAnimations = true;
+        }
+        if (localStorage.getItem('cookies') === 'accepted') {
+            refreshUserData('animations', [{
+                toggledOn: toggledAnimations
+            }]);
+        }
+    } else if (current[0].toggledOn) {
         refreshUserData('animations', [{
             toggledOn: false
         }]);
@@ -319,6 +336,10 @@ function toggleAnimations() {
         }]);
         button.innerHTML = "Vypnout animace 😥";
     }
+}
+
+function areAnimationsEnabled() {
+    return toggledAnimations;
 }
 
 function sleep(ms) {

@@ -3,7 +3,6 @@ const delay = (delayInms) => {
 }
 
 async function reveal() {
-    delayTime = await delay(0);
     var reveals = document.querySelectorAll(".reveal");
 
     for (var i = 0; i < reveals.length; i++) {
@@ -11,7 +10,18 @@ async function reveal() {
         var elementTop = reveals[i].getBoundingClientRect().top;
 
         let animations = getUserData("animations");
-        if (animations.length == 0 || animations[0].toggledOn == undefined || animations[0].toggledOn == true) {
+        if (animations.length == 0) {
+            if (areAnimationsEnabled()) {
+                if (elementTop < windowHeight - 80) {
+                    reveals[i].classList.add("active");
+                    delayTime = await delay(200);
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            } else {
+                revealAll(reveals);
+            }
+        } else if (animations[0].toggledOn == true) {
             if (elementTop < windowHeight - 80) {
                 reveals[i].classList.add("active");
                 delayTime = await delay(250);
@@ -19,13 +29,17 @@ async function reveal() {
                 reveals[i].classList.remove("active");
             }
         } else {
-            reveals[i].classList.remove("reveal-left");
-            reveals[i].classList.remove("reveal-right");
-            reveals[i].classList.remove("reveal-bottom");
-            reveals[i].classList.remove("reveal");
+            revealAll(reveals);
         }
     }
 }
+
+function revealAll(reveals) {
+    for (var i = 0; i < reveals.length; i++) {
+        reveals[i].classList.add("active");
+    }
+}
+
 
 window.addEventListener("scroll", reveal);
 document.addEventListener("DOMContentLoaded", reveal);
