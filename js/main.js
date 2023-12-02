@@ -40,9 +40,11 @@ function scroll() {
     if (window.scrollY > headerHeight.replace("px", "")) {
         document.getElementById("header").style.height = "0px";
         document.getElementById("header").style.opacity = "0";
+        document.getElementById("header").style.pointerEvents = "none";
     } else {
         document.getElementById("header").style.height = headerHeight;
         document.getElementById("header").style.opacity = "1";
+        document.getElementById("header").style.pointerEvents = "auto";
     }
 }
 
