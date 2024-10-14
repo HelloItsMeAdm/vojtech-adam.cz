@@ -76,8 +76,7 @@
                 <div class="content-text">
                     <h3>Galerie</h3>
                     <p>Podívej se na naše nejlepší práce a nech se inspirovat.</p>
-                    <button class="button" onclick="location.href='galerie.php'"><span
-                            class="url">Přejít</span></button>
+                    <button class="button" onclick="location.href='galerie.php'"><span class="url">Přejít</span></button>
                 </div>
             </div>
             <div class="container">
@@ -94,8 +93,7 @@
                 <div class="content-text">
                     <h3>Kontakt</h3>
                     <p>Máš nějaké dotazy? Neváhej nás kontaktovat.</p>
-                    <button class="button" onclick="location.href='kontakt.php'"><span
-                            class="contact">Kontaktovat</span></button>
+                    <button class="button" onclick="location.href='kontakt.php'"><span class="contact">Kontaktovat</span></button>
                 </div>
             </div>
         </div>
@@ -106,7 +104,8 @@
 
         <div class="section cards">
             <div class="container">
-                <video class="content-image video" src="/images/showcase.mp4" controls></video>
+                <!--<video class="content-image video" src="/images/showcase.mp4" controls></video> -- REMOVED TO GAIN FREE SPACE -->
+                <iframe class="content-image video" style="width: 1120px; height: 630px;" src="https://www.youtube.com/embed/ZWVIiVwdYyg?si=ISdelqbmFeeuGqGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -114,8 +113,7 @@
         require "includes/footer.php";
         ?>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
     <script src="/js/animations.js"></script>
 </body>
