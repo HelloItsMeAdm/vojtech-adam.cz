@@ -3,38 +3,6 @@
 </head>
 
 <div class="content">
-    <div class="cookies-wrapper hidden" id="cookies-box">
-        <div class="title-box">
-            <i class="fas fa-cookie-bite"></i>
-            <h3>Souhlas se soubory cookie</h3>
-        </div>
-        <div class="info">
-            <p>Tyto webové stránky používají soubory cookie, aby vám pomohly zajistit lepší a relevantnější prohlížení
-                webových stránek. <a href="https://www.vojtech-adam.cz/cookies"> Čtěte více...</a></p>
-        </div>
-        <div class="buttons">
-            <button class="button" id="acceptBtn">Povolit</button>
-            <button class="button darker" id="dismissBtn">Zamítnout</button>
-        </div>
-    </div>
-    <script>
-        const cookiesBox = document.getElementById('cookies-box');
-        if (localStorage.getItem('cookies') === null) {
-            cookiesBox.classList.remove('hidden');
-        }
-
-        const acceptBtn = document.getElementById('acceptBtn');
-        acceptBtn.addEventListener('click', () => {
-            cookiesBox.classList.add('hidden');
-            localStorage.setItem('cookies', 'accepted');
-        });
-
-        const dismissBtn = document.getElementById('dismissBtn');
-        dismissBtn.addEventListener('click', () => {
-            cookiesBox.classList.add('hidden');
-            localStorage.setItem('cookies', 'dismissed');
-        });
-    </script>
     <div class="about">
         <h2>O mně</h2>
         <p id="about_text_footer"></p>

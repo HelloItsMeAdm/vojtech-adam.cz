@@ -2,13 +2,13 @@ var prevScrollpos = window.pageYOffset;
 var headerHeight = "100px";
 var toggledEffects = true;
 var toggledAnimations = true;
-window.ontouchmove = function() {
+window.ontouchmove = function () {
     scroll();
 }
-window.onscroll = function() {
+window.onscroll = function () {
     scroll();
 }
-window.onload = function() {
+window.onload = function () {
     document.getElementById("links").style.display = "block";
     toggleMenu();
     if (window.location.pathname === "/project/school") {
@@ -17,7 +17,7 @@ window.onload = function() {
         showContent();
     } else {
         showContent();
-        donateCountdown = setInterval(function() {
+        donateCountdown = setInterval(function () {
             var counter = parseInt(localStorage.getItem("donateCountdown"));
             if (isNaN(counter)) {
                 counter = 0;
@@ -104,7 +104,7 @@ function toggleMenu() {
             });
         }
     }
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
         if (window.innerWidth > 1000) {
             links.style.display = "block";
             hamburger.style.display = "none";
@@ -178,7 +178,7 @@ function getSchoolProjects() {
 
                 let button = document.createElement("button");
                 button.classList.add("button");
-                button.onclick = function() {
+                button.onclick = function () {
                     window.open(data[i].url, "_blank");
                 }
 
@@ -212,7 +212,7 @@ function getSchoolProjects() {
 function getEffects() {
     let button = document.getElementById('toggleEffectsButton');
     button.innerHTML = "Načítám...";
-    $.getScript("/js/snowflakes.js", function(sf) {
+    $.getScript("/js/snowflakes.js", function (sf) {
         sf = new Snowflakes({
             color: "white"
         });
@@ -242,7 +242,7 @@ function refreshUserData(requested, newJson) {
 function toggleEffects() {
     let button = document.getElementById('toggleEffectsButton');
     button.innerHTML = "Načítám...";
-    $.getScript("/js/snowflakes.js", function(sf) {
+    $.getScript("/js/snowflakes.js", function (sf) {
         sf = new Snowflakes({
             color: "white"
         });
@@ -258,11 +258,9 @@ function toggleEffects() {
                 button.innerHTML = "Vypnout efekty";
                 toggledEffects = true;
             }
-            if (localStorage.getItem('cookies') === 'accepted') {
-                refreshUserData('effects', [{
-                    toggledOn: toggledEffects
-                }]);
-            }
+            refreshUserData('effects', [{
+                toggledOn: toggledEffects
+            }]);
         } else if (current[0].toggledOn) {
             refreshUserData('effects', [{
                 toggledOn: false
@@ -284,11 +282,9 @@ function toggleEffects() {
 
 function getUserData(requested) {
     let json = [];
-    if (localStorage.getItem('cookies') === 'accepted') {
-        let data = localStorage.getItem(requested);
-        if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
-            json = JSON.parse(data);
-        }
+    let data = localStorage.getItem(requested);
+    if (data !== 'undefined' && data !== null && data !== '' && data !== 'null') {
+        json = JSON.parse(data);
     }
     return json;
 }
@@ -322,11 +318,9 @@ function toggleAnimations() {
             button.innerHTML = "Vypnout animace 😥";
             toggledAnimations = true;
         }
-        if (localStorage.getItem('cookies') === 'accepted') {
-            refreshUserData('animations', [{
-                toggledOn: toggledAnimations
-            }]);
-        }
+        refreshUserData('animations', [{
+            toggledOn: toggledAnimations
+        }]);
     } else if (current[0].toggledOn) {
         refreshUserData('animations', [{
             toggledOn: false
