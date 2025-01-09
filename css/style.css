@@ -47,11 +47,12 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: 300;
 }
 * a {
-  color: var(--white);
+  color: var(--color-primary);
   -webkit-tap-highlight-color: transparent;
+  transition: 0.5s;
 }
 * a:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 /* Header */
