@@ -53,16 +53,27 @@ export function trackEvent(eventName: string, params: Record<string, unknown> = 
   window.gtag('event', eventName, params);
 }
 
+function getStoredUtm(): Record<string, string> {
+  try {
+    const raw = sessionStorage.getItem('utm_attribution');
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
 export function trackPageView(path?: string) {
   if (!canTrack()) return;
   const pagePath = path ?? getPagePath();
   if (lastPagePath === pagePath) return;
   lastPagePath = pagePath;
+  const utm = getStoredUtm();
   trackEvent('page_view', {
     page_location: window.location.href,
     page_path: pagePath,
     page_title: document.title,
     page_referrer: document.referrer || undefined,
+    ...utm,
   });
 }
 

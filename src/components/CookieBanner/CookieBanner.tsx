@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { getConsent, setConsent, loadGA } from '../../utils/analytics';
+import { getConsent, setConsent } from '../../utils/analytics';
 import styles from './CookieBanner.module.css';
 
 export default function CookieBanner() {
