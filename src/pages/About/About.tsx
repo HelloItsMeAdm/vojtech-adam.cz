@@ -149,6 +149,8 @@ export default function About() {
                 src="/images/vojtech-adam-hero.jpg"
                 alt="Vojtech Adam"
                 className={styles.headerImage}
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
