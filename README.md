@@ -1,26 +1,54 @@
-<p align="center">
-  <img src="https://www.vojtech-adam.cz/images/logo.svg" width="200" alt="Logo"/>
-</p>
+# vojtech-adam.cz
 
-# My official website! - *Also a school project!*
-This is a official website for domain vojtech-adam.cz. It uses mainly HTML, CSS and JS. I'm planning to add something with PHP.
+Personal portfolio website for Vojtěch Adam — programmer, photographer, and web designer from Prague.
 
-<div class='parent' align="center">
-  <div class='child' style="display: inline-block">
-    <a align="center" href="https://www.vojtech-adam.cz/" target="_blank">Click to visit!</a>
-  </div>
-</div>
+Live site: [vojtech-adam.cz](https://vojtech-adam.cz)
 
-***
+## Tech stack
 
-<div class='parent' align="center">
-  <div class='child' style="display: inline-block">
-    <a href="https://www.vojtech-adam.cz/privacy" target="_blank">Privacy</a>
-  </div>
-  <div class='child' style="display: inline-block">
-    <a href="https://www.vojtech-adam.cz/" target="_blank">Project Page</a>
-  </div>
-  <div class='child' style="display: inline-block">
-    <a href="https://www.vojtech-adam.cz/playstore" target="_blank">Developers Page</a>
-  </div>
-</div>
+- React 19
+- Vite
+- TypeScript
+- React Router
+- i18next
+- CSS Modules
+
+## What’s included
+
+- Czech / English language switcher
+- Dark / light theme toggle
+- Home, About, Projects, Project detail, Photography, Web Design, and Contact pages
+- Animated UI with scroll reveal, view transitions, and interaction effects
+- Contact form with Cloudflare Turnstile protection
+- Cookie banner, analytics tracking, and SEO metadata
+
+## Routes
+
+- `/` — Home
+- `/o-mne` — About
+- `/projekty` — Projects
+- `/projekty/:slug` — Project detail
+- `/fotografie` — Photography
+- `/weby` — Web design
+- `/kontakt` — Contact
+- `/ig` — Instagram redirect
+
+## Scripts
+
+```bash
+npm run dev      # start local dev server
+npm run build    # type-check and build for production
+npm run lint     # run ESLint
+npm run preview  # preview the production build
+npm run gen:og   # generate Open Graph assets
+```
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+The app is built with strict TypeScript settings, so `npm run build` should stay clean before deploys.
+
