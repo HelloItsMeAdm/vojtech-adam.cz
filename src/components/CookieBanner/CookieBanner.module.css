@@ -1,0 +1,127 @@
+.banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  width: calc(100% - 3rem);
+  max-width: 780px;
+  animation: slideUp .3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.1);
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .25rem;
+}
+
+.desc {
+  font-size: .8125rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+
+/* Primary — big and obvious */
+.accept {
+  display: inline-flex;
+  align-items: center;
+  padding: .625rem 1.375rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: .9375rem;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.accept:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37,99,235,.35);
+}
+
+/* Secondary — visible but understated */
+.reject {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+  font-family: var(--font);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: .25rem .375rem;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.reject:hover {
+  color: var(--text-muted);
+}
+
+.privacyLink {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .accept {
+    flex: 1;
+    justify-content: center;
+  }
+}

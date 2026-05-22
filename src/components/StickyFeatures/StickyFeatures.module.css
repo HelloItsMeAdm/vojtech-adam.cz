@@ -1,0 +1,188 @@
+/* ── Layout ───────────────────────────────────────────────── */
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Sticky visual panel ─────────────────────────────────── */
+.sticky {
+  position: sticky;
+  top: calc(50vh - 160px); /* center vertically in viewport */
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.card {
+  width: 280px;
+  height: 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner glow */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 40%,
+    color-mix(in srgb, var(--accent) 9%, transparent),
+    transparent 65%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Feature visual — one per feature, transitions in/out */
+.visual {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: scale(.7) translateY(14px);
+  transition:
+    opacity .4s cubic-bezier(.4, 0, .2, 1),
+    transform .45s cubic-bezier(.34, 1.56, .64, 1);
+  pointer-events: none;
+}
+
+.visualActive {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.visualIcon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.visualLabel {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Progress pill indicator */
+.dots {
+  position: absolute;
+  bottom: 1.125rem;
+  display: flex;
+  gap: .375rem;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 99px;
+  background: var(--border);
+  transition: width .3s cubic-bezier(.34, 1.56, .64, 1), background .25s ease;
+}
+
+.dotActive {
+  background: var(--accent);
+  width: 18px;
+}
+
+/* ── Scrollable list ─────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each item must be tall enough for scroll-tracking to work */
+.item {
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2rem;
+  border-left: 2px solid var(--border);
+  opacity: .45;
+  transition:
+    opacity .45s ease,
+    border-color .35s ease;
+  cursor: default;
+}
+
+.itemActive {
+  border-left-color: var(--accent);
+  opacity: 1;
+}
+
+.itemNum {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--border);
+  letter-spacing: -.03em;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.75rem;
+  transition: color .35s ease;
+}
+
+.itemActive .itemNum {
+  color: var(--accent);
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+}
+
+.itemTitle {
+  font-size: clamp(1.0625rem, 2vw, 1.3125rem);
+  color: var(--text);
+}
+
+.itemDesc {
+  font-size: .9375rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 400px;
+}
+
+/* ── Responsive — hide sticky panel on narrow screens ─────── */
+@media (max-width: 900px) {
+  .root {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sticky {
+    display: none;
+  }
+
+  .item {
+    opacity: 1;
+    border-left-color: var(--accent);
+    min-height: auto;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .itemNum {
+    color: var(--accent);
+  }
+}

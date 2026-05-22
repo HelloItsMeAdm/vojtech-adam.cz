@@ -1,0 +1,75 @@
+.main { padding-top: 64px; }
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.back {
+  margin-bottom: 2.5rem;
+  margin-left: -.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-bottom: 2.5rem;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectIcon {
+  color: var(--accent);
+  display: flex;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.imageWrapper {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 2rem;
+}
+
+.image {
+  max-height: 260px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.description p {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}

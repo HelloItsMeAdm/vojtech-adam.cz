@@ -1,173 +1,105 @@
 <!DOCTYPE html>
-<html lang="cs" style="background-color:#121212">
+<html lang="cs">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vojtěch Adam | Domů</title>
-    <meta name="description" content="Oficiální web programátora a fotografa Vojtěcha Adama alias HelloItsMeAdm.">
-    <link href="/images/logo.svg" type="image/x-icon" rel="icon">
-    <link rel="stylesheet" href="/css/style.css">
-    <meta name="keywords" content="Vojtěch Adam, Vojta, Vojta Adam, Vojtaa29, HelloItsMeAdm, JustInTime, Fast Coupons, Photography, Fotografie, Fotograf, Vojtech, Vojtech Adam, Vojtech Adam Photography, Vojtech Adam Fotografie, Vojtech Adam Fotograf, Vojtech Adam Fotografie">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRZLCH6D4R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = window.gtag || gtag;
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+  </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/be1f410c2f.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google" content="notranslate" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Default title & meta — přepíše react-helmet-async per-page -->
+  <title>Vojtěch Adam | Webdesign, programování a fotografie Praha</title>
+  <meta name="description"
+    content="Vojtěch Adam — programátor, webdesigner a fotograf z Prahy. Tvorba webů na zakázku, mobilní aplikace a profesionální fotografie." />
+  <meta name="author" content="Vojtěch Adam" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical (výchozí pro homepage) -->
+  <link rel="canonical" href="https://vojtech-adam.cz/" />
+
+  <!-- Open Graph — homepage fallback (sociální sítě nespouštějí JS) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vojtech-adam.cz/" />
+  <meta property="og:title" content="Vojtěch Adam | Webdesign, programování a fotografie Praha" />
+  <meta property="og:description"
+    content="Programátor, webdesigner a fotograf z Prahy. Tvorba webů na zakázku za rozumné ceny." />
+  <meta property="og:image" content="https://vojtech-adam.cz/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:site_name" content="Vojtěch Adam" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vojtěch Adam | Webdesign, programování a fotografie Praha" />
+  <meta name="twitter:description"
+    content="Programátor, webdesigner a fotograf z Prahy. Tvorba webů na zakázku za rozumné ceny." />
+  <meta name="twitter:image" content="https://vojtech-adam.cz/og-image.png" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- JSON-LD: Person + WebSite schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vojtěch Adam",
+    "url": "https://vojtech-adam.cz",
+    "email": "kontakt@vojtech-adam.cz",
+    "jobTitle": "Webdesigner, programátor a fotograf",
+    "description": "Programátor, webdesigner a fotograf z Prahy. Tvořím weby na zakázku, mobilní aplikace a profesionální fotografie.",
+    "mainEntityOfPage": "https://vojtech-adam.cz",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Praha",
+      "addressCountry": "CZ"
+    },
+    "sameAs": [
+      "https://github.com/helloitsmeadm",
+      "https://www.instagram.com/photographer_vojtech/"
+    ],
+    "knowsAbout": ["React", "TypeScript", "Python", "webdesign", "fotografie", "drony", "Android", "iOS"],
+    "image": "https://vojtech-adam.cz/og-image.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://vojtech-adam.cz",
+    "name": "Vojtěch Adam",
+    "description": "Osobní portfolio Vojtěcha Adama — webdesign, programování a fotografie z Prahy.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vojtech-adam.cz/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 
 <body>
-    <link rel="stylesheet" href="/css/preload.css" id="preloadCSS">
-    <div class="loading" id="loading">
-        <div class="loading-wrapper">
-            <div class="lds-ellipsis">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <h1>Načítání...</h1>
-            <h2>Prosím počkejte, než se stránka načte. Nemělo by to dlouho trvat.</h2>
-        </div>
-    </div>
-    <div id="body">
-        <header id="header">
-            <div class="header-items" id="headerItems">
-                <div class="mobile">
-                    <a href="#">
-                        <img src="/images/logo.svg" class="logo">
-                    </a>
-                    <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()" id="hamburger">
-                        <i class="fa fa-solid fa-times" id="hamburgerIcon"></i>
-                    </a>
-                </div>
-                <ul id="links">
-                    <li><a href="#" class="active">Domů</a></li>
-                    <li><a href="/project/photography">Fotografování</a></li>
-                    <li><a href="/project/justintime">JustInTime</a></li>
-                    <li><a href="/project/fastcoupons">Fast Coupons</a></li>
-                    <li><a href="https://maturita.vojtech-adam.cz/">Maturita</a></li>
-                    <li><a href="/project/school">Škola</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <canvas id="gradient-canvas"></canvas>
-        <script src="/js/Gradient.js"></script>
-        <script>
-            const gradient = new Gradient();
-            gradient.initGradient('#gradient-canvas')
-        </script>
-
-        <section class="hero">
-            <div class="hero-text reveal reveal-left">
-                <h1>Vojtěch Adam</h1>
-                <h2>alias HelloItsMeAdm</h2>
-                <div class="typing-container">
-                    <div id="move-screen">
-                        <span id="feature-text"></span>
-                        <span class="input-cursor"></span>
-                        <script>
-                            window.addEventListener("load", function() {
-                                var today = new Date();
-                                var birthDate = new Date("2005/05/29");
-                                var age = today.getFullYear() - birthDate.getFullYear();
-                                var m = today.getMonth() - birthDate.getMonth();
-                                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                                    age--;
-                                }
-                                type("Ahoj &#128075;! Jmenuji se Vojtěch Adam, je mi " + age + " let a jsem bývalý student Ekonomické školy &#127891;.<br>Baví mě programování mobilních aplikací &#128242; a ve volném čase se věnuju fotografování &#128248;.");
-                            });
-                        </script>
-                    </div>
-                    <a id="skipTyping" onclick="skipTyping();">Přeskočit animaci</a>
-                </div>
-            </div>
-            <div class="hero-image reveal reveal-right">
-                <img src="/images/logo.svg" alt="Logo">
-            </div>
-        </section>
-
-        <div class="section-spacer">
-            <h2 class="section-title reveal reveal-left">Aktuální projekty 😎</h2>
-        </div>
-
-        <section class="cards">
-            <div class="container reveal reveal-bottom">
-                <img class="content-image" src="/images/logo.svg" alt="Fotografování">
-                <div class="content-text">
-                    <h3>Fotografování 📸</h3>
-                    <p>Moje stránka o fotografování, kde se můžete podívat na mé fotky a zjistit, jaké fotoaparáty používám nebo i to, jak se můžeš focení zúčastnit.</p>
-                    <button class="button" onclick="location.href='/project/photography'"><span
-                            class="arrow">Přejít</span></button>
-                </div>
-            </div>
-            <div class="container reveal reveal-bottom">
-                <img class="content-image" src="/images/justintime.png" alt="JustInTime">
-                <div class="content-text">
-                    <h3>JustInTime 🚶‍♂️📲</h3>
-                    <p>Můj dosavadní největší projekt, který jsem vytvořil původně pouze pro osobní užívání. Jedná se o mobilní aplikaci pro Android, která slouží k plánování trasy mezi dvěma body, aby jste nikdy nepřišli pozdě.</p>
-                    <button class="button" onclick="location.href='/project/justintime'"><span
-                            class="arrow">Přejít</span></button>
-                </div>
-            </div>
-            <div class="container reveal reveal-bottom">
-                <img class="content-image" src="/images/fastcoupons.png" alt="Fast Coupons">
-                <div class="content-text">
-                    <h3>Fast Coupons 🍔📲</h3>
-                    <p>Tato mobilní aplikace na Android sloužila dříve jako seznam kupónů, které fungovaly v síti McDonald's. Nyní aplikace už nefunguje, ale je pořád dostupná ke stažení.</p>
-                    <button class="button" onclick="location.href='/project/fastcoupons'"><span
-                            class="arrow">Přejít</span></button>
-                </div>
-            </div>
-            <div class="container reveal reveal-bottom">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player class="content-image" src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" loop autoplay></lottie-player>
-                <div class="content-text">
-                    <h3>Školní projekty</h3>
-                    <p>Na této stránce najdete všechny školní projekty, které jsem vytvořil v rámci školních předmětů.
-                    </p>
-                    <button class="button" onclick="location.href='/project/school'"><span
-                            class="arrow">Přejít</span></button>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-spacer">
-            <h2 class="section-title reveal reveal-left">Důležité odkazy 🔗</h2>
-        </div>
-
-        <section class="cards">
-            <div class="container reveal reveal-bottom">
-                <img class="content-image" src="/images/github-mark-white.svg" alt="GitHub">
-                <div class="content-text">
-                    <h3>GitHub 🖥️</h3>
-                    <p>Na GitHub dávám všechny své projekty. Najdete tam i projekty, které se už na web nevešly.</p>
-                    <button class="button" onclick="window.open('https://github.com/helloitsmeadm/', '_blank')"><span
-                            class="url">Přejít</span></button>
-                </div>
-            </div>
-            <div class="container reveal reveal-bottom">
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player class="content-image" src="https://assets3.lottiefiles.com/packages/lf20_oabT72.json" background="transparent" speed="1" loop autoplay></lottie-player>">
-                <div class="content-text">
-                    <h3>Google PlayStore 📱</h3>
-                    <p>Na Google PlayStore najdete všechny moje aplikace, které jsem vytvořil. Můžete si je stáhnout a zkoušet si je.</p>
-                    <button class="button" onclick="window.open('https://www.vojtech-adam.cz/playstore', '_blank')"><span
-                            class="url">Přejít</span></button>
-                </div>
-            </div>
-        </section>
-
-        <footer id="footer"></footer>
-    </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/animations.js"></script>
-<script src="/js/type.js"></script>
-<script src="/js/dialog.js"></script>
 
 </html>

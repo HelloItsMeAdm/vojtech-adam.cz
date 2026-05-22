@@ -1,0 +1,354 @@
+{
+  "nav": {
+    "home": "Domů",
+    "about": "O mně",
+    "projects": "Projekty",
+    "photography": "Fotografie",
+    "webdesign": "Tvorba webů",
+    "contact": "Kontakt",
+    "logo_aria": "Vojtěch Adam — domů",
+    "switch_lang_to_en": "Přepnout jazyk na angličtinu",
+    "switch_lang_to_cs": "Přepnout jazyk na češtinu",
+    "switch_theme_light": "Přepnout na světlý motiv",
+    "switch_theme_dark": "Přepnout na tmavý motiv",
+    "menu_open": "Otevřít menu",
+    "menu_close": "Zavřít menu"
+  },
+  "cookie": {
+    "aria": "Souhlas s cookies",
+    "title": "Cookies & zpracování dat",
+    "desc": "Používám analytické cookies (Google Analytics) pro sledování návštěvnosti. Kontaktní formulář je zpracováván přes Cloudflare Workers. Data neprodávám ani nesdílím s třetími stranami. <0>Zásady ochrany osobních údajů</0>",
+    "accept_all": "Přijmout vše",
+    "decline": "Odmítnout"
+  },
+  "home": {
+    "seo_title": "Vojtěch Adam | Webdesign, programování a fotografie Praha",
+    "seo_desc": "Vojtěch Adam — programátor, webdesigner a fotograf z Prahy. Tvorba webů na zakázku, mobilní aplikace a profesionální fotografie.",
+    "hero_greeting": "Ahoj, jsem",
+    "hero_name": "Vojtěch Adam",
+    "hero_alias": "",
+    "hero_desc": "Programátor, fotograf a tvůrce webů z Prahy. Baví mě finance, létání s dronem a fotografování.",
+    "hero_cta_projects": "Moje projekty",
+    "hero_cta_contact": "Kontaktovat",
+    "section_projects": "Projekty",
+    "section_photography": "Fotografie",
+    "section_webdesign": "Tvorba webů",
+    "section_projects_desc": "Podívej se na čem pracuju a co jsem vytvořil.",
+    "section_photography_desc": "Fotografie a drony — moje vášeň mimo klávesnici.",
+    "section_webdesign_desc": "Tvořím weby na zakázku za rozumné ceny.",
+    "see_more": "Zjistit více",
+    "webfeature_design_label": "Design",
+    "webfeature_design_title": "Moderní design",
+    "webfeature_design_desc": "Čistý, přehledný vizuál přizpůsobený vašemu brandu. Žádné šablony — každý web stavím na míru od základu.",
+    "webfeature_responsive_label": "Responzivita",
+    "webfeature_responsive_title": "Funguje všude",
+    "webfeature_responsive_desc": "Dokonalé zobrazení na mobilu, tabletu i velkém monitoru. Rychlé načítání a hladký provoz na každém zařízení.",
+    "webfeature_security_label": "Zabezpečení",
+    "webfeature_security_title": "Bezpečnost na prvním místě",
+    "webfeature_security_desc": "SSL certifikát, ochrana před boty a injections, bezpečné formuláře. Váš web i data zákazníků jsou v bezpečí.",
+    "webfeature_maintenance_label": "Správa",
+    "webfeature_maintenance_title": "Správa bez starostí",
+    "webfeature_maintenance_desc": "Hosting, aktualizace, zálohy, monitoring dostupnosti — postarám se o vše. Vy se soustřeďte na svůj byznys.",
+    "section_photography_list_item": "Portréty & krajina"
+  },
+  "about": {
+    "seo_title": "O mně | Vojtěch Adam — programátor, webdesigner, fotograf",
+    "seo_desc": "Jsem Vojtěch Adam — programátor, webdesigner a fotograf z Prahy. Pracuju s Reactem, TypeScriptem a Pythonem. Fotím na Canon EOS 200D a létám s dronem DJI Mini 4 Pro.",
+    "title": "O mně",
+    "bio": "Jmenuji se Vojtěch Adam, je mi {{age}} let, původem z Opavy a aktuálně žiju v Praze (Vršovice). Baví mě finance, létání s dronem a fotografování. Pracuju s Reactem, TypeScriptem, Pythonem a HTML/CSS. Ve volném čase fotím a přispívám na Adobe Stock.",
+    "skills_title": "Dovednosti",
+    "skills_dev": "Vývoj",
+    "skills_creative": "Kreativa",
+    "timeline_title": "Zkušenosti & projekty",
+    "timeline_items": {
+      "2020": {
+        "title": "První kroky v programování",
+        "desc": "Začal jsem se učit HTML, CSS a JavaScript. Postavil jsem první web."
+      },
+      "2021": {
+        "title": "Fast Coupons — první Android app",
+        "desc": "Vytvořil jsem svou první Android aplikaci v Kotlinu pro McDonald's kupóny."
+      },
+      "2022": {
+        "title": "JustInTime a fotografování",
+        "desc": "Spustil jsem JustInTime aplikaci a začal se vážněji věnovat fotografii."
+      },
+      "2023": {
+        "title": "Zakázkové weby",
+        "desc": "Začal jsem tvořit weby pro klienty — včetně Šlapni k nám a MSSOZ."
+      },
+      "2024": {
+        "title": "DJI Mini 4 Pro a Adobe Stock",
+        "desc": "Pořídil jsem dron DJI Mini 4 Pro a začal přispívat na Adobe Stock."
+      },
+      "2025": {
+        "title": "Nový web a další projekty",
+        "desc": "Přebudoval jsem osobní web v Reactu. Pracuji na dalších zakázkách."
+      }
+    },
+    "media_title": "V médiích",
+    "section_label_who": "Kdo jsem",
+    "section_label_what": "Co dělám",
+    "section_title_areas": "Oblasti, ve kterých se pohybuji",
+    "expertise": {
+      "development": {
+        "label": "Vývoj",
+        "title": "Mobilní & webové aplikace",
+        "desc": "Vyvíjím nativní mobilní aplikace pro Android (Kotlin) a iOS (Swift), webové aplikace v Reactu a TypeScriptu. Baví mě řešit skutečné problémy a vytvářet věci, které lidé chtějí používat."
+      },
+      "websites": {
+        "label": "Weby",
+        "title": "Weby na míru od základu",
+        "desc": "Každý web stavím od nuly — bez šablon, bez kompromisů. Moderní design, responzivní layout, rychlé načítání. Postarám se o hosting, zabezpečení i průběžnou správu."
+      },
+      "photography": {
+        "label": "Fotografie",
+        "title": "Portréty, krajina & reportáž",
+        "desc": "Fotím s Canon EOS 200D od portrétů přes sportovní reportáž až po krajinu. Moje fotografie byly použity v médiích a na produktech škol. Část fotek prodávám přes Adobe Stock."
+      },
+      "drone": {
+        "label": "Dron",
+        "title": "Letecká fotografie & video",
+        "desc": "Létám s DJI Mini 4 Pro a pořizuji letecké záběry pro klienty i vlastní projekty. Materiál z dronu jsem dodával do zpravodajství CNN Prima News při povodních v Krnově v roce 2024."
+      }
+    }
+  },
+  "projects": {
+    "seo_title": "Projekty | Vojtěch Adam",
+    "seo_desc": "Přehled projektů Vojtěcha Adama — weby na zakázku, mobilní aplikace pro Android a iOS, open-source nástroje a fotografické projekty.",
+    "title": "Projekty",
+    "subtitle": "Přehled toho, na čem pracuju nebo jsem pracoval.",
+    "all_projects": "Všechny projekty",
+    "status_active": "Aktivní",
+    "status_inactive": "Neaktivní",
+    "preview": "Náhled",
+    "section_label_portfolio": "Portfolio",
+    "section_label_personal": "Osobní & vedlejší",
+    "section_title_other": "Co jsem ještě dělal",
+    "section_desc_personal": "Projekty pro vlastní potřebu, zákazníky nebo jen pro zábavu — ne všechny jsou veřejné.",
+    "modal_close": "Zavřít",
+    "modal_cta_label": "Zjistit více",
+    "items": {
+      "fotografie": {
+        "name": "Fotografie & Dron",
+        "short_desc": "Portrétní a krajinná fotografie, letecké záběry dronem DJI Mini 4 Pro.",
+        "desc": "Fotím portrétní, pouliční a krajinnou fotografii. Létám s dronem DJI Mini 4 Pro a pořizuji letecké záběry krajiny, měst a akcí. Fotky jsou k vidění na Instagramu a ke koupi na Adobe Stock.",
+        "links": {
+          "instagram": "Instagram",
+          "adobe_stock": "Adobe Stock"
+        }
+      },
+      "weby-na-zakazku": {
+        "name": "Tvorba webů",
+        "short_desc": "Moderní weby na zakázku — design, vývoj, hosting, správa a zabezpečení.",
+        "desc": "Tvořím moderní responzivní weby od návrhu přes kódování až po hosting, zabezpečení a průběžnou správu. Pracoval jsem pro finanční poradce, neziskové organizace i lokální podniky.",
+        "links": {
+          "learn_more": "Zjistit více"
+        }
+      },
+      "slapniknam": {
+        "name": "Šlapni k nám",
+        "short_desc": "Projekt finančního poradenství — spoluzakladatel, web a marketing.",
+        "desc": "Šlapni k nám je projekt komplexního finančního poradenství, který jsem spoluzaložil s Julií Hořínkovou. Pokrýváme pojištění, investice, spoření, hypotéky a úvěry. Kromě zakládání projektu jsem postavil celý web a zajišťuji online marketing včetně správy reels na Instagramu.",
+        "links": {
+          "website": "slapniknam.cz",
+          "instagram": "Instagram"
+        }
+      },
+      "justintime": {
+        "name": "JustInTime",
+        "short_desc": "Mobilní aplikace pro plánování trasy — aby jsi nikdy nepřišel pozdě.",
+        "desc": "JustInTime je Android aplikace, která ti řekne, kdy nejpozději vyrazit, aby jsi dorazil včas. Původně vytvořená pro osobní užívání, dnes s 500+ stahováními na Google Play.",
+        "links": {
+          "google_play": "Google Play"
+        }
+      },
+      "fastcoupons": {
+        "name": "Fast Coupons",
+        "short_desc": "McDonald's & KFC kupóny v jedné aplikaci pro Android.",
+        "desc": "Fast Coupons agregoval dostupné kupóny pro McDonald's a KFC na jednom místě. Aplikace je stále ke stažení, ale aktivní kupóny již nejsou k dispozici."
+      },
+      "raspberry-pi-dashboard": {
+        "name": "Raspberry Pi Dashboard",
+        "short_desc": "Webový dashboard pro monitoring domácího serveru v reálném čase.",
+        "desc": "Dashboard pro Raspberry Pi zobrazující CPU teplotu, využití RAM, síťový provoz, stav UPS a další metriky v reálném čase. Součástí je i přístup k Jellyfin media serveru."
+      },
+      "rolety": {
+        "name": "Ovládání rolet",
+        "short_desc": "Aplikace na časování rolet pro rodiče — vytahování a stahování dle plánu.",
+        "desc": "Jednoduchá webová aplikace s časovým plánováním pro automatické ovládání rolet. Oddělené nastavení pro pracovní dny a víkend, autentizace a možnost plán vypnout."
+      },
+      "bettermusic": {
+        "name": "BetterMusic",
+        "short_desc": "iOS a Android aplikace na správu a přehrávání offline stažených skladeb.",
+        "desc": "BetterMusic automaticky stahoval skladby z vybraného YouTube playlistu pro offline poslech. Napsaný ve Flutteru (Dart) pro Android i iOS. Původně vznikl jako osobní projekt i jako způsob jak se naučit Flutter."
+      },
+      "customocto": {
+        "name": "CustomOcto",
+        "short_desc": "Vlastní náhrada OctoEverywhere pro vzdálený přístup k OctoPrint přes Firebase.",
+        "desc": "CustomOcto byl alternativou k placené službě OctoEverywhere — umožňoval vzdálený přístup k 3D tiskárně přes OctoPrint pomocí Firebase Realtime Database jako proxy."
+      },
+      "reelpanel": {
+        "name": "ReelPanel",
+        "short_desc": "Kanban nástroj pro plánování a postprodukci Instagram reels.",
+        "desc": "Interní nástroj pro Šlapni k nám — Kanban board pro správu reels od nápadu přes natáčení až po publikaci. 7 fází workflow, 20bodový postprodukční checklist, integrace s Google Docs a NAS. Self-hosted na Raspberry Pi 4, postavený na FastAPI + SQLite."
+      },
+      "survival-games-leaderboard": {
+        "name": "survival-games.cz Leaderboard",
+        "short_desc": "Leaderboard systém pro Minecraft server s přehledem statistik hráčů.",
+        "desc": "Webový leaderboard pro Minecraft server survival-games.cz zobrazující statistiky hráčů napříč všemi minihry — BedWars, EggWars, Skywars, Survival Games a dalšími. Node.js backend napojený na serverové API."
+      },
+      "webfactory": {
+        "name": "WebFactory",
+        "short_desc": "CRM a dashboard pro správu klientů a pipeline zakázkové tvorby webů.",
+        "desc": "Interní nástroj na správu klientů při zakázkové tvorbě webů — sledování pipeline (Nový → Kontaktován → Zájem → V produkci → Prodáno), poznámky k webům klientů a správa kontaktů."
+      }
+    }
+  },
+  "photography": {
+    "seo_title": "Fotograf Praha | Vojtěch Adam — profesionální fotografie a drony",
+    "seo_desc": "Profesionální fotograf z Prahy. Portrétní, krajinná a reportážní fotografie. Letecké záběry dronem DJI Mini 4 Pro. Canon EOS 200D. Fotky na Adobe Stock a Instagramu.",
+    "subtitle": "Moje práce s foťákem a dronem. Více fotek najdeš na Instagramu nebo na Adobe Stock.",
+    "hero_label": "Galerie",
+    "hero_title": "Vidím svět<0>objektivem.</0>",
+    "featured_hint": "Klikni pro náhled",
+    "no_photos": "Fotky brzy přibydou.",
+    "stat_camera": "Technika",
+    "stat_drone": "Dron",
+    "stat_stock": "Prodej fotografií",
+    "equip_portrait": "Portréty & sport",
+    "equip_aerial": "Letecké záběry",
+    "equip_post": "Postprodukce",
+    "equip_stock": "Prodej fotografií",
+    "photos": {
+      "koncert-zpevacka-modra": "Zpěvačka na pódiu",
+      "makro-skorpion": "Makrofotografie — škorpion",
+      "sport-florbal-1": "Florbalový hráč v akci — Bruises Stonava",
+      "business-editorial": "Business focení — konzultace",
+      "event-soutez-radost": "Logistická soutěž — radost z výsledku",
+      "animal-kolie": "Kolie — zvířecí portrét",
+      "portrait-car-castle": "Portrét s autem — VW Scirocco u hradu",
+      "event-dance-show": "Dance Up Show Vítkov",
+      "reportaz-soutez": "Reportáž — logistická soutěž škol"
+    },
+    "media_label": "Zmínky v médiích",
+    "media_title": "Moje práce byla publikována",
+    "lightbox_close": "Zavřít",
+    "lightbox_prev": "Předchozí",
+    "lightbox_next": "Další"
+  },
+  "media": {
+    "items": {
+      "cnn": {
+        "title": "Záběry z dronu při povodních v Krnově",
+        "desc": "Při povodních v září 2024 jsem v Krnově točil záběry z dronu DJI Mini 4 Pro. Materiál byl použit v reportáži CNN Prima News."
+      },
+      "school_notebooks": {
+        "title": "Fotografie na školních sešitech",
+        "desc": "Moje fotografie byly použity na obalech školních sešitů vydaných Obchodní akademií a Střední odbornou školou logistickou v Opavě."
+      },
+      "bruntalsky_info": {
+        "title": "Fotografie v článku o Obchodní akademii Opava",
+        "desc": "V čísle 9/2024 Bruntálského Info vyšel článek o Obchodní akademii a SOŠ Logistické Opava. Levý obrázek v článku jsem fotil v rámci focení dne otevřených dveří."
+      },
+      "dance_up": {
+        "title": "Vánoční show Dance UP",
+        "desc": "V čísle 1/2025 vyšel článek o vánoční taneční show skupiny Dance UP. Více fotek z akce najdete na mém Instagramu a Instagramu Dance Up.",
+        "links": {
+          "my_instagram": "Můj Instagram",
+          "dance_up_instagram": "Instagram Dance Up"
+        }
+      }
+    }
+  },
+  "webdesign": {
+    "seo_title": "Tvorba webů na zakázku Praha | Vojtěch Adam",
+    "seo_desc": "Profesionální tvorba webů na zakázku v Praze. Moderní design, rychlé weby v Reactu. Ceny výrazně nižší než u agentur. Hosting, správa a zabezpečení v ceně.",
+    "subtitle": "Navrhuji a vyvíjím weby — od designu přes kódování až po správu, hosting a zabezpečení.",
+    "references_title": "Živé ukázky",
+    "price_note": "Ceny jsou individuální a výrazně nižší než u agentur — protože to dělám s radostí, ne jako hlavní práci. Napiš mi a domluvíme se.",
+    "cta": "Nezávazně se zeptat",
+    "offer_design": "Moderní design",
+    "offer_hosting": "Webhosting & doména",
+    "offer_maintenance": "Správa & údržba",
+    "hero_label": "Služby",
+    "hero_title": "Weby, které<0>fungují.</0>",
+    "process_label": "Jak to funguje",
+    "process_title": "Od nápadu k hotovému webu",
+    "browser_coming": "Připravujeme…",
+    "browser_open": "Otevřít web",
+    "browser_wip": "V přípravě",
+    "process": {
+      "consultation": {
+        "label": "Konzultace",
+        "title": "Začneme rozhovorem",
+        "desc": "Řekneme si, co potřebuješ — jaký web, pro koho, co má dělat. Nezávazně a zdarma. Z toho vzejde jasný plán a reálná cenová nabídka."
+      },
+      "design": {
+        "label": "Design",
+        "title": "Návrh na míru, ne šablona",
+        "desc": "Každý web navrhuji od nuly přesně pro tebe a tvůj brand. Čistý vizuál, srozumitelná navigace, správná typografie. Uvidíš náhled ještě před spuštěním."
+      },
+      "development": {
+        "label": "Vývoj",
+        "title": "Moderní technologie, rychlý výsledek",
+        "desc": "Stavím v moderních technologiích (React, Next.js nebo čisté HTML/CSS) — podle toho, co projekt skutečně potřebuje. Výsledek je rychlý, bezpečný a funguje na všech zařízeních."
+      },
+      "launch": {
+        "label": "Spuštění & péče",
+        "title": "Online bez starostí",
+        "desc": "Postarám se o hosting, SSL, doménu, zálohy i monitoring. Po spuštění jsem stále k dispozici — aktualizace, změny obsahu, technická podpora. Nic ti nepadne přes hlavu."
+      }
+    },
+    "featured": {
+      "badge": "★ Spoluzakladatel + web",
+      "desc": "Projekt komplexního finančního poradenství, který jsem spoluzaložil. Pojištění, investice, spoření, hypotéky — vše pod jednou střechou. Postavil jsem celý web, řeším hosting, zabezpečení a spravuji Instagram marketing.",
+      "stat_partners": "partnerských firem",
+      "stat_individual": "individuální přístup",
+      "mockup_desc": "Komplexní finanční poradenství pod jednou střechou."
+    },
+    "cta_title": "Chceš nový web?",
+    "cta_desc": "Napiš mi, vysvětli co potřebuješ a domluvíme se. Nezávazně, bez nátlaku."
+  },
+  "contact": {
+    "seo_title": "Kontakt | Vojtěch Adam — webdesign a fotografie Praha",
+    "seo_desc": "Kontaktujte Vojtěcha Adama — poptávka tvorby webu, fotografie na zakázku nebo spolupráce. Napište e-mail nebo použijte kontaktní formulář.",
+    "title": "Kontakt",
+    "subtitle": "Napiš mi — ať už jde o zakázku, spolupráci nebo jen tak.",
+    "form_name": "Jméno",
+    "form_email": "E-mail",
+    "form_subject": "Předmět",
+    "form_message": "Zpráva",
+    "form_send": "Odeslat",
+    "form_sending": "Odesílám...",
+    "form_success": "Zpráva odeslána! Ozvu se co nejdřív.",
+    "form_error": "Něco se pokazilo. Zkus to znovu nebo napiš přímo na e-mail.",
+    "phone": "Telefon",
+    "section_label": "Spojme se",
+    "error_verification": "Dokončete prosím ověření (políčko níže).",
+    "error_network": "Chyba sítě. Zkuste to znovu nebo napište přímo na e-mail.",
+    "success_title": "Zpráva odeslána!",
+    "placeholder_name": "Jan Novák",
+    "placeholder_email": "jan@example.cz",
+    "ts_hint": "Před odesláním dokončete ověření výše.",
+    "social_email": "E-mail",
+    "social_whatsapp": "WhatsApp",
+    "social_github": "GitHub",
+    "social_instagram": "Instagram"
+  },
+  "footer": {
+    "made_with": "Vytvořil Vojtěch Adam",
+    "brand_desc": "Web developer & fotograf, původem z Opavy, nyní v Praze.",
+    "nav_aria": "Navigace patičky",
+    "nav_title": "Stránky",
+    "contact_title": "Kontakt",
+    "contact_cta": "Napsat zprávu →",
+    "privacy": "Ochrana osobních údajů"
+  },
+  "common": {
+    "back": "Zpět",
+    "not_found": "Stránka nenalezena",
+    "not_found_desc": "Tato stránka neexistuje.",
+    "screenshot_alt": "Snímek {{name}} {{index}}"
+  }
+}

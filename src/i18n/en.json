@@ -1,0 +1,354 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "photography": "Photography",
+    "webdesign": "Web Design",
+    "contact": "Contact",
+    "logo_aria": "Vojtěch Adam — home",
+    "switch_lang_to_en": "Switch language to English",
+    "switch_lang_to_cs": "Switch language to Czech",
+    "switch_theme_light": "Switch to light theme",
+    "switch_theme_dark": "Switch to dark theme",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
+  },
+  "cookie": {
+    "aria": "Cookie consent",
+    "title": "Cookies & data processing",
+    "desc": "I use analytics cookies (Google Analytics) to track visits. The contact form is processed via Cloudflare Workers. I never sell or share data with third parties. <0>Privacy policy</0>",
+    "accept_all": "Accept all",
+    "decline": "Decline"
+  },
+  "home": {
+    "seo_title": "Vojtěch Adam | Web design, development and photography Prague",
+    "seo_desc": "Vojtěch Adam — developer, web designer and photographer based in Prague. Custom websites, mobile apps and professional photography.",
+    "hero_greeting": "Hi, I'm",
+    "hero_name": "Vojtěch Adam",
+    "hero_alias": "",
+    "hero_desc": "Developer, photographer and web creator based in Prague. I enjoy finance, drone flying and photography.",
+    "hero_cta_projects": "My projects",
+    "hero_cta_contact": "Get in touch",
+    "section_projects": "Projects",
+    "section_photography": "Photography",
+    "section_webdesign": "Web Design",
+    "section_projects_desc": "Take a look at what I'm working on and what I've built.",
+    "section_photography_desc": "Photography and drones — my passion away from the keyboard.",
+    "section_webdesign_desc": "I build custom websites at fair prices.",
+    "see_more": "Learn more",
+    "webfeature_design_label": "Design",
+    "webfeature_design_title": "Modern design",
+    "webfeature_design_desc": "Clean, structured visual design tailored to your brand. No templates — every site is built from scratch.",
+    "webfeature_responsive_label": "Responsive",
+    "webfeature_responsive_title": "Works everywhere",
+    "webfeature_responsive_desc": "Perfect rendering on mobile, tablet and desktop. Fast loading and smooth operation on every device.",
+    "webfeature_security_label": "Security",
+    "webfeature_security_title": "Security first",
+    "webfeature_security_desc": "SSL certificate, bot & injection protection, secure forms. Your site and customer data stay safe.",
+    "webfeature_maintenance_label": "Maintenance",
+    "webfeature_maintenance_title": "Hassle-free maintenance",
+    "webfeature_maintenance_desc": "Hosting, updates, backups, uptime monitoring — I handle everything. You focus on your business.",
+    "section_photography_list_item": "Portraits & landscape"
+  },
+  "about": {
+    "seo_title": "About me | Vojtěch Adam — developer, web designer, photographer",
+    "seo_desc": "I'm Vojtěch Adam — a developer, web designer and photographer based in Prague. I work with React, TypeScript and Python. I shoot on Canon EOS 200D and fly a DJI Mini 4 Pro.",
+    "title": "About me",
+    "bio": "My name is Vojtěch Adam, I'm {{age}} years old, originally from Opava and currently living in Prague (Vršovice). I enjoy finance, drone flying and photography. I work with React, TypeScript, Python and HTML/CSS. In my free time I take photos and contribute to Adobe Stock.",
+    "skills_title": "Skills",
+    "skills_dev": "Development",
+    "skills_creative": "Creative",
+    "timeline_title": "Experience & projects",
+    "timeline_items": {
+      "2020": {
+        "title": "First steps in programming",
+        "desc": "Started learning HTML, CSS and JavaScript. Built my first website."
+      },
+      "2021": {
+        "title": "Fast Coupons — first Android app",
+        "desc": "Built my first Android app in Kotlin — a McDonald's coupon tracker."
+      },
+      "2022": {
+        "title": "JustInTime and photography",
+        "desc": "Launched the JustInTime app and started taking photography more seriously."
+      },
+      "2023": {
+        "title": "Custom web projects",
+        "desc": "Started building websites for clients — including Šlapni k nám and MSSOZ."
+      },
+      "2024": {
+        "title": "DJI Mini 4 Pro and Adobe Stock",
+        "desc": "Got a DJI Mini 4 Pro drone and started contributing to Adobe Stock."
+      },
+      "2025": {
+        "title": "New website and more projects",
+        "desc": "Rebuilt my personal website in React. Working on more client projects."
+      }
+    },
+    "media_title": "In the media",
+    "section_label_who": "Who I am",
+    "section_label_what": "What I do",
+    "section_title_areas": "Areas I work in",
+    "expertise": {
+      "development": {
+        "label": "Development",
+        "title": "Mobile & web apps",
+        "desc": "I build native mobile apps for Android (Kotlin) and iOS (Swift), and web apps in React and TypeScript. I enjoy solving real problems and creating things people actually want to use."
+      },
+      "websites": {
+        "label": "Websites",
+        "title": "Custom websites from scratch",
+        "desc": "Every website I build from scratch — no templates, no compromises. Modern design, responsive layout, fast loading. I handle hosting, security and ongoing maintenance."
+      },
+      "photography": {
+        "label": "Photography",
+        "title": "Portraits, landscape & reportage",
+        "desc": "I shoot with a Canon EOS 200D — portraits, sports reportage, landscapes. My photos have been published in media and used on school materials. Some are sold via Adobe Stock."
+      },
+      "drone": {
+        "label": "Drone",
+        "title": "Aerial photography & video",
+        "desc": "I fly a DJI Mini 4 Pro for aerial shots for clients and personal projects. My drone footage was used in CNN Prima News coverage of the 2024 Krnov floods."
+      }
+    }
+  },
+  "projects": {
+    "seo_title": "Projects | Vojtěch Adam",
+    "seo_desc": "An overview of Vojtěch Adam's projects — custom websites, Android/iOS apps, open-source tools and photography projects.",
+    "title": "Projects",
+    "subtitle": "An overview of what I'm working on or have worked on.",
+    "all_projects": "All projects",
+    "status_active": "Active",
+    "status_inactive": "Inactive",
+    "preview": "Preview",
+    "section_label_portfolio": "Portfolio",
+    "section_label_personal": "Personal & side projects",
+    "section_title_other": "Other things I've built",
+    "section_desc_personal": "Projects for personal use, clients or just for fun — not all are public.",
+    "modal_close": "Close",
+    "modal_cta_label": "Explore project",
+    "items": {
+      "fotografie": {
+        "name": "Photography & Drone",
+        "short_desc": "Portrait and landscape photography, aerial footage with DJI Mini 4 Pro.",
+        "desc": "I shoot portrait, street and landscape photography. I fly a DJI Mini 4 Pro drone and capture aerial footage of landscapes, cities and events. Photos on Instagram and for sale on Adobe Stock.",
+        "links": {
+          "instagram": "Instagram",
+          "adobe_stock": "Adobe Stock"
+        }
+      },
+      "weby-na-zakazku": {
+        "name": "Web development",
+        "short_desc": "Custom websites — design, development, hosting, maintenance and security.",
+        "desc": "I build modern responsive websites from design through coding to hosting, security and ongoing maintenance. Worked for financial advisors, non-profits and local businesses.",
+        "links": {
+          "learn_more": "Learn more"
+        }
+      },
+      "slapniknam": {
+        "name": "Šlapni k nám",
+        "short_desc": "Financial advisory project — co-founder, website and marketing.",
+        "desc": "Šlapni k nám is a comprehensive financial advisory project I co-founded with Julie Hořínková. We cover insurance, investments, savings, mortgages and loans. Beyond co-founding, I built the entire website and handle online marketing including Instagram reels management.",
+        "links": {
+          "website": "slapniknam.cz",
+          "instagram": "Instagram"
+        }
+      },
+      "justintime": {
+        "name": "JustInTime",
+        "short_desc": "Mobile app for route planning so you never arrive late.",
+        "desc": "JustInTime is an Android app that tells you when to leave to arrive on time. Originally built for personal use, now with 500+ downloads on Google Play.",
+        "links": {
+          "google_play": "Google Play"
+        }
+      },
+      "fastcoupons": {
+        "name": "Fast Coupons",
+        "short_desc": "McDonald's & KFC coupons in one Android app.",
+        "desc": "Fast Coupons aggregated available McDonald's and KFC coupons in one place. The app is still downloadable but active coupons are no longer available."
+      },
+      "raspberry-pi-dashboard": {
+        "name": "Raspberry Pi Dashboard",
+        "short_desc": "Web dashboard for real-time home server monitoring.",
+        "desc": "Raspberry Pi dashboard showing CPU temperature, RAM usage, network traffic, UPS status and other real-time metrics. Includes access to a Jellyfin media server."
+      },
+      "rolety": {
+        "name": "Blind Control",
+        "short_desc": "Blind scheduling app for parents — auto-raise and lower on a timetable.",
+        "desc": "Simple web app with scheduling for automatic blind control. Separate settings for weekdays and weekends, authentication and the ability to disable the schedule."
+      },
+      "bettermusic": {
+        "name": "BetterMusic",
+        "short_desc": "iOS and Android app for managing and playing offline downloaded tracks.",
+        "desc": "BetterMusic automatically downloaded tracks from a selected YouTube playlist for offline listening. Written in Flutter (Dart) for both Android and iOS. Originally built as a personal project and to learn Flutter."
+      },
+      "customocto": {
+        "name": "CustomOcto",
+        "short_desc": "Custom OctoEverywhere replacement for remote OctoPrint access via Firebase.",
+        "desc": "CustomOcto was an alternative to the paid OctoEverywhere service — enabling remote access to a 3D printer via OctoPrint using Firebase Realtime Database as a proxy."
+      },
+      "reelpanel": {
+        "name": "ReelPanel",
+        "short_desc": "Kanban tool for planning and post-production of Instagram reels.",
+        "desc": "Internal tool for Šlapni k nám — Kanban board for managing reels from idea through filming to publication. 7-phase workflow, 20-point post-production checklist, Google Docs and NAS integration. Self-hosted on Raspberry Pi 4, built on FastAPI + SQLite."
+      },
+      "survival-games-leaderboard": {
+        "name": "survival-games.cz Leaderboard",
+        "short_desc": "Leaderboard system for a Minecraft server with player statistics.",
+        "desc": "Web leaderboard for the survival-games.cz Minecraft server displaying player statistics across all minigames — BedWars, EggWars, Skywars, Survival Games and more. Node.js backend connected to the server API."
+      },
+      "webfactory": {
+        "name": "WebFactory",
+        "short_desc": "CRM and dashboard for managing clients and web development pipeline.",
+        "desc": "Internal tool for managing clients in custom web development — tracking pipeline (New → Contacted → Interested → In production → Sold), client website notes and contact management."
+      }
+    }
+  },
+  "photography": {
+    "seo_title": "Photographer Prague | Vojtěch Adam — professional photography and drones",
+    "seo_desc": "Professional photographer based in Prague. Portrait, landscape and reportage photography. Aerial shots with DJI Mini 4 Pro. Canon EOS 200D. Photos on Adobe Stock and Instagram.",
+    "subtitle": "My work with a camera and drone. More photos on Instagram or Adobe Stock.",
+    "hero_label": "Gallery",
+    "hero_title": "I see the world<0>through a lens.</0>",
+    "featured_hint": "Click to preview",
+    "no_photos": "Photos coming soon.",
+    "stat_camera": "Camera",
+    "stat_drone": "Drone",
+    "stat_stock": "Stock photos",
+    "equip_portrait": "Portraits & sport",
+    "equip_aerial": "Aerial footage",
+    "equip_post": "Post-production",
+    "equip_stock": "Stock photography",
+    "photos": {
+      "koncert-zpevacka-modra": "Singer on stage",
+      "makro-skorpion": "Macro photography — scorpion",
+      "sport-florbal-1": "Floorball player in action — Bruises Stonava",
+      "business-editorial": "Business photoshoot — consultation",
+      "event-soutez-radost": "Logistics competition — celebrating results",
+      "animal-kolie": "Collie — animal portrait",
+      "portrait-car-castle": "Car portrait — VW Scirocco by a castle",
+      "event-dance-show": "Dance Up Show Vítkov",
+      "reportaz-soutez": "Reportage — school logistics competition"
+    },
+    "media_label": "Media mentions",
+    "media_title": "My work has been published",
+    "lightbox_close": "Close",
+    "lightbox_prev": "Previous",
+    "lightbox_next": "Next"
+  },
+  "media": {
+    "items": {
+      "cnn": {
+        "title": "Drone footage during floods in Krnov",
+        "desc": "During the September 2024 floods in Krnov I captured aerial drone footage that was used in a CNN Prima News news report."
+      },
+      "school_notebooks": {
+        "title": "Photos on school notebooks",
+        "desc": "My photographs were used on the covers of school notebooks published by the Business Academy and Logistics School in Opava."
+      },
+      "bruntalsky_info": {
+        "title": "Photography in an article about Business Academy Opava",
+        "desc": "Issue 9/2024 of Bruntálský Info featured an article about the Business Academy and Logistics School Opava. The left photo was shot during an open-day photoshoot."
+      },
+      "dance_up": {
+        "title": "Dance UP Christmas Show",
+        "desc": "Issue 1/2025 featured an article about the Dance UP dance group Christmas show. More photos on my Instagram and Dance Up's Instagram.",
+        "links": {
+          "my_instagram": "My Instagram",
+          "dance_up_instagram": "Dance Up Instagram"
+        }
+      }
+    }
+  },
+  "webdesign": {
+    "seo_title": "Custom web design Prague | Vojtěch Adam",
+    "seo_desc": "Professional custom web design in Prague. Modern design, fast React websites. Pricing far below agencies. Hosting, maintenance and security included.",
+    "subtitle": "I design and build websites — from design through coding to management, hosting and security.",
+    "references_title": "Live examples",
+    "price_note": "Pricing is individual and significantly lower than agencies — because I do it with passion, not as a full-time job. Message me and we'll figure it out.",
+    "cta": "Ask without commitment",
+    "offer_design": "Modern design",
+    "offer_hosting": "Hosting & domain",
+    "offer_maintenance": "Maintenance",
+    "hero_label": "Services",
+    "hero_title": "Websites that<0>work.</0>",
+    "process_label": "How it works",
+    "process_title": "From idea to finished website",
+    "browser_coming": "Coming soon…",
+    "browser_open": "Open website",
+    "browser_wip": "In progress",
+    "process": {
+      "consultation": {
+        "label": "Discovery",
+        "title": "We start with a conversation",
+        "desc": "We talk through what you need — what kind of site, who it's for, what it should do. No commitment, completely free. That gives us a clear plan and a realistic quote."
+      },
+      "design": {
+        "label": "Design",
+        "title": "Custom design, not a template",
+        "desc": "Every site is designed from scratch specifically for you and your brand. Clean visuals, clear navigation, right typography. You see a preview before it goes live."
+      },
+      "development": {
+        "label": "Development",
+        "title": "Modern tech, fast result",
+        "desc": "I build with modern tech (React, Next.js or clean HTML/CSS) — whatever the project actually needs. The result is fast, secure and works on all devices."
+      },
+      "launch": {
+        "label": "Launch & care",
+        "title": "Live without the hassle",
+        "desc": "I handle hosting, SSL, domain, backups and uptime monitoring. After launch I'm still around — updates, content changes, technical support. Nothing falls on your lap."
+      }
+    },
+    "featured": {
+      "badge": "★ Co-founder + website",
+      "desc": "A comprehensive financial advisory project I co-founded. Insurance, investments, savings, mortgages — all under one roof. I built the entire website, handle hosting, security and manage Instagram marketing.",
+      "stat_partners": "partner companies",
+      "stat_individual": "individual approach",
+      "mockup_desc": "Comprehensive financial advisory under one roof."
+    },
+    "cta_title": "Need a new website?",
+    "cta_desc": "Write to me, explain what you need and we'll figure it out. No commitment, no pressure."
+  },
+  "contact": {
+    "seo_title": "Contact | Vojtěch Adam — web design and photography Prague",
+    "seo_desc": "Contact Vojtěch Adam — request a website, commissioned photography or collaboration. Send an email or use the contact form.",
+    "title": "Contact",
+    "subtitle": "Write to me — whether it's about a project, collaboration, or just to say hi.",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_subject": "Subject",
+    "form_message": "Message",
+    "form_send": "Send",
+    "form_sending": "Sending...",
+    "form_success": "Message sent! I'll get back to you soon.",
+    "form_error": "Something went wrong. Try again or write directly to my email.",
+    "phone": "Phone",
+    "section_label": "Let's talk",
+    "error_verification": "Please complete the verification below.",
+    "error_network": "Network error. Please try again or email directly.",
+    "success_title": "Message sent!",
+    "placeholder_name": "John Doe",
+    "placeholder_email": "john@example.com",
+    "ts_hint": "Complete the verification above before sending.",
+    "social_email": "Email",
+    "social_whatsapp": "WhatsApp",
+    "social_github": "GitHub",
+    "social_instagram": "Instagram"
+  },
+  "footer": {
+    "made_with": "Made by Vojtěch Adam",
+    "brand_desc": "Web developer & photographer, originally from Opava, now in Prague.",
+    "nav_aria": "Footer navigation",
+    "nav_title": "Pages",
+    "contact_title": "Contact",
+    "contact_cta": "Send a message →",
+    "privacy": "Privacy policy"
+  },
+  "common": {
+    "back": "Back",
+    "not_found": "Page not found",
+    "not_found_desc": "This page doesn't exist.",
+    "screenshot_alt": "Screenshot {{name}} {{index}}"
+  }
+}

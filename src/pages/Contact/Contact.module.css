@@ -1,0 +1,218 @@
+.main {
+  padding-top: 64px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientPulse 11s 5.5s ease-in-out infinite;
+  background:
+    radial-gradient(ellipse 60% 50% at 100% 0%,  color-mix(in srgb, var(--accent) 10%, transparent), transparent),
+    radial-gradient(ellipse 45% 60% at 0%  100%, color-mix(in srgb, var(--accent) 7%, transparent), transparent),
+    radial-gradient(ellipse 35% 30% at 50% 50%,  color-mix(in srgb, var(--accent) 3%, transparent), transparent);
+}
+
+@keyframes ambientPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+.main > * { position: relative; z-index: 1; }
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  padding: 4rem 0 5rem;
+  align-items: start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  position: sticky;
+  top: 84px;
+}
+
+.info h1 { margin-bottom: .25rem; }
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: .5rem;
+}
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-top: .5rem;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .75rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition);
+}
+
+.socialItem:hover {
+  background: var(--bg-secondary);
+  color: inherit;
+}
+
+.socialIcon {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.socialLabel {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+}
+
+.socialValue {
+  font-size: .9375rem;
+  color: var(--text);
+}
+
+/* Form */
+.formCard {
+  padding: 2rem;
+  /* prevent the card hover-lift transform — GPU compositing blurs form text */
+  transform: none !important;
+  will-change: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.errorMsg {
+  font-size: .875rem;
+  color: #ef4444;
+}
+
+.successMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated SVG ring */
+.successRing {
+  color: #16a34a;
+  animation: successPop .5s .05s cubic-bezier(.34, 1.56, .64, 1) both;
+  position: relative;
+  z-index: 1;
+}
+
+/* Circle draws itself */
+.successCircle {
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: circleDraw .65s .2s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+/* Checkmark draws itself after circle */
+.successCheck {
+  stroke-dasharray: 56;
+  stroke-dashoffset: 56;
+  animation: drawCheck .38s .8s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+.successText {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  animation: successPop .45s .6s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+
+.successTitle {
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.successText p {
+  font-size: .9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@keyframes successPop {
+  0% { transform: scale(.3); opacity: 0; }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes circleDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Particle burst */
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: particleBurst .7s var(--delay, 0ms) cubic-bezier(.4, 0, .2, 1) both;
+}
+
+@keyframes particleBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--dist));
+  }
+}
+
+.turnstile {
+  margin: .25rem 0;
+}
+
+.tsHint {
+  font-size: .875rem;
+  color: var(--text-muted);
+  margin-top: -.25rem;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 0 4rem;
+  }
+
+  .info { position: static; }
+}

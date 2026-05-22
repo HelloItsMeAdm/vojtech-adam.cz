@@ -1,0 +1,127 @@
+.main {
+  padding-top: 64px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientPulse 13s 4s ease-in-out infinite;
+  background:
+    radial-gradient(ellipse 55% 45% at 95% 5%,  color-mix(in srgb, var(--accent) 8%, transparent), transparent),
+    radial-gradient(ellipse 40% 55% at 0%  70%, color-mix(in srgb, var(--accent) 6%, transparent), transparent),
+    radial-gradient(ellipse 30% 35% at 50% 100%, color-mix(in srgb, var(--accent) 4%, transparent), transparent);
+}
+
+.main > * { position: relative; z-index: 1; }
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: .5rem;
+  font-size: 1.0625rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: 1.75rem;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+  background: var(--bg-card);
+}
+
+.cardPublic {
+  cursor: pointer;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.cardHeaderRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .375rem;
+}
+
+.cardIcon {
+  color: var(--accent);
+  display: flex;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin-top: auto;
+  padding-top: .25rem;
+}
+
+.cardLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .25rem;
+  padding-top: .375rem;
+  border-top: 1px solid var(--border);
+}
+
+.cardLinkHint {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8125rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.cardPersonal {
+  background: var(--bg-card);
+  opacity: .9;
+}
+
+.previewHint {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}

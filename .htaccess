@@ -1,39 +1,48 @@
-Header set Content-Security-Policy "upgrade-insecure-requests;"
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "upgrade-insecure-requests;"
+  Header unset Permissions-Policy
+  Header always set Permissions-Policy "accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+</IfModule>
+
+# Cache: statické assety (JS/CSS/obrázky) na 1 rok, HTML bez cache
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
 
 RewriteEngine On
 
-# Custom Error Pages
-ErrorDocument 400 https://www.vojtech-adam.cz/chyba/400
-ErrorDocument 401 https://www.vojtech-adam.cz/chyba/401
-ErrorDocument 403 https://www.vojtech-adam.cz/chyba/403
-ErrorDocument 404 https://www.vojtech-adam.cz/chyba/404
-ErrorDocument 503 https://www.vojtech-adam.cz/chyba/503
+# non-www → www (kanonikální doména pro SEO)
+RewriteCond %{HTTP_HOST} ^vojtech-adam\.cz$ [NC]
+RewriteRule ^ https://www.vojtech-adam.cz%{REQUEST_URI} [L,R=301]
 
-# Redirect all requests to https
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Redirect all requests without .html extension
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R]
-
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^ %{REQUEST_URI}.php [NC,L]
-
-# Add .html extension internally if the file exists
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [NC,L]
-
-# Redirect /playstore to my account on Google Play
+# Redirect /playstore to Google Play
 RewriteRule ^playstore$ https://play.google.com/store/apps/dev?id=6507096780312923677 [R=301,L]
 
-# Serve content from /sub/maturita for the subdomain maturita.vojtech-adam.cz
-RewriteCond %{HTTP_HOST} ^maturita\.vojtech-adam\.cz$ [NC]
-RewriteCond %{REQUEST_URI} !^/sub/maturita/
-RewriteRule ^(.*)$ /sub/maturita/$1 [L]
+# Subdomains → /sub/<subdomain>/ (e.g. rolety.vojtech-adam.cz → /sub/rolety/)
+RewriteCond %{HTTP_HOST} ^([a-z0-9-]+)\.vojtech-adam\.cz$ [NC]
+RewriteCond %1 !^(www)$ [NC]
+RewriteCond %{REQUEST_URI} !^/sub/ [NC]
+RewriteCond %{DOCUMENT_ROOT}/sub/%1/$1 -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/sub/%1/$1 -d
+RewriteRule ^(.*)$ /sub/%1/$1 [L]
 
-# Serve content from /sub/solarsystem for the subdomain solarsystem.vojtech-adam.cz
-RewriteCond %{HTTP_HOST} ^solarsystem\.vojtech-adam\.cz$ [NC]
-RewriteCond %{REQUEST_URI} !^/sub/solarsystem/
-RewriteRule ^(.*)$ /sub/solarsystem/$1 [L]
+# Subdomain SPA fallback
+RewriteCond %{HTTP_HOST} ^([a-z0-9-]+)\.vojtech-adam\.cz$ [NC]
+RewriteCond %1 !^(www)$ [NC]
+RewriteCond %{REQUEST_URI} !^/sub/ [NC]
+RewriteCond %{DOCUMENT_ROOT}/sub/%1 -d
+RewriteRule ^.*$ /sub/%1/index.html [L]
+
+# SPA fallback — only for main domain, route non-file/non-dir requests to index.html
+RewriteCond %{HTTP_HOST} ^(www\.)?vojtech-adam\.cz$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
