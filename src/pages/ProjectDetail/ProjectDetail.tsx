@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { projects } from '../../data/projects';
@@ -28,6 +28,7 @@ export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
 
+  const [imgLoaded, setImgLoaded] = useState(false);
   const project = projects.find(p => p.slug === slug && p.visibility === 'public');
   if (!project) return <Navigate to="/projekty" replace />;
   const projectName = t(`${project.i18nKey}.name`);
@@ -74,8 +75,15 @@ export default function ProjectDetail() {
 
           <div className={styles.body}>
             {project.image && (
-              <div className={styles.imageWrapper}>
-                <img src={project.image} alt={projectName} className={styles.image} />
+              <div className={`${styles.imageWrapper} ${!imgLoaded ? styles.imageWrapperLoading : ''}`}>
+                <img
+                  src={project.image}
+                  alt={projectName}
+                  className={styles.image}
+                  loading="lazy"
+                  style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.35s ease' }}
+                  onLoad={() => setImgLoaded(true)}
+                />
               </div>
             )}
 

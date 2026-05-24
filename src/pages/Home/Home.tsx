@@ -19,6 +19,7 @@ import {
 import StickyFeatures, {
   type StickyFeatureItem,
 } from "../../components/StickyFeatures/StickyFeatures";
+import SkeletonImage from "../../components/SkeletonImage/SkeletonImage";
 import styles from "./Home.module.css";
 
 const PROJECT_ICONS: Record<string, React.ReactNode> = {
@@ -247,7 +248,7 @@ export default function Home() {
                     key={i}
                     className={`${styles.photoCell} ${styles[`cell${i}`]}`}
                   >
-                    <img
+                    <SkeletonImage
                       src={photo.src}
                       alt={t(photo.i18nKey)}
                       loading="lazy"

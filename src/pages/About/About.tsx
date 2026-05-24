@@ -17,6 +17,7 @@ import {
 import StickyFeatures, {
   type StickyFeatureItem,
 } from "../../components/StickyFeatures/StickyFeatures";
+import SkeletonImage from "../../components/SkeletonImage/SkeletonImage";
 import styles from "./About.module.css";
 
 const mediaItems = [
@@ -285,10 +286,12 @@ export default function About() {
               >
                 <div className={styles.mediaIconWrap}>
                   {item.image ? (
-                    <img
+                    <SkeletonImage
                       src={item.image}
                       alt={item.outlet}
-                      className={styles.mediaImage}
+                      wrapperClassName={styles.mediaImage}
+                      className={styles.mediaImageFill}
+                      fill={false}
                     />
                   ) : (
                     <div className={styles.mediaIcon}>

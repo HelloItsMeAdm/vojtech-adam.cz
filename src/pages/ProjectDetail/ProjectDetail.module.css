@@ -51,6 +51,26 @@
   justify-content: center;
   min-height: 200px;
   padding: 2rem;
+  position: relative;
+}
+
+.imageWrapperLoading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    color-mix(in srgb, var(--text) 5%, transparent) 50%,
+    transparent 75%
+  );
+  animation: skeletonShimmer 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes skeletonShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .image {

@@ -12,6 +12,7 @@ import {
   NewspaperIcon,
 } from "../../components/Icons";
 import { trackEvent } from "../../utils/analytics";
+import SkeletonImage from "../../components/SkeletonImage/SkeletonImage";
 import styles from "./Photography.module.css";
 
 const mediaItems = [
@@ -280,7 +281,7 @@ export default function Photography() {
           <div className="container">
             {/* Featured */}
             <div className={styles.featured} onClick={() => openPhoto(0)}>
-              <img
+              <SkeletonImage
                 src={featured.src}
                 alt={t(featured.i18nKey)}
                 loading="eager"
@@ -311,7 +312,7 @@ export default function Photography() {
                   }
                   onClick={() => openPhoto(i + 1)}
                 >
-                  <img src={photo.src} alt={t(photo.i18nKey)} loading="lazy" />
+                  <SkeletonImage src={photo.src} alt={t(photo.i18nKey)} loading="lazy" />
                   <div className={styles.gridOverlay}>
                     <span>{t(photo.i18nKey)}</span>
                   </div>
@@ -434,10 +435,12 @@ export default function Photography() {
               >
                 <div className={styles.mediaIconWrap}>
                   {item.image ? (
-                    <img
+                    <SkeletonImage
                       src={item.image}
                       alt={item.outlet}
-                      className={styles.mediaImage}
+                      wrapperClassName={styles.mediaImage}
+                      className={styles.mediaImageFill}
+                      fill={false}
                     />
                   ) : (
                     <div className={styles.mediaIcon}>
