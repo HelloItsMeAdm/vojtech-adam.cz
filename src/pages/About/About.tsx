@@ -277,7 +277,7 @@ export default function About() {
           <div className={styles.mediaList}>
             {mediaItems.map((item, i) => (
               <div
-                key={i}
+                key={item.id}
                 className={`${styles.mediaCard} reveal`}
                 style={
                   { "--reveal-delay": `${i * 80}ms` } as React.CSSProperties

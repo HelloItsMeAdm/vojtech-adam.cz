@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '../components/SEO/SEOHead';
 
 export default function NotFound() {
   const { t } = useTranslation();
   return (
     <main style={{ paddingTop: '64px', minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <SEOHead
+        title={t('common.not_found')}
+        description={t('common.not_found_desc')}
+        noindex={true}
+      />
       <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
         <span style={{ fontSize: '4rem' }}>🔍</span>
         <h1>{t('common.not_found')}</h1>

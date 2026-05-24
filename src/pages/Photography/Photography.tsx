@@ -304,7 +304,7 @@ export default function Photography() {
             <div className={styles.grid}>
               {rest.map((photo, i) => (
                 <div
-                  key={i}
+                  key={photo.i18nKey}
                   className={`${styles.gridItem} reveal`}
                   style={
                     { "--reveal-delay": `${i * 55}ms` } as React.CSSProperties
@@ -426,7 +426,7 @@ export default function Photography() {
           <div className={styles.mediaList}>
             {mediaItems.map((item, i) => (
               <div
-                key={i}
+                key={item.id}
                 className={`${styles.mediaCard} reveal`}
                 style={
                   { "--reveal-delay": `${i * 80}ms` } as React.CSSProperties
