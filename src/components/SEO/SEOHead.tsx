@@ -26,6 +26,17 @@ export default function SEOHead({
   const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
   const ogLocale = lang === 'cs' ? 'cs_CZ' : 'en_US';
 
+  const breadcrumbSchema = canonical
+    ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: lang === 'cs' ? 'Domů' : 'Home', item: BASE_URL },
+          { '@type': 'ListItem', position: 2, name: title, item: canonicalUrl },
+        ],
+      })
+    : null;
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
@@ -51,6 +62,10 @@ export default function SEOHead({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+
+      {breadcrumbSchema && (
+        <script type="application/ld+json">{breadcrumbSchema}</script>
+      )}
     </Helmet>
   );
 }

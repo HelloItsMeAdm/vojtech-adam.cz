@@ -50,43 +50,44 @@
   <!-- Theme -->
   <meta name="theme-color" content="#0a0a0a" />
 
-  <!-- JSON-LD: Person + WebSite schema -->
+  <!-- JSON-LD: ProfessionalService (LocalBusiness subtype — enables rich results) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "ProfessionalService",
     "name": "Vojtěch Adam",
     "url": "https://vojtech-adam.cz",
     "email": "kontakt@vojtech-adam.cz",
-    "jobTitle": "Webdesigner, programátor a fotograf",
     "description": "Programátor, webdesigner a fotograf z Prahy. Tvořím weby na zakázku, mobilní aplikace a profesionální fotografie.",
-    "mainEntityOfPage": "https://vojtech-adam.cz",
+    "image": "https://vojtech-adam.cz/og-image.png",
+    "telephone": "+420608073334",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Praha",
+      "postalCode": "101 00",
       "addressCountry": "CZ"
     },
+    "areaServed": {
+      "@type": "Country",
+      "name": "CZ"
+    },
+    "priceRange": "$$",
     "sameAs": [
       "https://github.com/helloitsmeadm",
       "https://www.instagram.com/photographer_vojtech/"
     ],
-    "knowsAbout": ["React", "TypeScript", "Python", "webdesign", "fotografie", "drony", "Android", "iOS"],
-    "image": "https://vojtech-adam.cz/og-image.png"
+    "knowsAbout": ["React", "TypeScript", "Python", "webdesign", "fotografie", "drony", "Android", "iOS"]
   }
   </script>
 
+  <!-- JSON-LD: WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "url": "https://vojtech-adam.cz",
     "name": "Vojtěch Adam",
-    "description": "Osobní portfolio Vojtěcha Adama — webdesign, programování a fotografie z Prahy.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://vojtech-adam.cz/?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "description": "Osobní portfolio Vojtěcha Adama — webdesign, programování a fotografie z Prahy."
   }
   </script>
 </head>
