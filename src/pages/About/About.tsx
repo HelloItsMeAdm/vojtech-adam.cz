@@ -25,6 +25,7 @@ const mediaItems = [
     outlet: "CNN Prima News",
     year: "2024",
     icon: "tv" as const,
+    image: "/images/media/cnn.png",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -32,6 +33,7 @@ const mediaItems = [
     outlet: "OA & SOŠ Logistická Opava",
     year: "2024",
     icon: "camera" as const,
+    image: "/images/media/school_notebooks.png",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -39,6 +41,7 @@ const mediaItems = [
     outlet: "Bruntálský Info",
     year: "2024",
     icon: "newspaper" as const,
+    image: "/images/media/bruntalsky_info.jpg",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -46,6 +49,7 @@ const mediaItems = [
     outlet: "Vítkovský Zpravodaj",
     year: "2025",
     icon: "newspaper" as const,
+    image: "/images/media/dance_up.png",
     links: [
       {
         labelKey: "my_instagram",
@@ -53,9 +57,17 @@ const mediaItems = [
       },
       {
         labelKey: "dance_up_instagram",
-        url: "https://www.instagram.com/danceup.vitkov/",
+        url: "https://www.instagram.com/ts_danceup/",
       },
     ],
+  },
+  {
+    id: "hlaska_opava",
+    outlet: "Hláska Opava",
+    year: "2025",
+    icon: "newspaper" as const,
+    image: "/images/media/hlaska_opava.png",
+    links: [] as { labelKey: string; url: string }[],
   },
 ];
 
@@ -94,8 +106,16 @@ export default function About() {
   };
 
   const skillGroups = [
-    { key: "dev", title: t("about.skills_dev"), items: skills.filter((s) => s.category === "dev") },
-    { key: "creative", title: t("about.skills_creative"), items: skills.filter((s) => s.category === "creative") },
+    {
+      key: "dev",
+      title: t("about.skills_dev"),
+      items: skills.filter((s) => s.category === "dev"),
+    },
+    {
+      key: "creative",
+      title: t("about.skills_creative"),
+      items: skills.filter((s) => s.category === "creative"),
+    },
   ];
 
   const expertiseAreas: StickyFeatureItem[] = [
@@ -186,7 +206,9 @@ export default function About() {
                 <p
                   className={`${styles.skillCategory} reveal`}
                   style={
-                    { "--reveal-delay": `${groupIndex * 120}ms` } as React.CSSProperties
+                    {
+                      "--reveal-delay": `${groupIndex * 120}ms`,
+                    } as React.CSSProperties
                   }
                 >
                   {group.title}
@@ -261,13 +283,23 @@ export default function About() {
                   { "--reveal-delay": `${i * 80}ms` } as React.CSSProperties
                 }
               >
-                <div className={styles.mediaIcon}>
-                  {item.icon === "tv" ? (
-                    <TvIcon size={28} />
-                  ) : item.icon === "newspaper" ? (
-                    <NewspaperIcon size={28} />
+                <div className={styles.mediaIconWrap}>
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.outlet}
+                      className={styles.mediaImage}
+                    />
                   ) : (
-                    <CameraIcon size={28} />
+                    <div className={styles.mediaIcon}>
+                      {item.icon === "tv" ? (
+                        <TvIcon size={28} />
+                      ) : item.icon === "newspaper" ? (
+                        <NewspaperIcon size={28} />
+                      ) : (
+                        <CameraIcon size={28} />
+                      )}
+                    </div>
                   )}
                 </div>
                 <div className={styles.mediaBody}>

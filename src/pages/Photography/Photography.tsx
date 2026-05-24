@@ -20,6 +20,7 @@ const mediaItems = [
     outlet: "CNN Prima News",
     year: "2024",
     icon: "tv" as const,
+    image: "/images/media/cnn.png",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -27,6 +28,7 @@ const mediaItems = [
     outlet: "OA & SOŠ Logistická Opava",
     year: "2024",
     icon: "camera" as const,
+    image: "/images/media/school_notebooks.png",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -34,6 +36,7 @@ const mediaItems = [
     outlet: "Bruntálský Info",
     year: "2024",
     icon: "newspaper" as const,
+    image: "/images/media/bruntalsky_info.jpg",
     links: [] as { labelKey: string; url: string }[],
   },
   {
@@ -41,6 +44,7 @@ const mediaItems = [
     outlet: "Vítkovský Zpravodaj",
     year: "2025",
     icon: "newspaper" as const,
+    image: "/images/media/dance_up.png",
     links: [
       {
         labelKey: "my_instagram",
@@ -48,9 +52,17 @@ const mediaItems = [
       },
       {
         labelKey: "dance_up_instagram",
-        url: "https://www.instagram.com/danceup.vitkov/",
+        url: "https://www.instagram.com/ts_danceup/",
       },
     ],
+  },
+  {
+    id: "hlaska_opava",
+    outlet: "Hláška Opava",
+    year: "2025",
+    icon: "newspaper" as const,
+    image: "/images/media/hlaska_opava.png",
+    links: [] as { labelKey: string; url: string }[],
   },
 ];
 
@@ -124,21 +136,24 @@ export default function Photography() {
   const hasPhotos = photos.length > 0;
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const openPhoto = useCallback((i: number) => {
-    const photo = photos[i];
-    trackEvent('gallery_open', {
-      item_id: photo.i18nKey,
-      item_name: t(photo.i18nKey),
-      index: i,
-      category: photo.category,
-    });
-    setActiveIndex(i);
-  }, [t]);
+  const openPhoto = useCallback(
+    (i: number) => {
+      const photo = photos[i];
+      trackEvent("gallery_open", {
+        item_id: photo.i18nKey,
+        item_name: t(photo.i18nKey),
+        index: i,
+        category: photo.category,
+      });
+      setActiveIndex(i);
+    },
+    [t],
+  );
 
   const closePhoto = useCallback(() => {
     if (activeIndex === null) return;
     const photo = photos[activeIndex];
-    trackEvent('gallery_close', {
+    trackEvent("gallery_close", {
       item_id: photo.i18nKey,
       item_name: t(photo.i18nKey),
       index: activeIndex,
@@ -151,8 +166,8 @@ export default function Photography() {
       if (i === null) return null;
       const nextIndex = (i - 1 + photos.length) % photos.length;
       const photo = photos[nextIndex];
-      trackEvent('gallery_navigate', {
-        direction: 'prev',
+      trackEvent("gallery_navigate", {
+        direction: "prev",
         item_id: photo.i18nKey,
         item_name: t(photo.i18nKey),
         index: nextIndex,
@@ -166,8 +181,8 @@ export default function Photography() {
       if (i === null) return null;
       const nextIndex = (i + 1) % photos.length;
       const photo = photos[nextIndex];
-      trackEvent('gallery_navigate', {
-        direction: 'next',
+      trackEvent("gallery_navigate", {
+        direction: "next",
         item_id: photo.i18nKey,
         item_name: t(photo.i18nKey),
         index: nextIndex,
@@ -186,7 +201,10 @@ export default function Photography() {
         canonical="/fotografie"
       />
       {/* ── Hero ────────────────────────────────────────── */}
-      <section className={styles.hero} data-analytics-section="photography_hero">
+      <section
+        className={styles.hero}
+        data-analytics-section="photography_hero"
+      >
         <div className={styles.heroBg} aria-hidden />
         <div className="container">
           <div className={styles.heroInner}>
@@ -414,13 +432,23 @@ export default function Photography() {
                   { "--reveal-delay": `${i * 80}ms` } as React.CSSProperties
                 }
               >
-                <div className={styles.mediaIcon}>
-                  {item.icon === "tv" ? (
-                    <TvIcon size={28} />
-                  ) : item.icon === "newspaper" ? (
-                    <NewspaperIcon size={28} />
+                <div className={styles.mediaIconWrap}>
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.outlet}
+                      className={styles.mediaImage}
+                    />
                   ) : (
-                    <CameraIcon size={28} />
+                    <div className={styles.mediaIcon}>
+                      {item.icon === "tv" ? (
+                        <TvIcon size={28} />
+                      ) : item.icon === "newspaper" ? (
+                        <NewspaperIcon size={28} />
+                      ) : (
+                        <CameraIcon size={28} />
+                      )}
+                    </div>
                   )}
                 </div>
                 <div className={styles.mediaBody}>

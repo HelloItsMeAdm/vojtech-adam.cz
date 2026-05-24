@@ -5,7 +5,10 @@
   right: 0;
   z-index: 100;
   background: transparent;
-  transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    backdrop-filter var(--transition);
 }
 
 .header.scrolled {
@@ -36,38 +39,40 @@
   filter: none;
 }
 
-[data-theme='light'] .logoImg {
+[data-theme="light"] .logoImg {
   filter: invert(1);
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
 .link {
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: .9375rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--text-muted);
-  transition: color var(--transition), background var(--transition);
+  transition:
+    color var(--transition),
+    background var(--transition);
   position: relative;
 }
 
 .link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 2px;
-  left: .75rem;
-  right: .75rem;
+  left: 0.75rem;
+  right: 0.75rem;
   height: 2px;
   border-radius: 1px;
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 220ms cubic-bezier(.4,0,.2,1);
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover {
@@ -86,20 +91,20 @@
 .controls {
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
 .iconBtn {
-  padding: .5rem .625rem;
+  padding: 0.5rem 0.625rem;
   border-radius: var(--radius-sm);
   color: var(--text-muted);
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .langLabel {
-  font-size: .8125rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 
 .menuBtn {
@@ -120,8 +125,14 @@
 
 /* ─── Mobile ──────────────────────────────────────────────────── */
 @keyframes menuItemIn {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -131,8 +142,11 @@
 
   .links {
     display: none;
-    position: fixed;
-    inset: 64px 0 0 0;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: calc(100dvh - 64px);
     background: color-mix(in srgb, var(--bg) 96%, transparent);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
@@ -146,14 +160,22 @@
 
   /* Ambient gradient corners */
   .links::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(ellipse 80% 40% at 100% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent),
-      radial-gradient(ellipse 60% 55% at 0% 100%, color-mix(in srgb, var(--accent) 8%, transparent), transparent);
+      radial-gradient(
+        ellipse 80% 40% at 100% 0%,
+        color-mix(in srgb, var(--accent) 14%, transparent),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 60% 55% at 0% 100%,
+        color-mix(in srgb, var(--accent) 8%, transparent),
+        transparent
+      );
   }
 
   .links > * {
@@ -167,19 +189,19 @@
 
   /* Stagger slide-in per item */
   .links.open li {
-    animation: menuItemIn .45s cubic-bezier(.22, 1, .36, 1) both;
+    animation: menuItemIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: calc(var(--i, 0) * 55ms + 60ms);
   }
 
   .link {
     display: flex;
     align-items: center;
-    gap: .875rem;
+    gap: 0.875rem;
     font-family: var(--font-display);
     font-size: 1.75rem;
     font-weight: 700;
-    letter-spacing: -.03em;
-    padding: .75rem .5rem;
+    letter-spacing: -0.03em;
+    padding: 0.75rem 0.5rem;
     border-radius: 0;
     color: var(--text-muted);
     border-bottom: 1px solid var(--border);
@@ -203,9 +225,9 @@
   /* Number prefix */
   .linkNum {
     display: inline-block;
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 400;
-    letter-spacing: .06em;
+    letter-spacing: 0.06em;
     color: var(--text-subtle);
     min-width: 1.5rem;
     transition: color var(--transition);
@@ -221,17 +243,17 @@
     margin-top: auto;
     padding-top: 2rem;
     border-bottom: none !important;
-    animation: menuItemIn .45s cubic-bezier(.22, 1, .36, 1) both;
+    animation: menuItemIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: calc(var(--i, 0) * 55ms + 60ms);
   }
 
   .menuEmail {
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-subtle);
     text-decoration: none;
     transition: color var(--transition);
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
   }
 
   .menuEmail:hover {
