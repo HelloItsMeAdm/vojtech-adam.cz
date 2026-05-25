@@ -19,9 +19,6 @@
 
 RewriteEngine On
 
-# non-www → www (kanonikální doména pro SEO)
-RewriteCond %{HTTP_HOST} ^vojtech-adam\.cz$ [NC]
-RewriteRule ^ https://www.vojtech-adam.cz%{REQUEST_URI} [L,R=301]
 
 # Redirect /playstore to Google Play
 RewriteRule ^playstore$ https://play.google.com/store/apps/dev?id=6507096780312923677 [R=301,L]

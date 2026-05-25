@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UTM_CONFIGS: Record<string, string> = {
   ig: "?utm_source=instagram&utm_medium=social&utm_campaign=bio_link",
@@ -48,5 +49,9 @@ export default function UtmRedirect({ source }: { source?: string }) {
     window.location.replace(target.toString());
   }, [source, search]);
 
-  return null;
+  return (
+    <Helmet>
+      <meta name="robots" content="noindex, nofollow" />
+    </Helmet>
+  );
 }
