@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LangProvider } from "./context/LangContext";
 import "./i18n/config";
@@ -26,6 +27,16 @@ import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound";
 import UtmRedirect from "./pages/UtmRedirect/UtmRedirect";
 
+function ProjectRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={`/projekty/${slug}`} replace />;
+}
+
+function PrivacyRedirect() {
+  useEffect(() => { window.location.replace('/privacy.html'); }, []);
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -47,6 +58,10 @@ export default function App() {
               <Route path="/fotografie" element={<Photography />} />
               <Route path="/weby" element={<WebDesign />} />
               <Route path="/kontakt" element={<Contact />} />
+              {/* Legacy URL redirects — old English paths and leftover URLs Google crawled */}
+              <Route path="/project/:slug" element={<ProjectRedirect />} />
+              <Route path="/privacy" element={<PrivacyRedirect />} />
+              <Route path="/index" element={<Navigate to="/" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
