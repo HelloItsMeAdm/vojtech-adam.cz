@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRZLCH6D4R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
+    function gtag() { window.dataLayer.push(arguments); }
     window.gtag = window.gtag || gtag;
     window.gtag('consent', 'default', {
       analytics_storage: 'denied',
@@ -28,10 +29,17 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zásady ochrany osobních údajů — Vojtěch Adam</title>
+  <title>Zásady ochrany osobních údajů / Privacy policy — Vojtěch Adam</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: #0a0a0a;
@@ -40,17 +48,104 @@
       font-size: 1rem;
       padding: 2rem 1.5rem 4rem;
     }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    .back { display: inline-flex; align-items: center; gap: .5rem; color: #3b82f6; text-decoration: none; font-size: .875rem; margin-bottom: 2.5rem; }
-    .back:hover { color: #60a5fa; }
-    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .5rem; color: #fff; }
-    .meta { font-size: .875rem; color: #737373; margin-bottom: 3rem; }
-    h2 { font-size: 1.125rem; font-weight: 600; color: #fff; margin: 2.5rem 0 .75rem; }
-    p { color: #a3a3a3; margin-bottom: .75rem; }
-    ul { color: #a3a3a3; padding-left: 1.5rem; margin-bottom: .75rem; }
-    li { margin-bottom: .375rem; }
-    a { color: #3b82f6; }
-    a:hover { color: #60a5fa; }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: #3b82f6;
+      text-decoration: none;
+      font-size: .875rem;
+    }
+
+    .back:hover {
+      color: #60a5fa;
+    }
+
+    .lang {
+      display: inline-flex;
+      border: 1px solid #262626;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .lang a {
+      color: #a3a3a3;
+      text-decoration: none;
+      font-size: .8125rem;
+      font-weight: 600;
+      padding: .3rem .85rem;
+    }
+
+    .lang a.active {
+      background: #161616;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+
+    .meta {
+      font-size: .875rem;
+      color: #737373;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 2.5rem 0 .75rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e5e5e5;
+      margin: 1.5rem 0 .5rem;
+    }
+
+    p {
+      color: #a3a3a3;
+      margin-bottom: .75rem;
+    }
+
+    ul {
+      color: #a3a3a3;
+      padding-left: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    li {
+      margin-bottom: .375rem;
+    }
+
+    a {
+      color: #3b82f6;
+    }
+
+    a:hover {
+      color: #60a5fa;
+    }
+
     .highlight {
       background: #161616;
       border: 1px solid #262626;
@@ -58,81 +153,345 @@
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;
     }
-    .highlight p { margin: 0; color: #d4d4d4; }
-    hr { border: none; border-top: 1px solid #262626; margin: 2rem 0; }
+
+    .highlight p {
+      margin: 0;
+      color: #d4d4d4;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #262626;
+      margin: 2rem 0;
+    }
+
+    /* One language at a time; without JavaScript both are shown. */
+    .js article {
+      display: none;
+    }
+
+    .js article.shown {
+      display: block;
+    }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
+
 <body>
   <div class="wrap">
-    <a href="/" class="back">← Zpět na web</a>
-
-    <h1>Zásady ochrany osobních údajů</h1>
-    <p class="meta">Správce: Vojtěch Adam · kontakt@vojtech-adam.cz · Naposledy aktualizováno: květen 2025</p>
-
-    <div class="highlight">
-      <p>Stručně: Sbírám pouze to, co potřebuji k provozu webu. Data neprodávám ani nesdílím s třetími stranami za komerčním účelem.</p>
+    <div class="top">
+      <a href="/" class="back" data-cs="← Zpět na web" data-en="← Back to the website">← Zpět na web</a>
+      <nav class="lang">
+        <a href="#cs" data-lang="cs">CZ</a>
+        <a href="#en" data-lang="en">EN</a>
+      </nav>
     </div>
 
-    <h2>1. Kdo zpracovává vaše data</h2>
-    <p>Správcem osobních údajů je Vojtěch Adam, fyzická osoba provozující osobní webové stránky na adrese vojtech-adam.cz. Kontakt: <a href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>.</p>
+    <!-- ===================== ČESKY ===================== -->
+    <article lang="cs" id="cs">
+      <h1>Zásady ochrany osobních údajů</h1>
+      <p class="meta">Správce: Vojtěch Adam · kontakt@vojtech-adam.cz · Naposledy aktualizováno: říjen 2026</p>
 
-    <h2>2. Analytické cookies — Google Analytics 4</h2>
-    <p>Po vašem souhlasu používám Google Analytics 4 (provozovatel Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irsko). Google Analytics sbírá:</p>
-    <ul>
-      <li>Anonymizovanou IP adresu (posledí oktet odstraněn)</li>
-      <li>Typ prohlížeče, operační systém a rozlišení displeje</li>
-      <li>Stránky, které jste navštívili a dobu strávenou na webu</li>
-      <li>Zemi původu (ne přesná poloha)</li>
-    </ul>
-    <p>Účel: pochopení toho, jak návštěvníci web používají, pro jeho zlepšování.</p>
-    <p>Právní základ: <strong>váš souhlas</strong> (čl. 6 odst. 1 písm. a) GDPR). Souhlas můžete kdykoli odvolat vymazáním cookies v nastavení prohlížeče nebo kliknutím na odkaz níže.</p>
-    <p>Data jsou přenášena do USA na základě standardních smluvních doložek. Zásady ochrany osobních údajů Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
-    <p>Doba uložení: analytická data jsou v GA4 uchovávána 14 měsíců, poté automaticky odstraněna.</p>
+      <div class="highlight">
+        <p>Stručně: Sbírám pouze to, co potřebuji k provozu webu a aplikace JustInTime. Data neprodávám ani nesdílím s
+          třetími stranami za komerčním účelem. Aplikace JustInTime nemá účty a tvoje cesty zůstávají v telefonu.</p>
+      </div>
 
-    <h2>3. Kontaktní formulář — EmailJS</h2>
-    <p>Zprávy odeslané přes kontaktní formulář jsou zpracovány službou EmailJS (EmailJS.com, UK). Zpracovávám tyto údaje:</p>
-    <ul>
-      <li>Jméno a příjmení</li>
-      <li>E-mailová adresa</li>
-      <li>Předmět a obsah zprávy</li>
-    </ul>
-    <p>Účel: odpovězení na vaši zprávu.</p>
-    <p>Právní základ: <strong>oprávněný zájem</strong> správce (čl. 6 odst. 1 písm. f) GDPR) — komunikace s osobami, které samy kontakt zahájily.</p>
-    <p>Zprávy jsou ukládány v e-mailové schránce správce. Data nejsou předávána třetím stranám kromě EmailJS jako zpracovatele. Zásady EmailJS: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener">emailjs.com/legal/privacy-policy</a>.</p>
-    <p>Doba uložení: e-mailová korespondence je uchovávána maximálně 2 roky od posledního kontaktu, poté odstraněna.</p>
+      <h2>1. Kdo zpracovává vaše data</h2>
+      <p>Správcem osobních údajů je Vojtěch Adam, fyzická osoba provozující osobní webové stránky na adrese
+        vojtech-adam.cz a vývojář aplikace JustInTime pro Android. Kontakt: <a
+          href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>.</p>
 
-    <h2>4. Cookies a localStorage</h2>
-    <p>Web používá:</p>
-    <ul>
-      <li><strong>localStorage — cookie_consent</strong>: uložení vašeho rozhodnutí o cookies. Platnost: trvalá (do vymazání prohlížeče). Neobsahuje osobní údaje.</li>
-      <li><strong>Cookies Google Analytics</strong> (_ga, _ga_*): pouze po vašem souhlasu. Platnost: až 2 roky.</li>
-    </ul>
-    <p>Web nepoužívá cookies pro reklamu, retargeting ani sociální sítě.</p>
+      <h2>2. Web: analytické cookies (Google Analytics 4)</h2>
+      <p>Po vašem souhlasu používám na webu Google Analytics 4 (provozovatel Google Ireland Ltd., Gordon House, Barrow
+        Street, Dublin 4, Irsko). Google Analytics sbírá:</p>
+      <ul>
+        <li>Anonymizovanou IP adresu (poslední oktet odstraněn)</li>
+        <li>Typ prohlížeče, operační systém a rozlišení displeje</li>
+        <li>Stránky, které jste navštívili, a dobu strávenou na webu</li>
+        <li>Zemi původu (ne přesná poloha)</li>
+      </ul>
+      <p>Účel: pochopení toho, jak návštěvníci web používají, pro jeho zlepšování.</p>
+      <p>Právní základ: <strong>váš souhlas</strong> (čl. 6 odst. 1 písm. a) GDPR). Souhlas můžete kdykoli odvolat
+        vymazáním cookies v nastavení prohlížeče.</p>
+      <p>Data jsou přenášena do USA na základě standardních smluvních doložek. Zásady ochrany osobních údajů Google: <a
+          href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+      <p>Doba uložení: analytická data jsou v GA4 uchovávána 14 měsíců, poté automaticky odstraněna.</p>
 
-    <h2>5. Vaše práva (GDPR)</h2>
-    <p>Máte právo:</p>
-    <ul>
-      <li><strong>Na přístup</strong> — získat informace o tom, jaké údaje o vás zpracovávám</li>
-      <li><strong>Na opravu</strong> — nechat opravit nepřesné údaje</li>
-      <li><strong>Na výmaz</strong> — požádat o smazání vašich dat</li>
-      <li><strong>Na přenositelnost</strong> — obdržet data ve strukturovaném formátu</li>
-      <li><strong>Vznést námitku</strong> — proti zpracování na základě oprávněného zájmu</li>
-      <li><strong>Odvolat souhlas</strong> — kdykoli, bez vlivu na zákonnost předchozího zpracování</li>
-    </ul>
-    <p>Pro uplatnění práv nebo jakékoli dotazy mě kontaktujte na <a href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>. Odpovím do 30 dnů.</p>
-    <p>Máte také právo podat stížnost u dozorového úřadu: <a href="https://www.uoou.cz" target="_blank" rel="noopener">Úřad pro ochranu osobních údajů (uoou.cz)</a>.</p>
+      <h2>3. Web: kontaktní formulář (EmailJS)</h2>
+      <p>Zprávy odeslané přes kontaktní formulář jsou zpracovány službou EmailJS (EmailJS.com, UK). Zpracovávám tyto
+        údaje:</p>
+      <ul>
+        <li>Jméno a příjmení</li>
+        <li>E-mailová adresa</li>
+        <li>Předmět a obsah zprávy</li>
+      </ul>
+      <p>Účel: odpovězení na vaši zprávu.</p>
+      <p>Právní základ: <strong>oprávněný zájem</strong> správce (čl. 6 odst. 1 písm. f) GDPR), tedy komunikace s
+        osobami, které samy kontakt zahájily.</p>
+      <p>Zprávy jsou ukládány v e-mailové schránce správce. Data nejsou předávána třetím stranám kromě EmailJS jako
+        zpracovatele. Zásady EmailJS: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank"
+          rel="noopener">emailjs.com/legal/privacy-policy</a>.</p>
+      <p>Doba uložení: e-mailová korespondence je uchovávána maximálně 2 roky od posledního kontaktu, poté odstraněna.
+      </p>
 
-    <h2>6. Zabezpečení</h2>
-    <p>Web běží na HTTPS. Přístup k e-mailové schránce obsahující zprávy z formuláře je chráněn heslem a dvoufaktorovým ověřením.</p>
+      <h2>4. Web: cookies a localStorage</h2>
+      <p>Web používá:</p>
+      <ul>
+        <li><strong>localStorage — cookie_consent</strong>: uložení vašeho rozhodnutí o cookies. Platnost: trvalá (do
+          vymazání prohlížeče). Neobsahuje osobní údaje.</li>
+        <li><strong>Cookies Google Analytics</strong> (_ga, _ga_*): pouze po vašem souhlasu. Platnost: až 2 roky.</li>
+      </ul>
+      <p>Web nepoužívá cookies pro reklamu, retargeting ani sociální sítě.</p>
 
-    <h2>7. Děti</h2>
-    <p>Web není určen dětem mladším 16 let. Vědomě neshromažďuji údaje od dětí.</p>
+      <h2>5. Aplikace JustInTime (Android)</h2>
+      <p>JustInTime ti řekne, kdy vyrazit, abys dorazil(a) včas. Nemá účty ani přihlašování a nemám žádný server, který
+        by tvá data sbíral.</p>
 
-    <h2>8. Změny těchto zásad</h2>
-    <p>Zásady mohou být aktualizovány. Datum poslední změny je uveden v záhlaví. Podstatné změny budou oznámeny prostřednictvím banneru na webu.</p>
+      <h3>5.1 Data v telefonu</h3>
+      <p>Cesty (místa, časy, způsob dopravy, připomínky) a nastavení se ukládají jen v zařízení. Pokud máš zapnutou
+        zálohu Androidu, může je Android zahrnout do šifrované zálohy zařízení u Googlu. Odinstalováním aplikace se
+        smažou.</p>
 
-    <hr />
-    <p style="font-size:.875rem; color:#525252;">Vojtěch Adam · kontakt@vojtech-adam.cz · vojtech-adam.cz</p>
+      <h3>5.2 Poloha</h3>
+      <p>Aplikace žádá o polohu jen během používání: pro start „Moje poloha“ a vycentrování mapy. Na pozadí polohu nikdy
+        nesleduje. Oprávnění můžeš kdykoli odebrat v nastavení Androidu a místa vybírat ručně.</p>
+
+      <h3>5.3 Výpočet trasy (MapQuest)</h3>
+      <p>Kvůli době cesty se souřadnice startu a cíle a způsob dopravy posílají přes HTTPS do MapQuest Directions API
+        (MapQuest, společnost System1, USA). Neposílá se s nimi jméno, účet ani identifikátor zařízení. Já tyto údaje
+        neukládám; MapQuest je zpracovává podle svých zásad: <a href="https://system1.com/terms/privacy-policy"
+          target="_blank" rel="noopener">system1.com/terms/privacy-policy</a>.</p>
+      <p>Právní základ: poskytnutí funkce, o kterou žádáš (čl. 6 odst. 1 písm. b) GDPR).</p>
+
+      <h3>5.4 Mapa a hledání adres (Google)</h3>
+      <p>Mapa se zobrazuje přes Google Mapy a hledání adres používá geocoder Androidu od Googlu. Google přitom dostává
+        hledaný text a zobrazenou oblast mapy. Zásady: <a href="https://policies.google.com/privacy" target="_blank"
+          rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h3>5.5 Reklamy (Google AdMob)</h3>
+      <p>Verze zdarma zobrazuje reklamní banner od Google AdMob. AdMob může shromažďovat identifikátory zařízení (např.
+        reklamní ID), IP adresu, přibližnou polohu odvozenou z IP a údaje o interakcích s reklamou, aby mohl reklamy
+        zobrazit a měřit.</p>
+      <p>Právní základ: v EHP, Velké Británii a Švýcarsku <strong>tvůj souhlas</strong> (čl. 6 odst. 1 písm. a) GDPR), o
+        který aplikace požádá přes Google User Messaging Platform. Volbu můžeš kdykoli změnit v aplikaci: Nastavení →
+        Ochrana soukromí u reklam. Uživatelé JustInTime Pro reklamy nevidí. Jak Google používá data z aplikací: <a
+          href="https://policies.google.com/technologies/partner-sites" target="_blank"
+          rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+
+      <h3>5.6 Nákupy (Google Play)</h3>
+      <p>JustInTime Pro se kupuje přes Google Play. Platební údaje zpracovává Google, aplikace se dozví jen to, jestli
+        Pro vlastníš. Právní základ: plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR).</p>
+
+      <h3>5.7 Co aplikace nedělá</h3>
+      <ul>
+        <li>Nemá účty ani přihlašování.</li>
+        <li>Nesleduje polohu na pozadí.</li>
+        <li>Nepoužívá vlastní analytiku a neposílá mi tvé cesty.</li>
+        <li>Neprodává osobní údaje.</li>
+      </ul>
+
+      <h2>6. Vaše práva (GDPR)</h2>
+      <p>Máte právo:</p>
+      <ul>
+        <li><strong>Na přístup</strong>: získat informace o tom, jaké údaje o vás zpracovávám</li>
+        <li><strong>Na opravu</strong>: nechat opravit nepřesné údaje</li>
+        <li><strong>Na výmaz</strong>: požádat o smazání vašich dat</li>
+        <li><strong>Na přenositelnost</strong>: obdržet data ve strukturovaném formátu</li>
+        <li><strong>Vznést námitku</strong>: proti zpracování na základě oprávněného zájmu</li>
+        <li><strong>Odvolat souhlas</strong>: kdykoli, bez vlivu na zákonnost předchozího zpracování</li>
+      </ul>
+      <p>Data aplikace JustInTime jsou jen ve vašem zařízení, takže je můžete kdykoli zobrazit, změnit nebo smazat přímo
+        v aplikaci, případně ji odinstalovat.</p>
+      <p>Pro uplatnění práv nebo jakékoli dotazy mě kontaktujte na <a
+          href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>. Odpovím do 30 dnů.</p>
+      <p>Máte také právo podat stížnost u dozorového úřadu: <a href="https://www.uoou.cz" target="_blank"
+          rel="noopener">Úřad pro ochranu osobních údajů (uoou.cz)</a>.</p>
+
+      <h2>7. Zabezpečení</h2>
+      <p>Web běží na HTTPS a aplikace komunikuje se všemi službami přes HTTPS. Přístup k e-mailové schránce obsahující
+        zprávy z formuláře je chráněn heslem a dvoufaktorovým ověřením.</p>
+
+      <h2>8. Děti</h2>
+      <p>Web ani aplikace nejsou určeny dětem mladším 16 let. Vědomě neshromažďuji údaje od dětí.</p>
+
+      <h2>9. Změny těchto zásad</h2>
+      <p>Zásady mohou být aktualizovány. Datum poslední změny je uvedeno v záhlaví. Podstatné změny budou oznámeny
+        prostřednictvím banneru na webu, u aplikace v poznámkách k nové verzi.</p>
+
+      <hr />
+      <p style="font-size:.875rem; color:#525252;">Vojtěch Adam · kontakt@vojtech-adam.cz · vojtech-adam.cz</p>
+    </article>
+
+    <!-- ===================== ENGLISH ===================== -->
+    <article lang="en" id="en">
+      <h1>Privacy policy</h1>
+      <p class="meta">Controller: Vojtěch Adam · kontakt@vojtech-adam.cz · Last updated: October 2026</p>
+
+      <div class="highlight">
+        <p>In short: I only collect what I need to run this website and the JustInTime app. I don't sell your data or
+          share it with third parties for commercial purposes. The JustInTime app has no accounts and your trips stay on
+          your phone.</p>
+      </div>
+
+      <h2>1. Who processes your data</h2>
+      <p>The controller of your personal data is Vojtěch Adam, a private individual who runs the personal website
+        vojtech-adam.cz and develops the JustInTime app for Android. Contact: <a
+          href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>.</p>
+
+      <h2>2. Website: analytics cookies (Google Analytics 4)</h2>
+      <p>With your consent, the website uses Google Analytics 4 (operated by Google Ireland Ltd., Gordon House, Barrow
+        Street, Dublin 4, Ireland). Google Analytics collects:</p>
+      <ul>
+        <li>Your anonymized IP address (last octet removed)</li>
+        <li>Browser type, operating system and screen resolution</li>
+        <li>The pages you visited and the time spent on the website</li>
+        <li>Your country (not your precise location)</li>
+      </ul>
+      <p>Purpose: understanding how visitors use the website in order to improve it.</p>
+      <p>Legal basis: <strong>your consent</strong> (Art. 6(1)(a) GDPR). You can withdraw it at any time by deleting
+        cookies in your browser settings.</p>
+      <p>Data is transferred to the USA under standard contractual clauses. Google's privacy policy: <a
+          href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+      <p>Retention: analytics data is kept in GA4 for 14 months and then deleted automatically.</p>
+
+      <h2>3. Website: contact form (EmailJS)</h2>
+      <p>Messages sent through the contact form are processed by EmailJS (EmailJS.com, UK). I process:</p>
+      <ul>
+        <li>First and last name</li>
+        <li>Email address</li>
+        <li>Subject and content of the message</li>
+      </ul>
+      <p>Purpose: replying to your message.</p>
+      <p>Legal basis: <strong>legitimate interest</strong> (Art. 6(1)(f) GDPR), namely communicating with people who got
+        in touch themselves.</p>
+      <p>Messages are stored in my mailbox. Data is not passed to third parties other than EmailJS as a processor.
+        EmailJS privacy policy: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank"
+          rel="noopener">emailjs.com/legal/privacy-policy</a>.</p>
+      <p>Retention: email correspondence is kept for at most 2 years after the last contact and then deleted.</p>
+
+      <h2>4. Website: cookies and localStorage</h2>
+      <p>The website uses:</p>
+      <ul>
+        <li><strong>localStorage — cookie_consent</strong>: stores your cookie choice. Duration: permanent (until you
+          clear your browser). Contains no personal data.</li>
+        <li><strong>Google Analytics cookies</strong> (_ga, _ga_*): only with your consent. Duration: up to 2 years.
+        </li>
+      </ul>
+      <p>The website does not use cookies for advertising, retargeting or social networks.</p>
+
+      <h2>5. The JustInTime app (Android)</h2>
+      <p>JustInTime tells you when to leave so you arrive on time. It has no accounts or sign-in, and I run no server
+        that collects your data.</p>
+
+      <h3>5.1 Data on your phone</h3>
+      <p>Your trips (places, times, travel mode, reminders) and settings are stored only on your device. If Android
+        backup is on, Android may include them in your encrypted device backup with Google. Uninstalling the app deletes
+        them.</p>
+
+      <h3>5.2 Location</h3>
+      <p>The app asks for your location only while you use it: to set "Use my location" as a starting point and to
+        center the map. It never tracks your location in the background. You can revoke the permission in Android
+        settings at any time and pick places by hand.</p>
+
+      <h3>5.3 Route calculation (MapQuest)</h3>
+      <p>To work out the travel time, the coordinates of the start and destination and the travel mode are sent over
+        HTTPS to the MapQuest Directions API (MapQuest, a System1 company, USA). No name, account or device identifier
+        is sent with them. I don't store this data; MapQuest processes it under its own policy: <a
+          href="https://system1.com/terms/privacy-policy" target="_blank"
+          rel="noopener">system1.com/terms/privacy-policy</a>.</p>
+      <p>Legal basis: providing the feature you ask for (Art. 6(1)(b) GDPR).</p>
+
+      <h3>5.4 Map and address search (Google)</h3>
+      <p>The map is shown with Google Maps and address search uses the Android geocoder provided by Google. Google
+        receives the search text and the visible map area. Policy: <a href="https://policies.google.com/privacy"
+          target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h3>5.5 Ads (Google AdMob)</h3>
+      <p>The free version shows a banner ad from Google AdMob. AdMob may collect device identifiers (such as the
+        advertising ID), your IP address, approximate location derived from it, and information about ad interactions in
+        order to show and measure ads.</p>
+      <p>Legal basis: in the EEA, the UK and Switzerland, <strong>your consent</strong> (Art. 6(1)(a) GDPR), which the
+        app asks for through Google's User Messaging Platform. You can change your choice at any time in the app:
+        Settings → Ad privacy options. JustInTime Pro users see no ads. How Google uses data from apps: <a
+          href="https://policies.google.com/technologies/partner-sites" target="_blank"
+          rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+
+      <h3>5.6 Purchases (Google Play)</h3>
+      <p>JustInTime Pro is bought through Google Play. Payment details are handled by Google; the app only learns
+        whether you own Pro. Legal basis: performance of a contract (Art. 6(1)(b) GDPR).</p>
+
+      <h3>5.7 What the app does not do</h3>
+      <ul>
+        <li>No accounts or sign-in.</li>
+        <li>No location tracking in the background.</li>
+        <li>No analytics of its own; your trips are never sent to me.</li>
+        <li>No selling of personal data.</li>
+      </ul>
+
+      <h2>6. Your rights (GDPR)</h2>
+      <p>You have the right:</p>
+      <ul>
+        <li><strong>Of access</strong>: to find out what data about you I process</li>
+        <li><strong>To rectification</strong>: to have inaccurate data corrected</li>
+        <li><strong>To erasure</strong>: to ask for your data to be deleted</li>
+        <li><strong>To data portability</strong>: to receive your data in a structured format</li>
+        <li><strong>To object</strong>: to processing based on legitimate interest</li>
+        <li><strong>To withdraw consent</strong>: at any time, without affecting the lawfulness of earlier processing
+        </li>
+      </ul>
+      <p>JustInTime app data lives only on your device, so you can view, change or delete it in the app at any time, or
+        uninstall the app.</p>
+      <p>To exercise your rights or ask anything, contact me at <a
+          href="mailto:kontakt@vojtech-adam.cz">kontakt@vojtech-adam.cz</a>. I reply within 30 days.</p>
+      <p>You also have the right to lodge a complaint with a supervisory authority, in the Czech Republic the <a
+          href="https://www.uoou.cz" target="_blank" rel="noopener">Office for Personal Data Protection (uoou.cz)</a>.
+      </p>
+
+      <h2>7. Security</h2>
+      <p>The website runs on HTTPS and the app talks to every service over HTTPS. The mailbox holding contact form
+        messages is protected by a password and two-factor authentication.</p>
+
+      <h2>8. Children</h2>
+      <p>Neither the website nor the app is intended for children under 16. I do not knowingly collect data from
+        children.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>This policy may be updated. The date of the last change is shown at the top. Significant changes will be
+        announced with a banner on the website and, for the app, in the release notes of the new version.</p>
+
+      <hr />
+      <p style="font-size:.875rem; color:#525252;">Vojtěch Adam · kontakt@vojtech-adam.cz · vojtech-adam.cz</p>
+    </article>
   </div>
+
+  <script>
+    // Czech for Czech browsers, English for everyone else; #cs or #en in the link wins.
+    (function () {
+      var back = document.querySelector('.back');
+      function show(lang) {
+        document.querySelectorAll('article').forEach(function (a) { a.classList.toggle('shown', a.lang === lang); });
+        document.querySelectorAll('.lang a').forEach(function (a) { a.classList.toggle('active', a.dataset.lang === lang); });
+        document.documentElement.lang = lang;
+        back.textContent = back.dataset[lang];
+        document.title = lang === 'cs' ? 'Zásady ochrany osobních údajů — Vojtěch Adam' : 'Privacy policy — Vojtěch Adam';
+      }
+      function pick() {
+        var hash = location.hash.slice(1);
+        if (hash === 'cs' || hash === 'en') return hash;
+        return (navigator.language || '').toLowerCase().indexOf('cs') === 0 ? 'cs' : 'en';
+      }
+      document.querySelectorAll('.lang a').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          history.replaceState(null, '', '#' + a.dataset.lang);
+          show(a.dataset.lang);
+          window.scrollTo(0, 0);
+        });
+      });
+      show(pick());
+    })();
+  </script>
 </body>
+
 </html>
