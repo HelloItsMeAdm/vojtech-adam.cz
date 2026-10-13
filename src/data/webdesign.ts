@@ -22,6 +22,13 @@ export const webReferences: WebReference[] = [
     tech: ['React', 'TypeScript', 'Tailwind CSS'],
   },
   {
+    name: 'Obdélníky',
+    desc: 'Web české značky dámského spodního prádla ve střihu boxerek — předprodejní landing page se sběrem e-mailů.',
+    descEn: 'Website for a Czech women\'s underwear brand with a boxer cut — pre-launch landing page with email signup.',
+    url: 'https://obdelniky.cz/',
+    tech: ['HTML/CSS', 'JavaScript'],
+  },
+  {
     name: 'Čalounictví Klement',
     desc: 'Web pro čalounické studio — galerie prací, ceník a kontakt.',
     descEn: 'Website for an upholstery studio — portfolio gallery, pricing and contact.',

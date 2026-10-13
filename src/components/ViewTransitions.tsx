@@ -22,7 +22,7 @@ export default function ViewTransitions() {
 
       (document as any).startViewTransition(() => {
         flushSync(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, behavior: 'instant' });
           navigate(to);
         });
       });
