@@ -97,8 +97,8 @@ export default function ProjectDetail() {
                   <a
                     key={link.url}
                     href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={link.url.startsWith('/') ? undefined : '_blank'}
+                    rel={link.url.startsWith('/') ? undefined : 'noopener noreferrer'}
                     className="btn btn-primary"
                   >
                     {t(`${project.i18nKey}.links.${link.labelKey}`)} <ExternalLinkIcon />

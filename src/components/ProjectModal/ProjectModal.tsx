@@ -95,8 +95,8 @@ export default function ProjectModal({ project, onClose }: Props) {
                 <a
                   key={link.url}
                   href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={link.url.startsWith('/') ? undefined : '_blank'}
+                  rel={link.url.startsWith('/') ? undefined : 'noopener noreferrer'}
                   className={i === 0 ? styles.ctaPrimary : styles.ctaSecondary}
                 >
                   {t(`${project.i18nKey}.links.${link.labelKey}`)}
